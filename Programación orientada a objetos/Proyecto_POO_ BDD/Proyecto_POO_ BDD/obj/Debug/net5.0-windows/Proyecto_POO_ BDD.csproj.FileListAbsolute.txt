@@ -1,0 +1,18 @@
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.exe
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.deps.json
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.runtimeconfig.json
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.runtimeconfig.dev.json
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.dll
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\ref\Proyecto_POO_ BDD.dll
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\bin\Debug\net5.0-windows\Proyecto_POO_ BDD.pdb
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.csproj.AssemblyReference.cache
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.AssemblyInfoInputs.cache
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.AssemblyInfo.cs
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.dll
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\ref\Proyecto_POO_ BDD.dll
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.pdb
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.genruntimeconfig.cache
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.csproj.GenerateResource.cache
+C:\Users\Rodrigo Carrero\Desktop\parcial02-perdidas\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO__BDD.frmInicioSesion.resources
