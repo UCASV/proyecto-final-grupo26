@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
+      "projectUniqueName": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
       "projectName": "Proyecto_POO_ BDD",
-      "projectPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
+      "projectPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
       "packagesPath": "C:\\Users\\Rodrigo Carrero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\obj\\",
+      "outputPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rodrigo Carrero\\AppData\\Roaming\\NuGet\\NuGet.Config",

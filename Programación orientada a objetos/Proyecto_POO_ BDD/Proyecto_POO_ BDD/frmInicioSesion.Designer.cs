@@ -376,7 +376,7 @@
             this.txtConNewContrasena.Size = new System.Drawing.Size(281, 40);
             this.txtConNewContrasena.TabIndex = 12;
             // 
-            // Form1
+            // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
