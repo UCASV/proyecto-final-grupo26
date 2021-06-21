@@ -67,7 +67,11 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Name = "panelBanner";
             this.panelBanner.Size = new System.Drawing.Size(497, 75);
             this.panelBanner.TabIndex = 1;
+            // {
+            // brn_register
             // 
+            
+            
             // lbl_logOut
             // 
             this.lbl_logOut.BackColor = System.Drawing.Color.Transparent;
