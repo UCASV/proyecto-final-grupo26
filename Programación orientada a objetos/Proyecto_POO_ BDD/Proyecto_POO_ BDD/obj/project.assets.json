@@ -8,26 +8,24 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Rodrigo Carrero\\.nuget\\packages\\": {}
+    "C:\\Users\\gi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
+      "projectUniqueName": "C:\\Users\\gi\\Desktop\\Proyectos\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
       "projectName": "Proyecto_POO_ BDD",
-      "projectPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
-      "packagesPath": "C:\\Users\\Rodrigo Carrero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rodrigo Carrero\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\obj\\",
+      "projectPath": "C:\\Users\\gi\\Desktop\\Proyectos\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD.csproj",
+      "packagesPath": "C:\\Users\\gi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gi\\Desktop\\Proyectos\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_ BDD\\Proyecto_POO_ BDD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rodrigo Carrero\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\gi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -63,7 +61,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

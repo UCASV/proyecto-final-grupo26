@@ -13,10 +13,4 @@
       </Reference>
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Update="frmAreaTrabajo.cs">
-        <SubType>Form</SubType>
-      </Compile>
-    </ItemGroup>
-
 </Project>
