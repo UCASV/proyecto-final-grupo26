@@ -53,3 +53,4 @@ C:\Users\gi\Desktop\Proyectos\Proyect_BD_POO\Programación orientada a objetos\P
 C:\Users\gi\Desktop\Proyectos\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\ref\Proyecto_POO_ BDD.dll
 C:\Users\gi\Desktop\Proyectos\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.pdb
 C:\Users\gi\Desktop\Proyectos\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO_ BDD.genruntimeconfig.cache
+C:\Users\gi\Desktop\Proyectos\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_ BDD\Proyecto_POO_ BDD\obj\Debug\net5.0-windows\Proyecto_POO__BDD.frmLogin.resources
