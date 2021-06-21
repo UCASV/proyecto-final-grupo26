@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Proyecto_POO_BDD
 {
@@ -7,6 +9,11 @@ namespace Proyecto_POO_BDD
         public frmMainMenu()
         {
             InitializeComponent();
+        }
+
+        private void btn_vaccinationProcess_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
