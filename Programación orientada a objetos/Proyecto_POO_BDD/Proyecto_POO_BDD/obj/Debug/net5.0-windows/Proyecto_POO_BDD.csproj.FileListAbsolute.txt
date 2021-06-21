@@ -16,3 +16,4 @@ C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Pro
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.genruntimeconfig.cache
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmLogIn.resources
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmMainMenu.resources
