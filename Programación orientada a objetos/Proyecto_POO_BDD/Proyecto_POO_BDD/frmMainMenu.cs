@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Proyecto_POO_BDD
 {
@@ -7,6 +8,12 @@ namespace Proyecto_POO_BDD
         public frmMainMenu()
         {
             InitializeComponent();
+        }
+
+        private void brn_register_Click(object sender, EventArgs e)
+        {
+            frmLogIn window = new frmLogIn();
+            window.ShowDialog();
         }
     }
 }

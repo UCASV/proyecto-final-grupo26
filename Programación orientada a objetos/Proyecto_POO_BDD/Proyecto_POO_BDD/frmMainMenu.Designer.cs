@@ -76,6 +76,7 @@ namespace Proyecto_POO_BDD
             this.brn_register.Size = new System.Drawing.Size(151, 146);
             this.brn_register.TabIndex = 2;
             this.brn_register.UseVisualStyleBackColor = false;
+            this.brn_register.Click += new System.EventHandler(this.brn_register_Click);
             // 
             // lbl_register
             // 
