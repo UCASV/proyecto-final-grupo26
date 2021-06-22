@@ -38,7 +38,7 @@ namespace Proyecto_POO_BDD
             this.lbl_register = new System.Windows.Forms.Label();
             this.btn_vaccinationProcess = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).BeginInit();
+          ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).BeginInit();
             this.panelBanner.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,6 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Name = "panelBanner";
             this.panelBanner.Size = new System.Drawing.Size(438, 71);
             this.panelBanner.TabIndex = 1;
-<<<<<<< HEAD
             // 
             // brn_register
             // 
@@ -78,7 +77,6 @@ namespace Proyecto_POO_BDD
             this.brn_register.TabIndex = 2;
             this.brn_register.UseVisualStyleBackColor = false;
             this.brn_register.Click += new System.EventHandler(this.brn_register_Click);
-=======
             // {
             // brn_register
             // 
@@ -125,7 +123,7 @@ namespace Proyecto_POO_BDD
             this.btn_register.Size = new System.Drawing.Size(151, 146);
             this.btn_register.TabIndex = 2;
             this.btn_register.UseVisualStyleBackColor = false;
->>>>>>> 0a8242fa66d9bc3a51f34e6b9e2b9a1cc257a1fb
+
             // 
             // lbl_register
             // 
@@ -172,7 +170,7 @@ namespace Proyecto_POO_BDD
             this.ClientSize = new System.Drawing.Size(437, 439);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_vaccinationProcess);
-            this.Controls.Add(this.lbl_register);
+          this.Controls.Add(this.lbl_register);
             this.Controls.Add(this.brn_register);
             this.Controls.Add(this.panelBanner);
             this.Name = "frmMainMenu";

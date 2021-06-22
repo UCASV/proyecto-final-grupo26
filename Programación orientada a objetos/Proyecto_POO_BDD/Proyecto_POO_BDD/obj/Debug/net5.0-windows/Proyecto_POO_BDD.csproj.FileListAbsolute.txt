@@ -74,3 +74,4 @@ C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_PO
 C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.csproj.CopyComplete
+C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmRegisterCitizen.resources
