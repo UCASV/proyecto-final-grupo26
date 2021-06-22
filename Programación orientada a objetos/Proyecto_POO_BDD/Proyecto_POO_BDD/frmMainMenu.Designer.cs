@@ -76,6 +76,7 @@ namespace Proyecto_POO_BDD
             this.brn_register.Size = new System.Drawing.Size(151, 146);
             this.brn_register.TabIndex = 2;
             this.brn_register.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             this.brn_register.Click += new System.EventHandler(this.brn_register_Click);
             // {
             // brn_register
@@ -124,6 +125,12 @@ namespace Proyecto_POO_BDD
             this.btn_register.TabIndex = 2;
             this.btn_register.UseVisualStyleBackColor = false;
 
+=======
+            this.brn_register.Click += new System.EventHandler(this.btn_register_Click);
+            //
+            // 
+            
+>>>>>>> 3d6e4200b4cb12faa46601a07a3136d7337e9dda
             // 
             // lbl_register
             // 
@@ -173,28 +180,21 @@ namespace Proyecto_POO_BDD
           this.Controls.Add(this.lbl_register);
             this.Controls.Add(this.brn_register);
             this.Controls.Add(this.panelBanner);
+            this.MaximizeBox = false;
             this.Name = "frmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             this.panelBanner.ResumeLayout(false);
             this.ResumeLayout(false);
         }
-
+        
         private System.Windows.Forms.Button brn_register;
 
-        private System.Windows.Forms.Button btn_vaccinateProcess;
+        private System.Windows.Forms.Button btn_vaccinationProcess;
 
-        private System.Windows.Forms.Label lbl_logOut;
-
-        private System.Windows.Forms.Button btn_LogOut;
-
-        private System.Windows.Forms.Button btn_register;
-
-        private System.Windows.Forms.Label lbl_vaccinateProcess;
-
-        private System.Windows.Forms.StatusStrip statusStripMainMenu;
-
-        private System.Windows.Forms.ToolStripStatusLabel lbl_userStatusStrip;
+        private System.Windows.Forms.Label label1;
+        
 
         private System.Windows.Forms.Label lbl_register;
 

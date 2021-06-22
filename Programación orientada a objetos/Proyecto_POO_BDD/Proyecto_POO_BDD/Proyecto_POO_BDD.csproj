@@ -18,6 +18,8 @@
       <Compile Update="frm.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Remove="Entities\**" />
+      <Compile Remove="Context\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,13 +29,29 @@
     </ItemGroup>
 
     <ItemGroup>
+<<<<<<< HEAD
+=======
+      <EmbeddedResource Remove="Entities\**" />
+      <EmbeddedResource Remove="Context\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Entities\**" />
+      <None Remove="Context\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+>>>>>>> 3d6e4200b4cb12faa46601a07a3136d7337e9dda
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.7" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+<<<<<<< HEAD
       
+=======
+>>>>>>> 3d6e4200b4cb12faa46601a07a3136d7337e9dda
     </ItemGroup>
 
 </Project>
