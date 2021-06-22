@@ -60,6 +60,7 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Name = "panelBanner";
             this.panelBanner.Size = new System.Drawing.Size(438, 71);
             this.panelBanner.TabIndex = 1;
+<<<<<<< HEAD
             // 
             // brn_register
             // 
@@ -77,6 +78,54 @@ namespace Proyecto_POO_BDD
             this.brn_register.TabIndex = 2;
             this.brn_register.UseVisualStyleBackColor = false;
             this.brn_register.Click += new System.EventHandler(this.brn_register_Click);
+=======
+            // {
+            // brn_register
+            // 
+            
+            
+            // lbl_logOut
+            // 
+            this.lbl_logOut.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_logOut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_logOut.ForeColor = System.Drawing.Color.Black;
+            this.lbl_logOut.Location = new System.Drawing.Point(382, 55);
+            this.lbl_logOut.Name = "lbl_logOut";
+            this.lbl_logOut.Size = new System.Drawing.Size(115, 16);
+            this.lbl_logOut.TabIndex = 2;
+            this.lbl_logOut.Text = "Cerrar Sesión";
+            this.lbl_logOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_LogOut
+            // 
+            this.btn_LogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btn_LogOut.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("btn_LogOut.BackgroundImage")));
+            this.btn_LogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LogOut.FlatAppearance.BorderSize = 0;
+            this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LogOut.Location = new System.Drawing.Point(414, 0);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Size = new System.Drawing.Size(58, 57);
+            this.btn_LogOut.TabIndex = 1;
+            this.btn_LogOut.UseVisualStyleBackColor = false;
+            // 
+            // btn_register
+            // 
+            this.btn_register.BackColor = System.Drawing.Color.Transparent;
+            this.btn_register.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("btn_register.BackgroundImage")));
+            this.btn_register.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_register.FlatAppearance.BorderSize = 0;
+            this.btn_register.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.btn_register.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_register.Location = new System.Drawing.Point(57, 172);
+            this.btn_register.Name = "btn_register";
+            this.btn_register.Size = new System.Drawing.Size(151, 146);
+            this.btn_register.TabIndex = 2;
+            this.btn_register.UseVisualStyleBackColor = false;
+>>>>>>> 0a8242fa66d9bc3a51f34e6b9e2b9a1cc257a1fb
             // 
             // lbl_register
             // 

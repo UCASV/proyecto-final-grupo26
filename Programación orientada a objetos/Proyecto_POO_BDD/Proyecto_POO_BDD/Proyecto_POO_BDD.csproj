@@ -13,6 +13,11 @@
       <Compile Update="frmMainMenu.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Remove="frmRegister.cs" />
+      <Compile Remove="frmRegister.Designer.cs" />
+      <Compile Update="frm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
