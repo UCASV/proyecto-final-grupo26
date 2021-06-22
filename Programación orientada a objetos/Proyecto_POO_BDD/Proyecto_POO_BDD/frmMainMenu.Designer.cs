@@ -67,11 +67,7 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Name = "panelBanner";
             this.panelBanner.Size = new System.Drawing.Size(497, 75);
             this.panelBanner.TabIndex = 1;
-            // {
-            // brn_register
             // 
-            
-            
             // lbl_logOut
             // 
             this.lbl_logOut.BackColor = System.Drawing.Color.Transparent;
@@ -113,6 +109,7 @@ namespace Proyecto_POO_BDD
             this.btn_register.Size = new System.Drawing.Size(151, 146);
             this.btn_register.TabIndex = 2;
             this.btn_register.UseVisualStyleBackColor = false;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // lbl_register
             // 
@@ -185,7 +182,9 @@ namespace Proyecto_POO_BDD
             this.Controls.Add(this.lbl_register);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.panelBanner);
+            this.MaximizeBox = false;
             this.Name = "frmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             this.panelBanner.ResumeLayout(false);

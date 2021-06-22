@@ -11,15 +11,17 @@ namespace Proyecto_POO_BDD
             InitializeComponent();
         }
 
-        private void brn_register_Click(object sender, EventArgs e)
-        {
-            frmLogIn window = new frmLogIn();
-            window.ShowDialog();
-        }
-
         private void btn_vaccinationProcess_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            using (frmRegisterCitizen window = new frmRegisterCitizen())
+            {
+                window.ShowDialog();
+            }
         }
     }
 }
