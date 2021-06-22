@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
+using Proyecto_POO_BDD.SqlServerContext;
 
 namespace Proyecto_POO_BDD
 {
@@ -55,6 +57,46 @@ namespace Proyecto_POO_BDD
              tabControl1.SelectedIndex = 0;
              rb_institutionNo.Checked = true;
              this.Height = 680;
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            /*var db = new ProCitasContext();
+
+            var listCitizen = db.Citizens
+                .Include(c => c.IdDirection)
+                .Include(c => c.IdCabin)
+                .Include(c => c.IdDiseases)
+                .Include(c => c.IdEmployee)
+                .Include(c => c.IdInstitution)
+                .Include(c => c.IdInfoVaccination);
+
+            Citizen newCitizen = new Citizen();
+                newCitizen.Dui = txt_dui.Text;
+                newCitizen.NameCitizen = txt_name.Text;
+                newCitizen.Phone = txt_celphone.Text;
+                newCitizen.Mail = txt_email.Text;
+                if (rb_deseasesNo.Checked)
+                    newCitizen.IdDiseases = null;
+                else
+                {
+                    
+                }
+
+                if (rb_institutionNo.Checked)
+                    newCitizen.IdDiseases = null;
+                else
+                {
+                    
+                }
+            
+            //ver como agregar el empleado y la cabina
+
+            db.Add(newCitizen);
+            db.SaveChanges();
+            
+            MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);*/
         }
     }
 }

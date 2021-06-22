@@ -15,8 +15,10 @@ namespace Proyecto_POO_BDD
         {
             using (frmRegisterCitizen window = new frmRegisterCitizen())
             {
+                this.Hide();
                 window.ShowDialog();
             }
+            this.Show();
         }
     }
 }
