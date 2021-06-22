@@ -64,6 +64,15 @@ namespace Proyecto_POO_BDD
             this.lbl_deseases = new System.Windows.Forms.Label();
             this.panelBannerTab2 = new System.Windows.Forms.Panel();
             this.pictureBoxBannerTab2 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_cancelTab3 = new System.Windows.Forms.Button();
+            this.btn_aceptTab3 = new System.Windows.Forms.Button();
+            this.lbl_nameInstitution = new System.Windows.Forms.Label();
+            this.lbl_description = new System.Windows.Forms.Label();
+            this.txt_numInstitution = new System.Windows.Forms.TextBox();
+            this.lbl_numInstitution = new System.Windows.Forms.Label();
+            this.panelBannerTab3 = new System.Windows.Forms.Panel();
+            this.pictureBoxBannerTab3 = new System.Windows.Forms.PictureBox();
             this.panelBannerTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -74,6 +83,9 @@ namespace Proyecto_POO_BDD
             this.tabPage2.SuspendLayout();
             this.panelBannerTab2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.panelBannerTab3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBannerTab1
@@ -82,7 +94,7 @@ namespace Proyecto_POO_BDD
             this.panelBannerTab1.Controls.Add(this.pictureBoxBannerTab1);
             this.panelBannerTab1.Location = new System.Drawing.Point(0, 0);
             this.panelBannerTab1.Name = "panelBannerTab1";
-            this.panelBannerTab1.Size = new System.Drawing.Size(513, 75);
+            this.panelBannerTab1.Size = new System.Drawing.Size(513, 81);
             this.panelBannerTab1.TabIndex = 2;
             // 
             // pictureBoxBannerTab1
@@ -99,11 +111,13 @@ namespace Proyecto_POO_BDD
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 0);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(1, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(521, 573);
             this.tabControl1.TabIndex = 11;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -302,6 +316,7 @@ namespace Proyecto_POO_BDD
             this.rb_institutionYes.TabIndex = 2;
             this.rb_institutionYes.Text = "Si";
             this.rb_institutionYes.UseVisualStyleBackColor = true;
+            this.rb_institutionYes.CheckedChanged += new System.EventHandler(this.rb_institutionYes_CheckedChanged);
             // 
             // rb_institutionNo
             // 
@@ -385,6 +400,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancelDeseases.TabIndex = 7;
             this.btn_cancelDeseases.Text = "Cancelar";
             this.btn_cancelDeseases.UseVisualStyleBackColor = false;
+            this.btn_cancelDeseases.Click += new System.EventHandler(this.btn_cancelDeseases_Click);
             // 
             // btn_aceptDeseases
             // 
@@ -437,11 +453,111 @@ namespace Proyecto_POO_BDD
             this.pictureBoxBannerTab2.TabIndex = 3;
             this.pictureBoxBannerTab2.TabStop = false;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btn_cancelTab3);
+            this.tabPage3.Controls.Add(this.btn_aceptTab3);
+            this.tabPage3.Controls.Add(this.lbl_nameInstitution);
+            this.tabPage3.Controls.Add(this.lbl_description);
+            this.tabPage3.Controls.Add(this.txt_numInstitution);
+            this.tabPage3.Controls.Add(this.lbl_numInstitution);
+            this.tabPage3.Controls.Add(this.panelBannerTab3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(513, 547);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancelTab3
+            // 
+            this.btn_cancelTab3.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelTab3.FlatAppearance.BorderSize = 0;
+            this.btn_cancelTab3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelTab3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_cancelTab3.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelTab3.Location = new System.Drawing.Point(276, 255);
+            this.btn_cancelTab3.Name = "btn_cancelTab3";
+            this.btn_cancelTab3.Size = new System.Drawing.Size(191, 43);
+            this.btn_cancelTab3.TabIndex = 10;
+            this.btn_cancelTab3.Text = "Cancelar";
+            this.btn_cancelTab3.UseVisualStyleBackColor = false;
+            this.btn_cancelTab3.Click += new System.EventHandler(this.btn_cancelTab3_Click);
+            // 
+            // btn_aceptTab3
+            // 
+            this.btn_aceptTab3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
+            this.btn_aceptTab3.FlatAppearance.BorderSize = 0;
+            this.btn_aceptTab3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptTab3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_aceptTab3.ForeColor = System.Drawing.Color.White;
+            this.btn_aceptTab3.Location = new System.Drawing.Point(42, 255);
+            this.btn_aceptTab3.Name = "btn_aceptTab3";
+            this.btn_aceptTab3.Size = new System.Drawing.Size(191, 43);
+            this.btn_aceptTab3.TabIndex = 9;
+            this.btn_aceptTab3.Text = "Aceptar";
+            this.btn_aceptTab3.UseVisualStyleBackColor = false;
+            // 
+            // lbl_nameInstitution
+            // 
+            this.lbl_nameInstitution.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_nameInstitution.Location = new System.Drawing.Point(57, 202);
+            this.lbl_nameInstitution.Name = "lbl_nameInstitution";
+            this.lbl_nameInstitution.Size = new System.Drawing.Size(395, 30);
+            this.lbl_nameInstitution.TabIndex = 8;
+            this.lbl_nameInstitution.Text = "Institución";
+            // 
+            // lbl_description
+            // 
+            this.lbl_description.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_description.Location = new System.Drawing.Point(48, 176);
+            this.lbl_description.Name = "lbl_description";
+            this.lbl_description.Size = new System.Drawing.Size(102, 26);
+            this.lbl_description.TabIndex = 7;
+            this.lbl_description.Text = "Institución";
+            // 
+            // txt_numInstitution
+            // 
+            this.txt_numInstitution.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txt_numInstitution.Location = new System.Drawing.Point(156, 114);
+            this.txt_numInstitution.Name = "txt_numInstitution";
+            this.txt_numInstitution.Size = new System.Drawing.Size(287, 24);
+            this.txt_numInstitution.TabIndex = 6;
+            // 
+            // lbl_numInstitution
+            // 
+            this.lbl_numInstitution.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_numInstitution.Location = new System.Drawing.Point(48, 114);
+            this.lbl_numInstitution.Name = "lbl_numInstitution";
+            this.lbl_numInstitution.Size = new System.Drawing.Size(102, 26);
+            this.lbl_numInstitution.TabIndex = 5;
+            this.lbl_numInstitution.Text = "Identificador: ";
+            // 
+            // panelBannerTab3
+            // 
+            this.panelBannerTab3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
+            this.panelBannerTab3.Controls.Add(this.pictureBoxBannerTab3);
+            this.panelBannerTab3.Location = new System.Drawing.Point(0, 0);
+            this.panelBannerTab3.Name = "panelBannerTab3";
+            this.panelBannerTab3.Size = new System.Drawing.Size(513, 75);
+            this.panelBannerTab3.TabIndex = 4;
+            // 
+            // pictureBoxBannerTab3
+            // 
+            this.pictureBoxBannerTab3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxBannerTab3.Image")));
+            this.pictureBoxBannerTab3.Location = new System.Drawing.Point(0, 3);
+            this.pictureBoxBannerTab3.Name = "pictureBoxBannerTab3";
+            this.pictureBoxBannerTab3.Size = new System.Drawing.Size(233, 72);
+            this.pictureBoxBannerTab3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBannerTab3.TabIndex = 3;
+            this.pictureBoxBannerTab3.TabStop = false;
+            // 
             // frmRegisterCitizen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 569);
+            this.ClientSize = new System.Drawing.Size(519, 569);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
             this.Name = "frmRegisterCitizen";
@@ -459,10 +575,28 @@ namespace Proyecto_POO_BDD
             this.tabPage2.ResumeLayout(false);
             this.panelBannerTab2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.panelBannerTab3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab3)).EndInit();
             this.ResumeLayout(false);
         }
 
-        
+        private System.Windows.Forms.Button btn_aceptTab3;
+        private System.Windows.Forms.Button btn_cancelTab3;
+
+        private System.Windows.Forms.Label lbl_nameInstitution;
+
+        private System.Windows.Forms.Label lbl_description;
+
+        private System.Windows.Forms.Label lbl_numInstitution;
+        private System.Windows.Forms.TextBox txt_numInstitution;
+
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panelBannerTab3;
+        private System.Windows.Forms.PictureBox pictureBoxBannerTab3;
 
 
         //tab2

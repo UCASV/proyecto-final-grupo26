@@ -27,6 +27,34 @@ namespace Proyecto_POO_BDD
             {
                 tabControl1.SelectedIndex = 1;
             }
+
+            this.Height = 350;
+        }
+
+        private void btn_cancelDeseases_Click(object sender, EventArgs e)
+        {
+            this.Height = 680;
+            tabControl1.SelectedIndex = 0;
+            rb_deseasesNo.Checked = true;
+            
+        }
+
+        private void rb_institutionYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_institutionYes.Checked)
+            {
+                tabControl1.SelectedIndex = 2;
+            }
+        
+            this.Height = 420;
+        }
+
+
+        private void btn_cancelTab3_Click(object sender, EventArgs e)
+        {
+             tabControl1.SelectedIndex = 0;
+             rb_institutionNo.Checked = true;
+             this.Height = 680;
         }
     }
 }
