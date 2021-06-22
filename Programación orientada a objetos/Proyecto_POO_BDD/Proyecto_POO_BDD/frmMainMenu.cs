@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
+
 
 namespace Proyecto_POO_BDD
 {
@@ -11,10 +11,7 @@ namespace Proyecto_POO_BDD
             InitializeComponent();
         }
 
-        private void btn_vaccinationProcess_Click(object sender, EventArgs e)
-        {
-            
-        }
+    
 
         private void btn_register_Click(object sender, EventArgs e)
         {
@@ -23,5 +20,6 @@ namespace Proyecto_POO_BDD
                 window.ShowDialog();
             }
         }
+        
     }
 }
