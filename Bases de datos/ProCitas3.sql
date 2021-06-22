@@ -5,26 +5,25 @@ SET LANGUAGE us_english;
 
 --Tablas
 CREATE TABLE CITIZEN(
-	id INT PRIMARY KEY NOT NULL,
 	dui VARCHAR(12) NOT NULL,
 	nameCITIZEN varchar(60) NOT NULL,
 	phone VARCHAR(8) NOT NULL,
-	mail VARCHAR(35) NOT NULL,
-	time_effect TIME,
-	date_effect DATE,
+	mail VARCHAR(35) NULL,
+	time_effect TIME NULL,
+	date_effect DATE NULL,
 	time_wline TIME,
 	date_wline DATE,
 	id_employee INT NOT NULL,
 	id_cabin INT NOT NULL,
-	id_institution INT NOT NULL,
+	id_institution INT NULL,
 	id_direction INT NOT NULL,
 	id_info_vaccination INT,
 	id_side_effects INT,
-	id_diseases INT
+	id_diseases INT NULL
 );
 
 CREATE TABLE INFO_VACCINATION(
-	id INT PRIMARY KEY,
+	id INT IDENTITY PRIMARY KEY,
 	date_appointment1 DATE,
 	time_appointment1 TIME,
 	vaccination_place VARCHAR(40),
