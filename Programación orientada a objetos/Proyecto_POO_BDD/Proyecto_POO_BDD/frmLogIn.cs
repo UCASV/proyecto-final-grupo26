@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Proyecto_POO_BDD
 {
@@ -7,6 +8,15 @@ namespace Proyecto_POO_BDD
         public frmLogIn()
         {
             InitializeComponent();
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(
+                "Bienvenido", "Vaccination", MessageBoxButtons.OK,MessageBoxIcon.Hand);
+
+
         }
     }
 }
