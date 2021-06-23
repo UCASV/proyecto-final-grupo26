@@ -17,7 +17,7 @@ namespace Proyecto_POO_BDD
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainMenu());
+            Application.Run(new frmLogIn());
         }
     }
 }
