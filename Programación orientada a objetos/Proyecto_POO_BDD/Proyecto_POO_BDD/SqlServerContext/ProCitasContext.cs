@@ -73,6 +73,12 @@ namespace Proyecto_POO_BDD.SqlServerContext
 
             modelBuilder.Entity<Citizen>(entity =>
             {
+<<<<<<< HEAD
+=======
+                entity.HasKey(e => e.Dui)
+                    .HasName("PK__CITIZEN__D876F1BE56B07FC7");
+
+>>>>>>> 10770b6c15f4deff575aa7e75f5d3367bab8fef2
                 entity.ToTable("CITIZEN");
 
                 entity.Property(e => e.Id)
@@ -155,7 +161,12 @@ namespace Proyecto_POO_BDD.SqlServerContext
                 entity.HasOne(d => d.IdInfoVaccinationNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInfoVaccination)
+<<<<<<< HEAD
                     .HasConstraintName("FK__CITIZEN__id_info__3A81B327");
+=======
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__CITIZEN__id_info__4CA06362");
+>>>>>>> 10770b6c15f4deff575aa7e75f5d3367bab8fef2
 
                 entity.HasOne(d => d.IdInstitutionNavigation)
                     .WithMany(p => p.Citizens)
@@ -267,7 +278,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
+<<<<<<< HEAD
                     .HasName("PK__EMPLOYEE__44FD7D356103F294");
+=======
+                    .HasName("PK__EMPLOYEE__44FD7D35641EB234");
+>>>>>>> 10770b6c15f4deff575aa7e75f5d3367bab8fef2
 
                 entity.ToTable("EMPLOYEEXCABIN");
 

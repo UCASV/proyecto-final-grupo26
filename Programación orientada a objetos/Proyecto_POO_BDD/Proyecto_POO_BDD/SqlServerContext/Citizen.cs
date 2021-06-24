@@ -20,7 +20,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
         public int IdCabin { get; set; }
         public int IdInstitution { get; set; }
         public int IdDirection { get; set; }
-        public int? IdInfoVaccination { get; set; }
+        public int IdInfoVaccination { get; set; }
         public int? IdSideEffects { get; set; }
         public int? IdDiseases { get; set; }
 

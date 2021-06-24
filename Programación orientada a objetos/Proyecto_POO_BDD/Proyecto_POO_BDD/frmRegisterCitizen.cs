@@ -10,6 +10,7 @@ namespace Proyecto_POO_BDD
     public partial class frmRegisterCitizen : Form
     {
         private Employee employee { get; set; }
+        private ProCitasContext db = new ProCitasContext();
         
         public frmRegisterCitizen(Employee employee)
         {
@@ -26,8 +27,6 @@ namespace Proyecto_POO_BDD
         {
             tabControl1.ItemSize = new Size(0, 1);
 
-            var db = new ProCitasContext();
-
             cmb_Diseases.DataSource = db.Diseases.ToList();
             cmb_Diseases.DisplayMember = "diseases";
             cmb_Diseases.ValueMember = "id";
@@ -39,11 +38,12 @@ namespace Proyecto_POO_BDD
             cmb_address.DisplayMember = "Direction";
             cmb_address.ValueMember = "Id";
         }
-
+        
+        
         private void rb_deseasesYes_Click(object sender, EventArgs e)
         {
             if (rb_diseasesYes.Checked)
-            tabControl1.SelectedIndex = 1;
+                tabControl1.SelectedIndex = 1;
             
             this.Height = 430;
         }
@@ -99,42 +99,97 @@ namespace Proyecto_POO_BDD
 
         private void btn_aceptRegister_Click(object sender, EventArgs e)
         {
-            /*var db = new ProCitasContext();
 
-           var listCitizen = db.Citizens
-               .Include(c => c.IdDirection)
-               .Include(c => c.IdCabin)
-               .Include(c => c.IdDiseases)
-               .Include(c => c.IdEmployee)
-               .Include(c => c.IdInstitution)
-               .Include(c => c.IdInfoVaccination);
+            var listCitizen = db.Citizens
+                .Include(c => c.IdDirection)
+                .Include(c => c.IdCabin)
+                .Include(c => c.IdDiseases)
+                .Include(c => c.IdEmployee)
+                .Include(c => c.IdInstitution)
+                .Include(c => c.IdInfoVaccination)
+                .ToList();
 
-           Citizen newCitizen = new Citizen();
-               newCitizen.Dui = txt_dui.Text;
-               newCitizen.NameCitizen = txt_name.Text;
-               newCitizen.Phone = txt_celphone.Text;
-               newCitizen.Mail = txt_email.Text;
-               if (rb_deseasesNo.Checked)
-                   newCitizen.IdDiseases = null;
-               else
-               {
-                   
-               }
+            Citizen newCitizen = new Citizen();
 
-               if (rb_institutionNo.Checked)
-                   newCitizen.IdDiseases = null;
-               else
-               {
-                   
-               }
-           
-           //ver como agregar el empleado y la cabina
+            newCitizen.Dui = txt_dui.Text;
+            newCitizen.NameCitizen = txt_name.Text;
+            newCitizen.Phone = txt_celphone.Text;
+            newCitizen.Mail = txt_email.Text;
+            newCitizen.IdEmployee = employee.Id;
+            newCitizen.IdEmployeeNavigation = employee;
 
-           db.Add(newCitizen);
-           db.SaveChanges();
-           
-           MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
-               MessageBoxIcon.Information);*/
+            //EMFERMEDADES---------------------------------------------------//
+            if (rb_diseasesNo.Checked)
+            {
+                newCitizen.IdDiseases = null;
+                newCitizen.IdDiseases = null;
+            }
+            else
+            {
+                // Curso cref = (Curso) cmbCursos.SelectedItem;
+
+                Disease dref = (Disease) cmb_Diseases.SelectedItem;
+                Disease dbdd = db.Set<Disease>()
+                    .SingleOrDefault(m => m.Id == dref.Id);
+
+                newCitizen.IdDiseases = dbdd.Id;
+                newCitizen.IdDiseasesNavigation = dbdd;
+            }
+            //------------------------------------------------------------------//
+
+            //INSTITUCION-------------------------------------------------------//
+            Institution ibdd = db.Set<Institution>()
+                .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
+
+            if (rb_institutionNo.Checked)
+            {
+                newCitizen.IdInstitution = null;
+                newCitizen.IdInstitutionNavigation = null;
+            }
+            else
+            {
+                newCitizen.IdInstitution = ibdd.Id;
+                newCitizen.IdInstitutionNavigation = ibdd;
+            }
+            //--------------------------------------------------------------------//
+
+            //CABINA--------------------------------------------------------------//
+            Employeexcabin xref = db.Set<Employeexcabin>()
+                .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
+
+            Cabin cbdd = db.Set<Cabin>()
+                .SingleOrDefault(c => c.Id == xref.IdCabin);
+
+            newCitizen.IdCabin = cbdd.Id;
+            newCitizen.IdCabinNavigation = cbdd;
+            //---------------------------------------------------------------------//
+
+            //DIRECCION------------------------------------------------------------//
+            Direction rref = (Direction) cmb_address.SelectedItem;
+            Direction rbdd = db.Set<Direction>()
+                .SingleOrDefault(r => r.Id == rref.Id);
+
+            newCitizen.IdDirection = rbdd.Id;
+            newCitizen.IdDirectionNavigation = rbdd;
+            //---------------------------------------------------------------------//
+
+            // asignar detalles de la cita de la vacuna
+            InfoVaccination newInfo = new InfoVaccination();
+            newInfo.DateAppointment1 = dtp_date.Value.Date;
+            newInfo.TimeAppointment1 = dtp_date.Value.TimeOfDay;
+            newInfo.VaccinationPlace = "prueba";
+
+            newCitizen.IdInfoVaccinationNavigation = newInfo;
+            newCitizen.IdInfoVaccination = newInfo.Id;
+            //----------------------------------------------------------------------//
+
+            
+            
+            db.Add(newCitizen);
+            db.SaveChanges();
+
+            MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
         }
     }
 }
