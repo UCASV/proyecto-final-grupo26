@@ -30,7 +30,7 @@ namespace Proyecto_POO_BDD
             {
                 MessageBox.Show("Bienvenido Gestor!", "Vaccination Program", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                frmMainMenu window = new frmMainMenu();
+                frmMainMenu window = new frmMainMenu(result[0]);
                 window.Show();
                 this.Hide();
             }

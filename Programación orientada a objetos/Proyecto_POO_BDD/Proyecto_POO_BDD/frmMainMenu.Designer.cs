@@ -182,6 +182,7 @@ namespace Proyecto_POO_BDD
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             this.panelBanner.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
