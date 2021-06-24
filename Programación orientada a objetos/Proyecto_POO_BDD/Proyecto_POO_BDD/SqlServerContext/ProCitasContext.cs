@@ -74,7 +74,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BE1DF1F229");
+                    .HasName("PK__CITIZEN__D876F1BE89FA3A7E");
 
                 entity.ToTable("CITIZEN");
 
@@ -260,7 +260,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
-                    .HasName("PK__EMPLOYEE__44FD7D359B6572E4");
+                    .HasName("PK__EMPLOYEE__44FD7D350C2FF181");
 
                 entity.ToTable("EMPLOYEEXCABIN");
 
@@ -330,9 +330,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             {
                 entity.ToTable("RECORD");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.DateR)
                     .HasColumnType("date")

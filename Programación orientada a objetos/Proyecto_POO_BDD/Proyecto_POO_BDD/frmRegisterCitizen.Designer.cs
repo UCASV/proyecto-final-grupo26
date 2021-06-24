@@ -707,13 +707,16 @@ namespace Proyecto_POO_BDD
             // dtp_date
             // 
             this.dtp_date.CalendarFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.dtp_date.CustomFormat = "dd/mm/yyyy       hh:mm";
+            this.dtp_date.CustomFormat = "yyyy/MM/dd       hh:mm";
             this.dtp_date.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_date.Location = new System.Drawing.Point(226, 119);
+            this.dtp_date.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.dtp_date.MinDate = new System.DateTime(2021, 6, 24, 0, 0, 0, 0);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(213, 23);
             this.dtp_date.TabIndex = 7;
+            this.dtp_date.Value = new System.DateTime(2021, 6, 24, 0, 0, 0, 0);
             // 
             // panelBannerTab4
             // 
