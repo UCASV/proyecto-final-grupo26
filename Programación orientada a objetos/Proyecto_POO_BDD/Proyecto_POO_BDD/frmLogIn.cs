@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Newtonsoft.Json.Serialization;
 using Proyecto_POO_BDD.SqlServerContext;
 
 namespace Proyecto_POO_BDD
@@ -32,7 +33,25 @@ namespace Proyecto_POO_BDD
                     MessageBoxIcon.Information);
                 frmMainMenu window = new frmMainMenu(result[0]);
                 window.Show();
+
+                DateTime date = DateTime.Today;
+                string formatDate = "yyyy MM d";
+
+                string fullTime = $"{date.ToString(formatDate)}";
+                //DateTime time = DateTime.Now;
+                string formatTime = "hh mm"; 
+                
+                
+                var newRegister = new Record();
+                newRegister.DateR = DateTime.Today;
+                //newRegister.TimeR = DateTime.Now.TimeOfDay;
+                
+                db.Add(newRegister);
+                db.SaveChanges();
+                
                 this.Hide();
+
+
             }
         }
     }
