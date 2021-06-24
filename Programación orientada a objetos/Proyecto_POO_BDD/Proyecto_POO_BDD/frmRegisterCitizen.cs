@@ -75,6 +75,7 @@ namespace Proyecto_POO_BDD
 
         private void btn_next_Click(object sender, EventArgs e)
         {
+            
             if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&
                 txt_celphone.Text.Length > 0)
 
@@ -100,28 +101,22 @@ namespace Proyecto_POO_BDD
         private void btn_aceptRegister_Click(object sender, EventArgs e)
         {
 
-            var listCitizen = db.Citizens
-                .Include(c => c.IdDirection)
-                .Include(c => c.IdCabin)
-                .Include(c => c.IdDiseases)
-                .Include(c => c.IdEmployee)
-                .Include(c => c.IdInstitution)
-                .Include(c => c.IdInfoVaccination)
-                .ToList();
-
-            Citizen newCitizen = new Citizen();
+            try
+            {
+                var listCitizen = db.Citizens
+                    .ToList();
+                
+                Citizen newCitizen = new Citizen();
 
             newCitizen.Dui = txt_dui.Text;
             newCitizen.NameCitizen = txt_name.Text;
             newCitizen.Phone = txt_celphone.Text;
             newCitizen.Mail = txt_email.Text;
             newCitizen.IdEmployee = employee.Id;
-            newCitizen.IdEmployeeNavigation = employee;
 
             //EMFERMEDADES---------------------------------------------------//
             if (rb_diseasesNo.Checked)
             {
-                newCitizen.IdDiseases = null;
                 newCitizen.IdDiseases = null;
             }
             else
@@ -133,7 +128,7 @@ namespace Proyecto_POO_BDD
                     .SingleOrDefault(m => m.Id == dref.Id);
 
                 newCitizen.IdDiseases = dbdd.Id;
-                newCitizen.IdDiseasesNavigation = dbdd;
+                //newCitizen.IdDiseases = null;
             }
             //------------------------------------------------------------------//
 
@@ -144,12 +139,10 @@ namespace Proyecto_POO_BDD
             if (rb_institutionNo.Checked)
             {
                 newCitizen.IdInstitution = null;
-                newCitizen.IdInstitutionNavigation = null;
             }
             else
             {
                 newCitizen.IdInstitution = ibdd.Id;
-                newCitizen.IdInstitutionNavigation = ibdd;
             }
             //--------------------------------------------------------------------//
 
@@ -161,35 +154,55 @@ namespace Proyecto_POO_BDD
                 .SingleOrDefault(c => c.Id == xref.IdCabin);
 
             newCitizen.IdCabin = cbdd.Id;
-            newCitizen.IdCabinNavigation = cbdd;
             //---------------------------------------------------------------------//
 
             //DIRECCION------------------------------------------------------------//
-            Direction rref = (Direction) cmb_address.SelectedItem;
+            //Direction rref = (Direction) cmb_address.SelectedItem;
+            int idAdress = cmb_address.SelectedIndex + 1;
             Direction rbdd = db.Set<Direction>()
-                .SingleOrDefault(r => r.Id == rref.Id);
+                .SingleOrDefault(r => r.Id == idAdress);
 
             newCitizen.IdDirection = rbdd.Id;
-            newCitizen.IdDirectionNavigation = rbdd;
+
+            //Direction rbdd = db.Set<Direction>()
+                //.SingleOrDefault(r => r.Id == 1);
+            
+            //newCitizen.IdDirection = null;
+            
             //---------------------------------------------------------------------//
 
             // asignar detalles de la cita de la vacuna
             InfoVaccination newInfo = new InfoVaccination();
-            newInfo.DateAppointment1 = dtp_date.Value.Date;
-            newInfo.TimeAppointment1 = dtp_date.Value.TimeOfDay;
-            newInfo.VaccinationPlace = "prueba";
-
-            newCitizen.IdInfoVaccinationNavigation = newInfo;
-            newCitizen.IdInfoVaccination = newInfo.Id;
+            newInfo.DateAppointment1 = null;
+            newInfo.TimeAppointment1 = null;
+            newInfo.VaccinationPlace = null;
+            newInfo.DateAppointment2 = null;
+            newInfo.TimeAppointment2 = null;
+            
+            newCitizen.IdInfoVaccination = null;
             //----------------------------------------------------------------------//
 
-            
+            //valores temporalmente nulos-------------------------------------------//
+            newCitizen.TimeEffect = null;
+            newCitizen.DateEffect = null;
+            newCitizen.TimeWline = null;
+            newCitizen.DateWline = null;
+            newCitizen.IdSideEffects = null;
+            //-----------------------------------------------------------------------//
             
             db.Add(newCitizen);
             db.SaveChanges();
 
             MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
                MessageBoxIcon.Information);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            } 
+
+            
         }
     }
 }

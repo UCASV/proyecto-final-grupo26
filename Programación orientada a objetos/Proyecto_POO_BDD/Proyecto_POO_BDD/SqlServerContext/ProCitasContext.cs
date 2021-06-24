@@ -74,7 +74,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BE56B07FC7");
+                    .HasName("PK__CITIZEN__D876F1BE1DF1F229");
 
                 entity.ToTable("CITIZEN");
 
@@ -129,13 +129,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
                 entity.HasOne(d => d.IdCabinNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdCabin)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__CITIZEN__id_cabi__49C3F6B7");
 
                 entity.HasOne(d => d.IdDirectionNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdDirection)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__CITIZEN__id_dire__4BAC3F29");
 
                 entity.HasOne(d => d.IdDiseasesNavigation)
@@ -146,13 +144,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
                 entity.HasOne(d => d.IdEmployeeNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdEmployee)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__CITIZEN__id_empl__48CFD27E");
 
                 entity.HasOne(d => d.IdInfoVaccinationNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInfoVaccination)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__CITIZEN__id_info__4CA06362");
 
                 entity.HasOne(d => d.IdInstitutionNavigation)
@@ -264,7 +260,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
-                    .HasName("PK__EMPLOYEE__44FD7D35641EB234");
+                    .HasName("PK__EMPLOYEE__44FD7D359B6572E4");
 
                 entity.ToTable("EMPLOYEEXCABIN");
 
