@@ -74,7 +74,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BEAC5070AB");
+                    .HasName("PK__CITIZEN__D876F1BE56B07FC7");
 
                 entity.ToTable("CITIZEN");
 
@@ -152,6 +152,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
                 entity.HasOne(d => d.IdInfoVaccinationNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInfoVaccination)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__CITIZEN__id_info__4CA06362");
 
                 entity.HasOne(d => d.IdInstitutionNavigation)
@@ -263,7 +264,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
-                    .HasName("PK__EMPLOYEE__44FD7D358FCFB371");
+                    .HasName("PK__EMPLOYEE__44FD7D35641EB234");
 
                 entity.ToTable("EMPLOYEEXCABIN");
 
