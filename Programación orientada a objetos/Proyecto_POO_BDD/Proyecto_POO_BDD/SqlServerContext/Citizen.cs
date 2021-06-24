@@ -7,7 +7,6 @@ namespace Proyecto_POO_BDD.SqlServerContext
 {
     public partial class Citizen
     {
-        public int Id { get; set; }
         public string Dui { get; set; }
         public string NameCitizen { get; set; }
         public string Phone { get; set; }
@@ -16,11 +15,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
         public DateTime? DateEffect { get; set; }
         public TimeSpan? TimeWline { get; set; }
         public DateTime? DateWline { get; set; }
-        public int IdEmployee { get; set; }
-        public int IdCabin { get; set; }
-        public int IdInstitution { get; set; }
-        public int IdDirection { get; set; }
-        public int IdInfoVaccination { get; set; }
+        public int? IdEmployee { get; set; }
+        public int? IdCabin { get; set; }
+        public int? IdInstitution { get; set; }
+        public int? IdDirection { get; set; }
+        public int? IdInfoVaccination { get; set; }
         public int? IdSideEffects { get; set; }
         public int? IdDiseases { get; set; }
 

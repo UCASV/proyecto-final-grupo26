@@ -75,10 +75,22 @@ namespace Proyecto_POO_BDD
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-            if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&
-                txt_celphone.Text.Length > 0)
-
-                tabControl1.SelectedIndex = 3;
+            var listCitizen = db.Citizens.ToList(); 
+            
+            var result = listCitizen.Where(e =>
+                e.Dui.Equals(txt_dui.Text)).ToList();
+            //Se evalua si el dui que se ingreso ya esta en la base de datos
+            
+            if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&  txt_celphone.Text.Length > 0)
+                
+                if(result.Count == 0) // Si no se encontro ningun dui igual en la base de datos se puede registrar
+                    
+                    tabControl1.SelectedIndex = 3;
+                
+                else // Si se ha encontrado un dui igual en la base no se puede volver a registrar
+                    
+                    MessageBox.Show("Este numero de dui ya ha sido registrado para una cita", "Cita duplicada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            
             else
                 MessageBox.Show("Asegurese de llenar todos los campo", "Registro ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
@@ -100,96 +112,99 @@ namespace Proyecto_POO_BDD
         private void btn_aceptRegister_Click(object sender, EventArgs e)
         {
 
-            var listCitizen = db.Citizens
-                .Include(c => c.IdDirection)
-                .Include(c => c.IdCabin)
-                .Include(c => c.IdDiseases)
-                .Include(c => c.IdEmployee)
-                .Include(c => c.IdInstitution)
-                .Include(c => c.IdInfoVaccination)
-                .ToList();
-
-            Citizen newCitizen = new Citizen();
-
-            newCitizen.Dui = txt_dui.Text;
-            newCitizen.NameCitizen = txt_name.Text;
-            newCitizen.Phone = txt_celphone.Text;
-            newCitizen.Mail = txt_email.Text;
-            newCitizen.IdEmployee = employee.Id;
-            newCitizen.IdEmployeeNavigation = employee;
-
-            //EMFERMEDADES---------------------------------------------------//
-            if (rb_diseasesNo.Checked)
+            try
             {
-                newCitizen.IdDiseases = null;
-                newCitizen.IdDiseases = null;
+                var listCitizen = db.Citizens.ToList(); 
+                
+                Citizen newCitizen = new Citizen();
+
+                newCitizen.Dui = txt_dui.Text;
+                newCitizen.NameCitizen = txt_name.Text;
+                newCitizen.Phone = txt_celphone.Text;
+                newCitizen.Mail = txt_email.Text;
+                newCitizen.IdEmployee = employee.Id;
+
+                //EMFERMEDADES---------------------------------------------------//
+                if (rb_diseasesNo.Checked)
+                    newCitizen.IdDiseases = null;
+                    else
+                {
+                    Disease dref = (Disease) cmb_Diseases.SelectedItem;
+                    Disease dbdd = db.Set<Disease>()
+                        .SingleOrDefault(m => m.Id == dref.Id);
+
+                    newCitizen.IdDiseases = dbdd.Id;
+                }
+                //------------------------------------------------------------------//
+
+                //INSTITUCION-------------------------------------------------------//
+                Institution ibdd = db.Set<Institution>()
+                    .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
+
+                if (rb_institutionNo.Checked)
+                    newCitizen.IdInstitution = null;
+                else
+                    newCitizen.IdInstitution = ibdd.Id;
+                //--------------------------------------------------------------------//
+
+                //CABINA--------------------------------------------------------------//
+                Employeexcabin xref = db.Set<Employeexcabin>()
+                    .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
+
+                Cabin cbdd = db.Set<Cabin>()
+                    .SingleOrDefault(c => c.Id == xref.IdCabin);
+
+                newCitizen.IdCabin = cbdd.Id;
+                //---------------------------------------------------------------------//
+
+                //DIRECCION------------------------------------------------------------//
+                int idAddress = cmb_address.SelectedIndex + 1; 
+                // el indice empieza de 0 por lo que se le suma 1 para obtener su id
+                
+                Direction rbdd = db.Set<Direction>()
+                    .SingleOrDefault(r => r.Id == idAddress);
+
+                newCitizen.IdDirection = rbdd.Id;
+                
+                //Detalles de la cita------------------------------------------------------//
+
+                //asignando valores a la tabla INFOVACCINATION
+                    InfoVaccination newInfo = new InfoVaccination();
+                    newInfo.DateAppointment1 = dtp_date.Value.Date;
+                    newInfo.TimeAppointment1 = dtp_date.Value.TimeOfDay;
+                    newInfo.VaccinationPlace = "Hopital Rosales";
+                    newInfo.DateAppointment2 = null;
+                    newInfo.TimeAppointment2 = null;
+
+                    db.Add(newInfo);
+                    db.SaveChanges();
+
+                newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFOVACCINATION
+                //----------------------------------------------------------------------//
+
+                //valores temporalmente nulos ya que se llenan mas adelante--------------//
+                newCitizen.TimeEffect = null;
+                newCitizen.DateEffect = null;
+                newCitizen.TimeWline = null;
+                newCitizen.DateWline = null;
+                newCitizen.IdSideEffects = null;
+                //-----------------------------------------------------------------------//
+                
+                db.Add(newCitizen);
+                db.SaveChanges();
+
+                MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+                
+                this.Close();
             }
-            else
+            catch (Exception exception)
             {
-                // Curso cref = (Curso) cmbCursos.SelectedItem;
-
-                Disease dref = (Disease) cmb_Diseases.SelectedItem;
-                Disease dbdd = db.Set<Disease>()
-                    .SingleOrDefault(m => m.Id == dref.Id);
-
-                newCitizen.IdDiseases = dbdd.Id;
-                newCitizen.IdDiseasesNavigation = dbdd;
-            }
-            //------------------------------------------------------------------//
-
-            //INSTITUCION-------------------------------------------------------//
-            Institution ibdd = db.Set<Institution>()
-                .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
-
-            if (rb_institutionNo.Checked)
-            {
-                newCitizen.IdInstitution = null;
-                newCitizen.IdInstitutionNavigation = null;
-            }
-            else
-            {
-                newCitizen.IdInstitution = ibdd.Id;
-                newCitizen.IdInstitutionNavigation = ibdd;
-            }
-            //--------------------------------------------------------------------//
-
-            //CABINA--------------------------------------------------------------//
-            Employeexcabin xref = db.Set<Employeexcabin>()
-                .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
-
-            Cabin cbdd = db.Set<Cabin>()
-                .SingleOrDefault(c => c.Id == xref.IdCabin);
-
-            newCitizen.IdCabin = cbdd.Id;
-            newCitizen.IdCabinNavigation = cbdd;
-            //---------------------------------------------------------------------//
-
-            //DIRECCION------------------------------------------------------------//
-            Direction rref = (Direction) cmb_address.SelectedItem;
-            Direction rbdd = db.Set<Direction>()
-                .SingleOrDefault(r => r.Id == rref.Id);
-
-            newCitizen.IdDirection = rbdd.Id;
-            newCitizen.IdDirectionNavigation = rbdd;
-            //---------------------------------------------------------------------//
-
-            // asignar detalles de la cita de la vacuna
-            InfoVaccination newInfo = new InfoVaccination();
-            newInfo.DateAppointment1 = dtp_date.Value.Date;
-            newInfo.TimeAppointment1 = dtp_date.Value.TimeOfDay;
-            newInfo.VaccinationPlace = "prueba";
-
-            newCitizen.IdInfoVaccinationNavigation = newInfo;
-            newCitizen.IdInfoVaccination = newInfo.Id;
-            //----------------------------------------------------------------------//
+                Console.WriteLine(exception);
+                throw;
+            } 
 
             
-            
-            db.Add(newCitizen);
-            db.SaveChanges();
-
-            MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
-               MessageBoxIcon.Information);
         }
     }
 }
