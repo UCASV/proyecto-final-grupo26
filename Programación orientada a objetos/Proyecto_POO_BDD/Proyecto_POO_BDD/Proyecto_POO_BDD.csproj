@@ -20,6 +20,9 @@
       </Compile>
       <Compile Remove="Entities\**" />
       <Compile Remove="Context\**" />
+      <Compile Update="frmVaccinationProcess.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
