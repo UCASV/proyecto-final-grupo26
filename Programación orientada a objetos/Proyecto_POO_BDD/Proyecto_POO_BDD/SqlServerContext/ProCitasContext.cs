@@ -73,6 +73,12 @@ namespace Proyecto_POO_BDD.SqlServerContext
 
             modelBuilder.Entity<Citizen>(entity =>
             {
+<<<<<<< HEAD
+=======
+                entity.HasKey(e => e.Dui)
+                    .HasName("PK__CITIZEN__D876F1BE69EF5101");
+
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
                 entity.ToTable("CITIZEN");
 
                 entity.Property(e => e.Id)
@@ -133,13 +139,21 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdCabin)
                     .OnDelete(DeleteBehavior.ClientSetNull)
+<<<<<<< HEAD
                     .HasConstraintName("FK__CITIZEN__id_cabi__37A5467C");
+=======
+                    .HasConstraintName("FK__CITIZEN__id_cabi__49C3F6B7");
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
 
                 entity.HasOne(d => d.IdDirectionNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdDirection)
                     .OnDelete(DeleteBehavior.ClientSetNull)
+<<<<<<< HEAD
                     .HasConstraintName("FK__CITIZEN__id_dire__398D8EEE");
+=======
+                    .HasConstraintName("FK__CITIZEN__id_dire__4BAC3F29");
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
 
                 entity.HasOne(d => d.IdDiseasesNavigation)
                     .WithMany(p => p.Citizens)
@@ -150,12 +164,21 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
+<<<<<<< HEAD
                     .HasConstraintName("FK__CITIZEN__id_empl__36B12243");
+=======
+                    .HasConstraintName("FK__CITIZEN__id_empl__48CFD27E");
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
 
                 entity.HasOne(d => d.IdInfoVaccinationNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInfoVaccination)
+<<<<<<< HEAD
                     .HasConstraintName("FK__CITIZEN__id_info__3A81B327");
+=======
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__CITIZEN__id_info__4CA06362");
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
 
                 entity.HasOne(d => d.IdInstitutionNavigation)
                     .WithMany(p => p.Citizens)
@@ -267,7 +290,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
+<<<<<<< HEAD
                     .HasName("PK__EMPLOYEE__44FD7D356103F294");
+=======
+                    .HasName("PK__EMPLOYEE__44FD7D358B64317C");
+>>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
 
                 entity.ToTable("EMPLOYEEXCABIN");
 
@@ -309,6 +336,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
                 entity.Property(e => e.TimeAppointment2).HasColumnName("time_appointment2");
 
                 entity.Property(e => e.VaccinationPlace)
+                    .IsRequired()
                     .HasMaxLength(40)
                     .IsUnicode(false)
                     .HasColumnName("vaccination_place");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
 
@@ -28,6 +29,33 @@ namespace Proyecto_POO_BDD
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             lbl_user.Text = $"Usuario: {employee.NameEmployee}";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProCitasContext db = new ProCitasContext();
+
+            var listCitizen = db.Citizens.ToList();
+            var result = listCitizen.Where(e =>
+                e.Dui.Equals("12345")).ToList();
+            
+            Citizen newCitizen = new Citizen();
+
+            if (result.Count != 0)
+            {
+                newCitizen.IdInstitution = 2;
+                db.Update(newCitizen.IdInstitution);
+                db.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("NEl");
+            }
+            
+            
+
+
+
         }
     }
 }
