@@ -15,10 +15,11 @@ namespace Proyecto_POO_BDD.SqlServerContext
         public int Id { get; set; }
         public DateTime? DateAppointment1 { get; set; }
         public TimeSpan? TimeAppointment1 { get; set; }
-        public string VaccinationPlace { get; set; }
         public DateTime? DateAppointment2 { get; set; }
         public TimeSpan? TimeAppointment2 { get; set; }
+        public int IdVaccinationPlace { get; set; }
 
+        public virtual VaccinationPlace IdVaccinationPlaceNavigation { get; set; }
         public virtual ICollection<Citizen> Citizens { get; set; }
     }
 }

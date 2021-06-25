@@ -118,3 +118,4 @@ C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Pro
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.csproj.CopyComplete
 >>>>>>> 3d6e4200b4cb12faa46601a07a3136d7337e9dda
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmVaccinationProcess.resources
+C:\Users\gi\Desktop\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmVaccinationProcess.resources

@@ -12,21 +12,15 @@ namespace Proyecto_POO_BDD.SqlServerContext
         public string NameCitizen { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
-        public TimeSpan? TimeEffect { get; set; }
+        public int? TimeEffect { get; set; }
         public DateTime? DateEffect { get; set; }
         public TimeSpan? TimeWline { get; set; }
         public DateTime? DateWline { get; set; }
         public int IdEmployee { get; set; }
         public int IdCabin { get; set; }
-<<<<<<< HEAD
-        public int IdInstitution { get; set; }
-        public int IdDirection { get; set; }
-        public int? IdInfoVaccination { get; set; }
-=======
         public int? IdInstitution { get; set; }
         public int IdDirection { get; set; }
         public int IdInfoVaccination { get; set; }
->>>>>>> 6be22aca1c54a1409377290e42e3ec8e8482bd5c
         public int? IdSideEffects { get; set; }
         public int? IdDiseases { get; set; }
 
