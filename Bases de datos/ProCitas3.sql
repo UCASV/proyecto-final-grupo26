@@ -5,7 +5,7 @@ SET LANGUAGE us_english;
 
 --Tablas
 CREATE TABLE CITIZEN(
-	id INT PRIMARY KEY NOT NULL,
+	id INT IDENTITY PRIMARY KEY NOT NULL,
 	dui VARCHAR(12) NOT NULL,
 	nameCitizen varchar(60) NOT NULL,
 	phone VARCHAR(8) NOT NULL,
@@ -302,20 +302,20 @@ INSERT INTO EMPLOYEEXCABIN(id_employee, id_cabin) VALUES('13','2');
 INSERT INTO EMPLOYEEXCABIN(id_employee, id_cabin) VALUES('14','1');
 
 --Banco de datos CITIZEN
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('1','06579183-4','Julie Fleming','79968165','julie@gmail.com','5','1','2','1','1');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('2','05478211-5','Avye Wiley','76839474','avye@gmail.com','1','3','7','5','2');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('3','09215548-6','Regan Greene','75932558','regan@gmail.com','7','5','4','9','3');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('4','03255972-2','Karly Charles','79758486','karly@gmail.com','10','2','7','13','4','1');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('5','01478925-4','Melodie George','72983505','melodie@gmail.com','2','13','5','17','5');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('6','03266895-1','Dai Oneill','72835384','dai@gmail.com','3','10','8','21','6','2');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('7','02589630-7','Mari Cross','74713990','mari@gmail.com','9','9','3','25','7');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('8','01286590-9','TaShya Simpson','71199480','tashya@gmail.com','4','6','10','29','8','4');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('9','03259875-5','Sonia Woodward','77427371','sonia@gmail.com','6','11','4','33','9');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('10','03256987-7','Vania Benitez','73420371','vania@gmail.com','12','4','7','37','10');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('11','05489622-7','Rodrigo Carrero','78526526','rodrigo@gmail.com','14','8','1','41','11','2');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('12','01486599-3','Carlos Estevez','71968865','carlos@gmail.com','8','14','6','45','12');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('13','02587488-9','Jason Cruz','76259774','jason@gmail.com','11','7','9','49','13');
-INSERT INTO CITIZEN(id,dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('14','03258965-5','Alessandro Pineda','71335758','alessandro@gmail.com','13','12','5','53','14','3');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('06579183-4','Julie Fleming','79968165','julie@gmail.com','5','1','2','1','1');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('05478211-5','Avye Wiley','76839474','avye@gmail.com','1','3','7','5','2');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('09215548-6','Regan Greene','75932558','regan@gmail.com','7','5','4','9','3');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('03255972-2','Karly Charles','79758486','karly@gmail.com','10','2','7','13','4','1');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('01478925-4','Melodie George','72983505','melodie@gmail.com','2','13','5','17','5');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('03266895-1','Dai Oneill','72835384','dai@gmail.com','3','10','8','21','6','2');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('02589630-7','Mari Cross','74713990','mari@gmail.com','9','9','3','25','7');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('01286590-9','TaShya Simpson','71199480','tashya@gmail.com','4','6','10','29','8','4');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('03259875-5','Sonia Woodward','77427371','sonia@gmail.com','6','11','4','33','9');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('03256987-7','Vania Benitez','73420371','vania@gmail.com','12','4','7','37','10');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('05489622-7','Rodrigo Carrero','78526526','rodrigo@gmail.com','14','8','1','41','11','2');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('01486599-3','Carlos Estevez','71968865','carlos@gmail.com','8','14','6','45','12');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination) VALUES('02587488-9','Jason Cruz','76259774','jason@gmail.com','11','7','9','49','13');
+INSERT INTO CITIZEN(dui,nameCitizen,phone,mail,id_employee,id_cabin,id_institution,id_direction,id_info_vaccination,id_diseases) VALUES('03258965-5','Alessandro Pineda','71335758','alessandro@gmail.com','13','12','5','53','14','3');
 
 --SELECT * FROM INFO_VACCINATION;
 --SELECT * FROM CITIZEN;
