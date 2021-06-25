@@ -74,12 +74,13 @@ namespace Proyecto_POO_BDD
             this.btn_cancelInstitution = new System.Windows.Forms.Button();
             this.btn_aceptInstitution = new System.Windows.Forms.Button();
             this.lbl_nameInstitution = new System.Windows.Forms.Label();
-            this.lbl_description = new System.Windows.Forms.Label();
             this.txt_numInstitution = new System.Windows.Forms.TextBox();
             this.lbl_numInstitution = new System.Windows.Forms.Label();
             this.panelBannerTab3 = new System.Windows.Forms.Panel();
             this.pictureBoxBannerTab3 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cmb_PlaceVaccination = new System.Windows.Forms.ComboBox();
+            this.lbl_vaccinationPlace = new System.Windows.Forms.Label();
             this.btn_cancelRegister = new System.Windows.Forms.Button();
             this.btn_aceptRegister = new System.Windows.Forms.Button();
             this.lbl_dateVaccinate = new System.Windows.Forms.Label();
@@ -134,7 +135,7 @@ namespace Proyecto_POO_BDD
             this.tabControl1.Location = new System.Drawing.Point(1, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(521, 580);
+            this.tabControl1.Size = new System.Drawing.Size(521, 578);
             this.tabControl1.TabIndex = 11;
             this.tabControl1.TabStop = false;
             // 
@@ -147,7 +148,7 @@ namespace Proyecto_POO_BDD
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(513, 554);
+            this.tabPage1.Size = new System.Drawing.Size(513, 552);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -326,7 +327,7 @@ namespace Proyecto_POO_BDD
             // 
             // rb_diseasesYes
             // 
-            this.rb_diseasesYes.Location = new System.Drawing.Point(198, 25);
+            this.rb_diseasesYes.Location = new System.Drawing.Point(198, 20);
             this.rb_diseasesYes.Name = "rb_diseasesYes";
             this.rb_diseasesYes.Size = new System.Drawing.Size(52, 23);
             this.rb_diseasesYes.TabIndex = 1;
@@ -337,7 +338,7 @@ namespace Proyecto_POO_BDD
             // rb_diseasesNo
             // 
             this.rb_diseasesNo.Checked = true;
-            this.rb_diseasesNo.Location = new System.Drawing.Point(18, 25);
+            this.rb_diseasesNo.Location = new System.Drawing.Point(18, 20);
             this.rb_diseasesNo.Name = "rb_diseasesNo";
             this.rb_diseasesNo.Size = new System.Drawing.Size(52, 23);
             this.rb_diseasesNo.TabIndex = 0;
@@ -360,7 +361,7 @@ namespace Proyecto_POO_BDD
             // 
             // rb_institutionYes
             // 
-            this.rb_institutionYes.Location = new System.Drawing.Point(198, 25);
+            this.rb_institutionYes.Location = new System.Drawing.Point(198, 19);
             this.rb_institutionYes.Name = "rb_institutionYes";
             this.rb_institutionYes.Size = new System.Drawing.Size(52, 23);
             this.rb_institutionYes.TabIndex = 2;
@@ -371,7 +372,7 @@ namespace Proyecto_POO_BDD
             // rb_institutionNo
             // 
             this.rb_institutionNo.Checked = true;
-            this.rb_institutionNo.Location = new System.Drawing.Point(18, 25);
+            this.rb_institutionNo.Location = new System.Drawing.Point(18, 19);
             this.rb_institutionNo.Name = "rb_institutionNo";
             this.rb_institutionNo.Size = new System.Drawing.Size(52, 23);
             this.rb_institutionNo.TabIndex = 2;
@@ -394,7 +395,7 @@ namespace Proyecto_POO_BDD
             // 
             // rb_disabilityYes
             // 
-            this.rb_disabilityYes.Location = new System.Drawing.Point(198, 25);
+            this.rb_disabilityYes.Location = new System.Drawing.Point(198, 19);
             this.rb_disabilityYes.Name = "rb_disabilityYes";
             this.rb_disabilityYes.Size = new System.Drawing.Size(52, 23);
             this.rb_disabilityYes.TabIndex = 2;
@@ -404,7 +405,7 @@ namespace Proyecto_POO_BDD
             // rb_disabilityNo
             // 
             this.rb_disabilityNo.Checked = true;
-            this.rb_disabilityNo.Location = new System.Drawing.Point(18, 25);
+            this.rb_disabilityNo.Location = new System.Drawing.Point(18, 19);
             this.rb_disabilityNo.Name = "rb_disabilityNo";
             this.rb_disabilityNo.Size = new System.Drawing.Size(52, 23);
             this.rb_disabilityNo.TabIndex = 2;
@@ -447,7 +448,7 @@ namespace Proyecto_POO_BDD
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(513, 554);
+            this.tabPage2.Size = new System.Drawing.Size(513, 552);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -556,14 +557,13 @@ namespace Proyecto_POO_BDD
             this.tabPage3.Controls.Add(this.btn_cancelInstitution);
             this.tabPage3.Controls.Add(this.btn_aceptInstitution);
             this.tabPage3.Controls.Add(this.lbl_nameInstitution);
-            this.tabPage3.Controls.Add(this.lbl_description);
             this.tabPage3.Controls.Add(this.txt_numInstitution);
             this.tabPage3.Controls.Add(this.lbl_numInstitution);
             this.tabPage3.Controls.Add(this.panelBannerTab3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(513, 554);
+            this.tabPage3.Size = new System.Drawing.Size(513, 552);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -575,7 +575,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancelInstitution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelInstitution.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_cancelInstitution.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelInstitution.Location = new System.Drawing.Point(276, 255);
+            this.btn_cancelInstitution.Location = new System.Drawing.Point(261, 177);
             this.btn_cancelInstitution.Name = "btn_cancelInstitution";
             this.btn_cancelInstitution.Size = new System.Drawing.Size(191, 43);
             this.btn_cancelInstitution.TabIndex = 10;
@@ -590,7 +590,7 @@ namespace Proyecto_POO_BDD
             this.btn_aceptInstitution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aceptInstitution.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_aceptInstitution.ForeColor = System.Drawing.Color.White;
-            this.btn_aceptInstitution.Location = new System.Drawing.Point(42, 255);
+            this.btn_aceptInstitution.Location = new System.Drawing.Point(42, 177);
             this.btn_aceptInstitution.Name = "btn_aceptInstitution";
             this.btn_aceptInstitution.Size = new System.Drawing.Size(191, 43);
             this.btn_aceptInstitution.TabIndex = 9;
@@ -601,20 +601,10 @@ namespace Proyecto_POO_BDD
             // lbl_nameInstitution
             // 
             this.lbl_nameInstitution.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_nameInstitution.Location = new System.Drawing.Point(57, 202);
+            this.lbl_nameInstitution.Location = new System.Drawing.Point(162, 174);
             this.lbl_nameInstitution.Name = "lbl_nameInstitution";
-            this.lbl_nameInstitution.Size = new System.Drawing.Size(395, 30);
+            this.lbl_nameInstitution.Size = new System.Drawing.Size(305, 46);
             this.lbl_nameInstitution.TabIndex = 8;
-            this.lbl_nameInstitution.Text = "Institución";
-            // 
-            // lbl_description
-            // 
-            this.lbl_description.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_description.Location = new System.Drawing.Point(48, 176);
-            this.lbl_description.Name = "lbl_description";
-            this.lbl_description.Size = new System.Drawing.Size(102, 26);
-            this.lbl_description.TabIndex = 7;
-            this.lbl_description.Text = "Institución";
             // 
             // txt_numInstitution
             // 
@@ -644,6 +634,7 @@ namespace Proyecto_POO_BDD
             // 
             // pictureBoxBannerTab3
             // 
+            this.pictureBoxBannerTab3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxBannerTab3.Image")));
             this.pictureBoxBannerTab3.Location = new System.Drawing.Point(0, 3);
             this.pictureBoxBannerTab3.Name = "pictureBoxBannerTab3";
             this.pictureBoxBannerTab3.Size = new System.Drawing.Size(233, 72);
@@ -653,6 +644,8 @@ namespace Proyecto_POO_BDD
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.cmb_PlaceVaccination);
+            this.tabPage4.Controls.Add(this.lbl_vaccinationPlace);
             this.tabPage4.Controls.Add(this.btn_cancelRegister);
             this.tabPage4.Controls.Add(this.btn_aceptRegister);
             this.tabPage4.Controls.Add(this.lbl_dateVaccinate);
@@ -661,10 +654,29 @@ namespace Proyecto_POO_BDD
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(513, 554);
+            this.tabPage4.Size = new System.Drawing.Size(513, 552);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // cmb_PlaceVaccination
+            // 
+            this.cmb_PlaceVaccination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_PlaceVaccination.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cmb_PlaceVaccination.FormattingEnabled = true;
+            this.cmb_PlaceVaccination.Location = new System.Drawing.Point(221, 171);
+            this.cmb_PlaceVaccination.Name = "cmb_PlaceVaccination";
+            this.cmb_PlaceVaccination.Size = new System.Drawing.Size(217, 25);
+            this.cmb_PlaceVaccination.TabIndex = 14;
+            // 
+            // lbl_vaccinationPlace
+            // 
+            this.lbl_vaccinationPlace.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_vaccinationPlace.Location = new System.Drawing.Point(72, 164);
+            this.lbl_vaccinationPlace.Name = "lbl_vaccinationPlace";
+            this.lbl_vaccinationPlace.Size = new System.Drawing.Size(111, 42);
+            this.lbl_vaccinationPlace.TabIndex = 13;
+            this.lbl_vaccinationPlace.Text = "Lugar de vacunacion";
             // 
             // btn_cancelRegister
             // 
@@ -673,7 +685,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancelRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_cancelRegister.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelRegister.Location = new System.Drawing.Point(276, 184);
+            this.btn_cancelRegister.Location = new System.Drawing.Point(279, 223);
             this.btn_cancelRegister.Name = "btn_cancelRegister";
             this.btn_cancelRegister.Size = new System.Drawing.Size(191, 43);
             this.btn_cancelRegister.TabIndex = 12;
@@ -687,7 +699,7 @@ namespace Proyecto_POO_BDD
             this.btn_aceptRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aceptRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_aceptRegister.ForeColor = System.Drawing.Color.White;
-            this.btn_aceptRegister.Location = new System.Drawing.Point(42, 184);
+            this.btn_aceptRegister.Location = new System.Drawing.Point(42, 223);
             this.btn_aceptRegister.Name = "btn_aceptRegister";
             this.btn_aceptRegister.Size = new System.Drawing.Size(191, 43);
             this.btn_aceptRegister.TabIndex = 11;
@@ -772,13 +784,6 @@ namespace Proyecto_POO_BDD
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button btn_cancelRegister;
-        private System.Windows.Forms.Button btn_aceptRegister;
-
-        private System.Windows.Forms.Label lbl_dateVaccinate;
-
-        private System.Windows.Forms.Label label1;
-
 
         //Tab 1//
         private System.Windows.Forms.TextBox txt_age;
@@ -814,7 +819,6 @@ namespace Proyecto_POO_BDD
         private System.Windows.Forms.Button btn_aceptInstitution;
         private System.Windows.Forms.Button btn_cancelInstitution;
         private System.Windows.Forms.Label lbl_nameInstitution;
-        private System.Windows.Forms.Label lbl_description;
         private System.Windows.Forms.Label lbl_numInstitution;
         private System.Windows.Forms.TextBox txt_numInstitution;
         private System.Windows.Forms.TabPage tabPage3;
@@ -838,9 +842,14 @@ namespace Proyecto_POO_BDD
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panelBannerTab4;
         private System.Windows.Forms.PictureBox pictureBoxBannerTab4;
-
+        private System.Windows.Forms.Label lbl_vaccinationPlace;
+        private System.Windows.Forms.Button btn_cancelRegister;
+        private System.Windows.Forms.Button btn_aceptRegister;
+        private System.Windows.Forms.Label lbl_dateVaccinate;
         private System.Windows.Forms.DateTimePicker dtp_date;
+        private System.Windows.Forms.ComboBox cmb_PlaceVaccination;
         //
+        
         private System.Windows.Forms.TabControl tabControl1;
        
 

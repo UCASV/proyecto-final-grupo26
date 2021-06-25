@@ -35,7 +35,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost; Database=ProCitas;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server = localhost\\SQLEXPRESS; Database = ProCitas; Trusted_Connection = True;");
             }
         }
 
@@ -69,7 +69,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Cabins)
                     .HasForeignKey(d => d.IdDirection)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CABIN__id_direct__45F365D3");
+                    .HasConstraintName("FK__CABIN__id_direct__5812160E");
             });
 
             modelBuilder.Entity<Citizen>(entity =>
@@ -131,40 +131,40 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdCabin)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_cabi__398D8EEE");
+                    .HasConstraintName("FK__CITIZEN__id_cabi__4BAC3F29");
 
                 entity.HasOne(d => d.IdDirectionNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdDirection)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_dire__3B75D760");
+                    .HasConstraintName("FK__CITIZEN__id_dire__4D94879B");
 
                 entity.HasOne(d => d.IdDiseasesNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdDiseases)
-                    .HasConstraintName("FK__CITIZEN__id_dise__3E52440B");
+                    .HasConstraintName("FK__CITIZEN__id_dise__5070F446");
 
                 entity.HasOne(d => d.IdEmployeeNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_empl__38996AB5");
+                    .HasConstraintName("FK__CITIZEN__id_empl__4AB81AF0");
 
                 entity.HasOne(d => d.IdInfoVaccinationNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInfoVaccination)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_info__3C69FB99");
+                    .HasConstraintName("FK__CITIZEN__id_info__4E88ABD4");
 
                 entity.HasOne(d => d.IdInstitutionNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInstitution)
-                    .HasConstraintName("FK__CITIZEN__id_inst__3A81B327");
+                    .HasConstraintName("FK__CITIZEN__id_inst__4CA06362");
 
                 entity.HasOne(d => d.IdSideEffectsNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdSideEffects)
-                    .HasConstraintName("FK__CITIZEN__id_side__3D5E1FD2");
+                    .HasConstraintName("FK__CITIZEN__id_side__4F7CD00D");
             });
 
             modelBuilder.Entity<Direction>(entity =>
@@ -249,23 +249,23 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.IdDirection)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEE__id_dir__412EB0B6");
+                    .HasConstraintName("FK__EMPLOYEE__id_dir__534D60F1");
 
                 entity.HasOne(d => d.IdRecordNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.IdRecord)
-                    .HasConstraintName("FK__EMPLOYEE__id_rec__403A8C7D");
+                    .HasConstraintName("FK__EMPLOYEE__id_rec__52593CB8");
 
                 entity.HasOne(d => d.IdTypeEmployeeNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.IdTypeEmployee)
-                    .HasConstraintName("FK__EMPLOYEE__id_typ__4222D4EF");
+                    .HasConstraintName("FK__EMPLOYEE__id_typ__5441852A");
             });
 
             modelBuilder.Entity<Employeexcabin>(entity =>
             {
                 entity.HasKey(e => new { e.IdEmployee, e.IdCabin })
-                    .HasName("PK__EMPLOYEE__44FD7D35C6D642B5");
+                    .HasName("PK__EMPLOYEE__44FD7D352EAF24B1");
 
                 entity.ToTable("EMPLOYEEXCABIN");
 
@@ -277,13 +277,13 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.Employeexcabins)
                     .HasForeignKey(d => d.IdCabin)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEEX__id_ca__44FF419A");
+                    .HasConstraintName("FK__EMPLOYEEX__id_ca__571DF1D5");
 
                 entity.HasOne(d => d.IdEmployeeNavigation)
                     .WithMany(p => p.Employeexcabins)
                     .HasForeignKey(d => d.IdEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEEX__id_em__440B1D61");
+                    .HasConstraintName("FK__EMPLOYEEX__id_em__5629CD9C");
             });
 
             modelBuilder.Entity<InfoVaccination>(entity =>
@@ -310,7 +310,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
                     .WithMany(p => p.InfoVaccinations)
                     .HasForeignKey(d => d.IdVaccinationPlace)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__INFO_VACC__id_va__3F466844");
+                    .HasConstraintName("FK__INFO_VACC__id_va__5165187F");
             });
 
             modelBuilder.Entity<Institution>(entity =>
