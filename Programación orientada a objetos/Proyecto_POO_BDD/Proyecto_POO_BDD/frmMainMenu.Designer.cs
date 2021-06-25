@@ -120,6 +120,7 @@ namespace Proyecto_POO_BDD
             this.btn_vaccinationProcess.Size = new System.Drawing.Size(151, 146);
             this.btn_vaccinationProcess.TabIndex = 4;
             this.btn_vaccinationProcess.UseVisualStyleBackColor = false;
+            this.btn_vaccinationProcess.Click += new System.EventHandler(this.btn_vaccinationProcess_Click);
             // 
             // lbl_vaccinate
             // 

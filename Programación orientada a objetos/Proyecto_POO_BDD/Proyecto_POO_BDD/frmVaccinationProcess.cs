@@ -19,7 +19,7 @@ namespace Proyecto_POO_BDD
         {
             tabVaccinationProcess.ItemSize = new Size(0, 1);
 
-            this.Height = 240;
+            this.Height = 280;
         }
 
         private void btn_aceptDui_Click(object sender, EventArgs e)
@@ -37,7 +37,37 @@ namespace Proyecto_POO_BDD
             else
             {
                 tabVaccinationProcess.SelectedIndex = 1;
+                this.Height = 360;
+                
             }
+        }
+
+        private void btnConsentAcepted_Click(object sender, EventArgs e)
+        {
+            tabVaccinationProcess.SelectedIndex = 2;
+            this.Height = 315;
+
+        }
+
+        private void chkConsent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkConsent.Checked = true)
+            {
+                btnConsentAcepted.BackColor = ColorTranslator.FromHtml("#ed1b24");
+                btnConsentAcepted.Enabled = true;
+            }
+        }
+
+        private void btn_queueAcept_Click(object sender, EventArgs e)
+        {
+            Citizen c = db.Citizens.First(c => c.Dui.Equals(txt_dui.Text));
+
+            c.DateWline = dtp_queueDate.Value.Date;
+            c.TimeWline = dtp_queueDate.Value.TimeOfDay;
+
+            db.SaveChanges();
+
+            tabVaccinationProcess.SelectedIndex = 3;
         }
     }
 }

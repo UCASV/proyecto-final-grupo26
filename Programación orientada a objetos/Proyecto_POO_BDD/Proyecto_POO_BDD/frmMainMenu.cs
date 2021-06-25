@@ -30,5 +30,15 @@ namespace Proyecto_POO_BDD
         {
             lbl_user.Text = $"Usuario: {employee.NameEmployee}";
         }
+
+        private void btn_vaccinationProcess_Click(object sender, EventArgs e)
+        {
+            using (frmVaccinationProcess window = new frmVaccinationProcess())
+            {
+                this.Hide();
+                window.ShowDialog();
+            }
+            this.Show();
+        }
     }
 }

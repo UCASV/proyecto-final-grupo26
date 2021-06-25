@@ -93,6 +93,7 @@ namespace Proyecto_POO_BDD
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab3)).BeginInit();
+            this.panelBannerTab3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.grp_sideEffects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab4)).BeginInit();
@@ -113,7 +114,7 @@ namespace Proyecto_POO_BDD
             this.tabVaccinationProcess.Location = new System.Drawing.Point(1, -4);
             this.tabVaccinationProcess.Name = "tabVaccinationProcess";
             this.tabVaccinationProcess.SelectedIndex = 0;
-            this.tabVaccinationProcess.Size = new System.Drawing.Size(394, 363);
+            this.tabVaccinationProcess.Size = new System.Drawing.Size(394, 362);
             this.tabVaccinationProcess.TabIndex = 0;
             // 
             // tabPage1
@@ -126,7 +127,7 @@ namespace Proyecto_POO_BDD
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(386, 337);
+            this.tabPage1.Size = new System.Drawing.Size(386, 336);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dui";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -207,7 +208,7 @@ namespace Proyecto_POO_BDD
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(386, 337);
+            this.tabPage2.Size = new System.Drawing.Size(386, 336);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consentimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -238,7 +239,8 @@ namespace Proyecto_POO_BDD
             // 
             // btnConsentAcepted
             // 
-            this.btnConsentAcepted.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
+            this.btnConsentAcepted.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
+            this.btnConsentAcepted.Enabled = false;
             this.btnConsentAcepted.FlatAppearance.BorderSize = 0;
             this.btnConsentAcepted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsentAcepted.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -249,6 +251,7 @@ namespace Proyecto_POO_BDD
             this.btnConsentAcepted.TabIndex = 8;
             this.btnConsentAcepted.Text = "Aceptar";
             this.btnConsentAcepted.UseVisualStyleBackColor = false;
+            this.btnConsentAcepted.Click += new System.EventHandler(this.btnConsentAcepted_Click);
             // 
             // tlpConsent
             // 
@@ -272,6 +275,7 @@ namespace Proyecto_POO_BDD
             this.chkConsent.Size = new System.Drawing.Size(30, 31);
             this.chkConsent.TabIndex = 0;
             this.chkConsent.UseVisualStyleBackColor = true;
+            this.chkConsent.CheckedChanged += new System.EventHandler(this.chkConsent_CheckedChanged);
             // 
             // lbl_consent
             // 
@@ -316,12 +320,11 @@ namespace Proyecto_POO_BDD
             this.tabPage3.Controls.Add(this.lbl_queue);
             this.tabPage3.Controls.Add(this.lbl_queueDate);
             this.tabPage3.Controls.Add(this.dtp_queueDate);
-            this.tabPage3.Controls.Add(this.pictureBoxBannerTab3);
             this.tabPage3.Controls.Add(this.panelBannerTab3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(386, 337);
+            this.tabPage3.Size = new System.Drawing.Size(386, 336);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fila espera";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -339,6 +342,7 @@ namespace Proyecto_POO_BDD
             this.btn_queueAcept.TabIndex = 11;
             this.btn_queueAcept.Text = "Aceptar";
             this.btn_queueAcept.UseVisualStyleBackColor = false;
+            this.btn_queueAcept.Click += new System.EventHandler(this.btn_queueAcept_Click);
             // 
             // lbl_queue
             // 
@@ -385,7 +389,8 @@ namespace Proyecto_POO_BDD
             // panelBannerTab3
             // 
             this.panelBannerTab3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
-            this.panelBannerTab3.Location = new System.Drawing.Point(3, 0);
+            this.panelBannerTab3.Controls.Add(this.pictureBoxBannerTab3);
+            this.panelBannerTab3.Location = new System.Drawing.Point(0, 0);
             this.panelBannerTab3.Name = "panelBannerTab3";
             this.panelBannerTab3.Size = new System.Drawing.Size(386, 69);
             this.panelBannerTab3.TabIndex = 6;
@@ -402,7 +407,7 @@ namespace Proyecto_POO_BDD
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(386, 337);
+            this.tabPage4.Size = new System.Drawing.Size(386, 336);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "vacuna";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -516,7 +521,7 @@ namespace Proyecto_POO_BDD
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(386, 337);
+            this.tabPage5.Size = new System.Drawing.Size(386, 336);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "efectos sec.";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -614,7 +619,7 @@ namespace Proyecto_POO_BDD
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(386, 337);
+            this.tabPage6.Size = new System.Drawing.Size(386, 336);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "2° vacuna";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -678,6 +683,7 @@ namespace Proyecto_POO_BDD
             this.Controls.Add(this.tabVaccinationProcess);
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "frmVaccinationProcess";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmVaccinationProcess_Load);
             this.tabVaccinationProcess.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -691,6 +697,7 @@ namespace Proyecto_POO_BDD
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab3)).EndInit();
+            this.panelBannerTab3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.grp_sideEffects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab4)).EndInit();
