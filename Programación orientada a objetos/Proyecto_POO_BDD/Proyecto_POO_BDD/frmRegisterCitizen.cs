@@ -10,7 +10,7 @@ namespace Proyecto_POO_BDD
     public partial class frmRegisterCitizen : Form
     {
         private Employee employee { get; set; }
-    //    private ProCitasContext db = new ProCitasContext();
+        private ProCitasContext db = new ProCitasContext();
         
         public frmRegisterCitizen(Employee employee)
         {
@@ -27,14 +27,14 @@ namespace Proyecto_POO_BDD
         {
             tabControl1.ItemSize = new Size(0, 1);
 
-    //        cmb_Diseases.DataSource = db.Diseases.ToList();
+            cmb_Diseases.DataSource = db.Diseases.ToList();
             cmb_Diseases.DisplayMember = "diseases";
             cmb_Diseases.ValueMember = "id";
 
-    //        var listdirection = db.Directions
-    //            .Select( d => new{ Id = d.Id, Direction = d.Department+ " " + d.Street + " " + d.Municipality});
+            var listdirection = db.Directions
+                .Select( d => new{ Id = d.Id, Direction = d.Department+ " " + d.Street + " " + d.Municipality});
 
-    //        cmb_address.DataSource = listdirection.ToList();
+            cmb_address.DataSource = listdirection.ToList();
             cmb_address.DisplayMember = "Direction";
             cmb_address.ValueMember = "Id";
 
@@ -78,7 +78,6 @@ namespace Proyecto_POO_BDD
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             var listCitizen = db.Citizens.ToList();
 
             var result = listCitizen.Where(e =>
@@ -90,18 +89,8 @@ namespace Proyecto_POO_BDD
 
                 if (result.Count == 0) // Si no se encontro ningun dui igual en la base de datos se puede registrar
                 {
-=======
-    //        var listCitizen = db.Citizens.ToList(); 
-            
-    //        var result = listCitizen.Where(e =>
-    //            e.Dui.Equals(txt_dui.Text)).ToList();
-            //Se evalua si el dui que se ingreso ya esta en la base de datos
-            
-            if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&  txt_celphone.Text.Length > 0)
-                
-    //            if(result.Count == 0) // Si no se encontro ningun dui igual en la base de datos se puede registrar
-                    
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
+                    if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&  txt_celphone.Text.Length > 0)
+                        
                     tabControl1.SelectedIndex = 3;
                     this.Height = 380;
                 }
@@ -109,7 +98,7 @@ namespace Proyecto_POO_BDD
                     
                     MessageBox.Show("Este numero de dui ya ha sido registrado para una cita", "Cita duplicada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             
-      //      else
+            else
                 MessageBox.Show("Asegurese de llenar todos los campo", "Registro ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
@@ -170,28 +159,20 @@ namespace Proyecto_POO_BDD
                 else
                 {
                     Disease dref = (Disease) cmb_Diseases.SelectedItem;
-     //               Disease dbdd = db.Set<Disease>()
-     //                   .SingleOrDefault(m => m.Id == dref.Id);
+                    Disease dbdd = db.Set<Disease>()
+                        .SingleOrDefault(m => m.Id == dref.Id);
 
-    //                newCitizen.IdDiseases = dbdd.Id;
+                    newCitizen.IdDiseases = dbdd.Id;
                 }
                 //------------------------------------------------------------------
-
-<<<<<<< HEAD
                 
                 //INSTITUCION-------------------------------------------------------
                 Institution ibdd = db.Set<Institution>()
                     .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
-=======
-                //INSTITUCION-------------------------------------------------------//
-    //            Institution ibdd = db.Set<Institution>()
-    //                .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
 
                 if (rb_institutionNo.Checked)
                     newCitizen.IdInstitution = null;
                 else
-<<<<<<< HEAD
                     newCitizen.IdInstitution = ibdd.Id;
                 //--------------------------------------------------------------------
 
@@ -199,38 +180,22 @@ namespace Proyecto_POO_BDD
                 //CABINA--------------------------------------------------------------
                 Employeexcabin xref = db.Set<Employeexcabin>()
                     .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
-=======
-    //                newCitizen.IdInstitution = ibdd.Id;
-                //--------------------------------------------------------------------//
 
-                //CABINA--------------------------------------------------------------//
-    //            Employeexcabin xref = db.Set<Employeexcabin>()
-    //                .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
-
-    //            Cabin cbdd = db.Set<Cabin>()
-    //                .SingleOrDefault(c => c.Id == xref.IdCabin);
-
-<<<<<<< HEAD
+                Cabin cbdd = db.Set<Cabin>()
+                    .SingleOrDefault(c => c.Id == xref.IdCabin);
+    
                 newCitizen.IdCabin = cbdd.Id;
                 //---------------------------------------------------------------------
 
-                
-                //DIRECCION------------------------------------------------------------
-                int idAddress = cmb_address.SelectedIndex + 1; //el indice empieza de 0 por lo que se le suma 1 para obtener su id
-=======
-    //            newCitizen.IdCabin = cbdd.Id;
-                //---------------------------------------------------------------------//
 
                 //DIRECCION------------------------------------------------------------//
-    //            int idAddress = cmb_address.SelectedIndex + 1; 
+                int idAddress = cmb_address.SelectedIndex + 1; 
                 // el indice empieza de 0 por lo que se le suma 1 para obtener su id
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
-                
-     //           Direction rbdd = db.Set<Direction>()
-     //               .SingleOrDefault(r => r.Id == idAddress);
 
-<<<<<<< HEAD
+                
+                Direction rbdd = db.Set<Direction>()
+                    .SingleOrDefault(r => r.Id == idAddress);
+                
                 newCitizen.IdDirection = rbdd.Id;
                 //------------------------------------------------------------------------
                 
@@ -249,30 +214,14 @@ namespace Proyecto_POO_BDD
                     newInfo.IdVaccinationPlace = vbdd.Id;
                     newInfo.DateAppointment2 = null;
                     newInfo.TimeAppointment2 = null;
-=======
-    //            newCitizen.IdDirection = rbdd.Id;
-                
-                //Detalles de la cita------------------------------------------------------//
 
-                //asignando valores a la tabla INFOVACCINATION
-    //                InfoVaccination newInfo = new InfoVaccination();
-    //                newInfo.DateAppointment1 = dtp_date.Value.Date;
-    //                newInfo.TimeAppointment1 = dtp_date.Value.TimeOfDay;
-    //                newInfo.VaccinationPlace = "Hopital Rosales";
-    //                newInfo.DateAppointment2 = null;
-    //               newInfo.TimeAppointment2 = null;
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
-
-       //             db.Add(newInfo);
-       //             db.SaveChanges();
-
-<<<<<<< HEAD
-                newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFO_VACCINATION
+                    db.Add(newInfo);
+                    db.SaveChanges();
+                    
+                    newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFO_VACCINATION
                 //----------------------------------------------------------------------
-=======
-    //            newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFOVACCINATION
+
                 //----------------------------------------------------------------------//
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
 
                 //valores temporalmente nulos ya que se llenan mas adelante--------------//
                 newCitizen.TimeEffect = null;
@@ -282,8 +231,8 @@ namespace Proyecto_POO_BDD
                 newCitizen.IdSideEffects = null;
                 //-----------------------------------------------------------------------//
                 
-        //        db.Add(newCitizen);
-        //        db.SaveChanges();
+                db.Add(newCitizen);
+                db.SaveChanges();
 
                 MessageBox.Show("Ciudadano Registrado","Vacunacion Covid-19", MessageBoxButtons.OK,
                    MessageBoxIcon.Information);

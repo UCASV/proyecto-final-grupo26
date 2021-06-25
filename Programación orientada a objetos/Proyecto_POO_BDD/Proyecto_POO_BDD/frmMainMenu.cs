@@ -30,9 +30,6 @@ namespace Proyecto_POO_BDD
         {
             lbl_user.Text = $"Usuario: {employee.NameEmployee}";
         }
-<<<<<<< HEAD
-        
-=======
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -60,6 +57,5 @@ namespace Proyecto_POO_BDD
 
 
         }
->>>>>>> 7078ca151f8079dc815ff2bf5a38fa96f67b9c5d
     }
 }
