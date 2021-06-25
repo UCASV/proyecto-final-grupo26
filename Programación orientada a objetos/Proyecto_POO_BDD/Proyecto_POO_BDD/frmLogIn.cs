@@ -49,8 +49,6 @@ namespace Proyecto_POO_BDD
                 db.SaveChanges();
 
                 this.Hide();
-
-
             }
         }
     }
