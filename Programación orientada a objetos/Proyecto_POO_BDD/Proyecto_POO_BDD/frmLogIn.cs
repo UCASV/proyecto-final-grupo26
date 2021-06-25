@@ -37,27 +37,33 @@ namespace Proyecto_POO_BDD
                 string formatDate = "yyyy MM d";
 
                 string fullTime = $"{date.ToString(formatDate)}";
+<<<<<<< HEAD
 
                //DateTime time = DateTime.Now;
                 DateTime time = DateTime.Now;
 
+=======
+                DateTime time = DateTime.Now;
+>>>>>>> 9515f614d87ebf2f3d096797a1073b9366fc3b24
                 string formatTime = "hh mm";
 
 
                 var newRegister = new Record();
                 newRegister.DateR = DateTime.Today;
+<<<<<<< HEAD
 
                 //newRegister.TimeR = DateTime.Now.TimeOfDay;
 
                 newRegister.TimeR = DateTime.Now.TimeOfDay;
 
+=======
+                newRegister.TimeR = DateTime.Now.TimeOfDay;
+>>>>>>> 9515f614d87ebf2f3d096797a1073b9366fc3b24
 
                 db.Add(newRegister);
                 db.SaveChanges();
 
                 this.Hide();
-
-
             }
         }
     }

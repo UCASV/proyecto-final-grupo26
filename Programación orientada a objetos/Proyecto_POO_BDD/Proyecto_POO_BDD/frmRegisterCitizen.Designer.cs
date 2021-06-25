@@ -691,6 +691,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancelRegister.TabIndex = 12;
             this.btn_cancelRegister.Text = "Cancelar";
             this.btn_cancelRegister.UseVisualStyleBackColor = false;
+            this.btn_cancelRegister.Click += new System.EventHandler(this.btn_cancelRegister_Click);
             // 
             // btn_aceptRegister
             // 

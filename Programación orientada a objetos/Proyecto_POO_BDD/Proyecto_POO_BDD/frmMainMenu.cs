@@ -31,31 +31,14 @@ namespace Proyecto_POO_BDD
             lbl_user.Text = $"Usuario: {employee.NameEmployee}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_vaccinationProcess_Click(object sender, EventArgs e)
         {
-            ProCitasContext db = new ProCitasContext();
-
-            var listCitizen = db.Citizens.ToList();
-            var result = listCitizen.Where(e =>
-                e.Dui.Equals("12345")).ToList();
-            
-            Citizen newCitizen = new Citizen();
-
-           if (result.Count != 0)
+            using (frmVaccinationProcess window = new frmVaccinationProcess())
             {
-                newCitizen.IdInstitution = 2;
-                db.Update(newCitizen.IdInstitution);
-                db.SaveChanges();
+                this.Hide();
+                window.ShowDialog();
             }
-            else
-            {
-                MessageBox.Show("NEl");
-            }
-            
-            
-
-
-
+            this.Show();
         }
     }
 }

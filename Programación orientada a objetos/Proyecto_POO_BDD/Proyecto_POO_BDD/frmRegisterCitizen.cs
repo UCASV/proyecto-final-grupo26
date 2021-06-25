@@ -26,29 +26,31 @@ namespace Proyecto_POO_BDD
         private void frmRegisterCitizen_Load(object sender, EventArgs e)
         {
             tabControl1.ItemSize = new Size(0, 1);
-
+            
+            //Poblando comboBox con las enfermedades
             cmb_Diseases.DataSource = db.Diseases.ToList();
             cmb_Diseases.DisplayMember = "diseases";
             cmb_Diseases.ValueMember = "id";
 
+            //Unir los campos de Departamento, calle y municipio para mostrarla en comboBox
             var listdirection = db.Directions
                 .Select( d => new{ Id = d.Id, Direction = d.Department+ " " + d.Street + " " + d.Municipality});
-
+            
+            //Poblando comboBox con las direcciones
             cmb_address.DataSource = listdirection.ToList();
             cmb_address.DisplayMember = "Direction";
             cmb_address.ValueMember = "Id";
 
+            //Poblando comboBox con los lugares de vacunacion
             cmb_PlaceVaccination.DataSource = db.VaccinationPlaces.ToList();
-            cmb_Diseases.DisplayMember = "Place";
+            cmb_PlaceVaccination.DisplayMember = "Place";
             cmb_PlaceVaccination.ValueMember = "Id";
         }
         
         
         private void rb_deseasesYes_Click(object sender, EventArgs e)
         {
-            if (rb_diseasesYes.Checked)
-                tabControl1.SelectedIndex = 1;
-            
+            tabControl1.SelectedIndex = 1;
             this.Height = 430;
         }
 
@@ -90,9 +92,10 @@ namespace Proyecto_POO_BDD
                 if (result.Count == 0) // Si no se encontro ningun dui igual en la base de datos se puede registrar
                 {
                     if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&  txt_celphone.Text.Length > 0)
-                        
-                    tabControl1.SelectedIndex = 3;
-                    this.Height = 380;
+                    {
+                        tabControl1.SelectedIndex = 3;
+                        this.Height = 380;
+                    }
                 }
                 else // Si se ha encontrado un dui igual en la base no se puede volver a registrar
                     
@@ -246,6 +249,11 @@ namespace Proyecto_POO_BDD
             } 
 
             
+        }
+
+        private void btn_cancelRegister_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
