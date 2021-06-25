@@ -33,21 +33,21 @@ namespace Proyecto_POO_BDD
 
         private void button1_Click(object sender, EventArgs e)
         {
-    //        ProCitasContext db = new ProCitasContext();
+            ProCitasContext db = new ProCitasContext();
 
-    //        var listCitizen = db.Citizens.ToList();
-    //        var result = listCitizen.Where(e =>
-    //            e.Dui.Equals("12345")).ToList();
+            var listCitizen = db.Citizens.ToList();
+            var result = listCitizen.Where(e =>
+                e.Dui.Equals("12345")).ToList();
             
             Citizen newCitizen = new Citizen();
 
-    //        if (result.Count != 0)
+           if (result.Count != 0)
             {
                 newCitizen.IdInstitution = 2;
-    //            db.Update(newCitizen.IdInstitution);
-    //            db.SaveChanges();
+                db.Update(newCitizen.IdInstitution);
+                db.SaveChanges();
             }
-    //        else
+            else
             {
                 MessageBox.Show("NEl");
             }

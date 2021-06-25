@@ -15,19 +15,18 @@ namespace Proyecto_POO_BDD
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-    //        var db = new ProCitasContext();
-    //        var listOfEmployees = db.Employees.
-    //            OrderBy(c => c.Id).ToList();
+            var db = new ProCitasContext();
+            var listOfEmployees = db.Employees.OrderBy(c => c.Id).ToList();
 
-    //        var result = listOfEmployees.Where(e =>
-    //            e.NameEmployee.Equals(txt_user.Text) &&
-    //            e.Passwordd.Equals((txt_password.Text))).ToList();
+            var result = listOfEmployees.Where(e =>
+                e.NameEmployee.Equals(txt_user.Text) &&
+                e.Passwordd.Equals((txt_password.Text))).ToList();
 
-    //       if (result.Count == 0)
+            if (result.Count == 0)
                 MessageBox.Show("Este usuario no existe", "Vaccination Program", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-            
-    /*        else
+
+            else
             {
                 MessageBox.Show("Bienvenido Gestor!", "Vaccination Program", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -39,19 +38,20 @@ namespace Proyecto_POO_BDD
 
                 string fullTime = $"{date.ToString(formatDate)}";
                 //DateTime time = DateTime.Now;
-                string formatTime = "hh mm"; 
-                
-                
+                string formatTime = "hh mm";
+
+
                 var newRegister = new Record();
                 newRegister.DateR = DateTime.Today;
                 //newRegister.TimeR = DateTime.Now.TimeOfDay;
-                
+
                 db.Add(newRegister);
                 db.SaveChanges();
-      */          
+
                 this.Hide();
 
 
             }
         }
     }
+}
