@@ -96,23 +96,20 @@ namespace Proyecto_POO_BDD
 
             if (radYesSideEffects.Checked)
             {
-                int idASideEffects = cmbSideEffect.SelectedIndex + 1; 
-                // el indice empieza de 0 por lo que se le suma 1 para obtener su id
-
-                SideEffect sbdd = db.Set<SideEffect>()
-                    .SingleOrDefault(s => s.Id == idASideEffects);
-                
-                c.IdDirection = sbdd.Id;
-            }
-
-            if (radYesSideEffects.Checked)
-            {
                 //Se resta la hora en que se dan los efectos secundarios con la hora en que se coloco la vacuna 
                 var Time = dtpTimeSideEffect.Value.TimeOfDay.Subtract(dtp_dateVaccineRecieved.Value.TimeOfDay);
                 int minutes = Convert.ToInt32(Time.Minutes); // Se convierten los minutos a entero
 
                 c.TimeEffect = minutes; //se ingresan los minutos
                 c.DateEffect = dtp_dateVaccineRecieved.Value.Date;
+                
+                int idSideEffects = cmbSideEffect.SelectedIndex + 1; 
+                // el indice empieza de 0 por lo que se le suma 1 para obtener su id
+
+                SideEffect sbdd = db.Set<SideEffect>()
+                    .SingleOrDefault(s => s.Id == idSideEffects);
+                
+                c.IdSideEffects = sbdd.Id;
             }
             else
             {
@@ -135,16 +132,18 @@ namespace Proyecto_POO_BDD
             {
                 MessageBox.Show("Ambas dosis recibidas", "Vacuna Covid-19", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
+                    db.SaveChanges();
+                    
+                    this.Close();
             }
 
-            db.SaveChanges();
-            
             tabVaccinationProcess.SelectedIndex = 5;
             this.Height = 280;
         }
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            /* Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 32);
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
             doc.Open();
@@ -155,7 +154,12 @@ namespace Proyecto_POO_BDD
             
             
             
+=======
+            MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+>>>>>>> 41caceedfb66b45a4e1d4cfa2b6f2cc88a315618
             
+            this.Close();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Proyecto_POO_BDD.SqlServerContext
         {
             Citizens = new HashSet<Citizen>();
             Employeexcabins = new HashSet<Employeexcabin>();
+            Records = new HashSet<Record>();
         }
 
         public int Id { get; set; }
@@ -21,5 +22,6 @@ namespace Proyecto_POO_BDD.SqlServerContext
         public virtual Direction IdDirectionNavigation { get; set; }
         public virtual ICollection<Citizen> Citizens { get; set; }
         public virtual ICollection<Employeexcabin> Employeexcabins { get; set; }
+        public virtual ICollection<Record> Records { get; set; }
     }
 }

@@ -2,8 +2,9 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 using Proyecto_POO_BDD.SqlServerContext;
+using Proyecto_POO_BDD.Validations;
 
 namespace Proyecto_POO_BDD
 {
@@ -82,27 +83,29 @@ namespace Proyecto_POO_BDD
         {
             var listCitizen = db.Citizens.ToList();
 
-            var result = listCitizen.Where(e =>
-                e.Dui.Equals(txt_dui.Text)).ToList();
             //Se evalua si el dui que se ingreso ya esta en la base de datos
+            var result = listCitizen.Where(e => e.Dui.Equals(txt_dui.Text)).ToList();
 
             if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&
                 txt_celphone.Text.Length > 0)
 
                 if (result.Count == 0) // Si no se encontro ningun dui igual en la base de datos se puede registrar
                 {
-                    if (txt_name.Text.Length > 0 && txt_dui.Text.Length > 0 && txt_age.Text.Length > 0 &&  txt_celphone.Text.Length > 0)
+                    int age = Int32.Parse(txt_age.Text);
+                    if (ValidationDui.VerificationDui(txt_dui.Text) && ValidationAge.VerificationAge(age) && ValidationPhoneNumber.VerificationNumer(txt_celphone.Text))
                     {
                         tabControl1.SelectedIndex = 3;
                         this.Height = 380;
                     }
                 }
-                else // Si se ha encontrado un dui igual en la base no se puede volver a registrar
-                    
-                    MessageBox.Show("Este numero de dui ya ha sido registrado para una cita", "Cita duplicada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            
+                else 
+                    // Si se ha encontrado un dui igual en la base no se puede volver a registrar
+                    MessageBox.Show("Este numero de dui ya ha sido registrado para una cita", "Cita duplicada",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             else
-                MessageBox.Show("Asegurese de llenar todos los campo", "Registro ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Asegurese de llenar todos los campo", "Registro ciudadano", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
         }
 
         private void btn_aceptDeseases_Click(object sender, EventArgs e)
