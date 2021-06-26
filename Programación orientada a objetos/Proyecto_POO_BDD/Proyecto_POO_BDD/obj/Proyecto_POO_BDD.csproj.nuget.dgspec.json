@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {}
   },
   "projects": {
@@ -13,22 +12,9 @@
         "projectPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
         "packagesPath": "C:\\Users\\gi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
-=======
-    "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
-        "projectName": "Proyecto_POO_BDD",
-        "projectPath": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
->>>>>>> 41caceedfb66b45a4e1d4cfa2b6f2cc88a315618
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"

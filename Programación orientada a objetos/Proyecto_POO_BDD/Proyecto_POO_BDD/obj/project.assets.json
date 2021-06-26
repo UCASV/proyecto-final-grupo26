@@ -5761,27 +5761,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\gi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
       "projectName": "Proyecto_POO_BDD",
       "projectPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
       "packagesPath": "C:\\Users\\gi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
-      "projectName": "Proyecto_POO_BDD",
-      "projectPath": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\POO PRO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
->>>>>>> 41caceedfb66b45a4e1d4cfa2b6f2cc88a315618
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\gi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0-windows"
@@ -5841,5 +5833,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

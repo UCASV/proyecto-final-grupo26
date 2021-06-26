@@ -143,7 +143,7 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
            /* Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 32);
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
             doc.Open();
@@ -154,10 +154,10 @@ namespace Proyecto_POO_BDD
             
             
             
-=======
+
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
->>>>>>> 41caceedfb66b45a4e1d4cfa2b6f2cc88a315618
+
             
             this.Close();
         }
