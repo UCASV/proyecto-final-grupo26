@@ -5766,11 +5766,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gi\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
+      "projectUniqueName": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
       "projectName": "Proyecto_POO_BDD",
-      "projectPath": "C:\\Users\\gi\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
+      "projectPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
       "packagesPath": "C:\\Users\\gi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gi\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
+      "outputPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gi\\AppData\\Roaming\\NuGet\\NuGet.Config"

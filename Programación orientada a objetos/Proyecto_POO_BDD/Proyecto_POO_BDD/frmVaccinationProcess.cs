@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
-
 namespace Proyecto_POO_BDD
 {
     public partial class frmVaccinationProcess : Form
@@ -146,6 +145,16 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
+           /* Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 32);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph paragraph = new Paragraph("Tryouts");
+            doc.Add(paragraph);
+            doc.Close();
+            */
+            
+            
+            
             
         }
     }

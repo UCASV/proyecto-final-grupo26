@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RW/Ubm/G5YmC7xeywORSfOINZ5N6NpfIep1x0Uyoi3zxLsOUVERdrWS+ffdsZHokvBOsCMLfmxyKBXeFughBiQ==",
+  "dgSpecHash": "7CL+eNvLdtX8fItoWfLEpIvws4jCGoCcetiiCgm4++SrOlzLWsjSvqEQJHZTcFODPZ9jzlS0PvexgfGY9wagsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gi\\Desktop\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
+  "projectFilePath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
