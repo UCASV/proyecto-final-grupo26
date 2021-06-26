@@ -71,7 +71,6 @@ namespace Proyecto_POO_BDD
             this.btn_CancelSideEffect = new System.Windows.Forms.Button();
             this.btn_aceptTimeEffects = new System.Windows.Forms.Button();
             this.lbl_timeSideEffect = new System.Windows.Forms.Label();
-            this.dtpTimeSideEffect = new System.Windows.Forms.DateTimePicker();
             this.cmbSideEffect = new System.Windows.Forms.ComboBox();
             this.lbl_sideEffects = new System.Windows.Forms.Label();
             this.pictureBoxBannerTab5 = new System.Windows.Forms.PictureBox();
@@ -82,6 +81,7 @@ namespace Proyecto_POO_BDD
             this.lbl_date2Vaccine = new System.Windows.Forms.Label();
             this.pictureBoxBanner6 = new System.Windows.Forms.PictureBox();
             this.panelBannerTab6 = new System.Windows.Forms.Panel();
+            this.txt_minutesEffects = new System.Windows.Forms.TextBox();
             this.tabVaccinationProcess.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelBannerTab1.SuspendLayout();
@@ -419,7 +419,7 @@ namespace Proyecto_POO_BDD
             this.grp_sideEffects.Controls.Add(this.radYesSideEffects);
             this.grp_sideEffects.Controls.Add(this.radNoSideEffects);
             this.grp_sideEffects.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.grp_sideEffects.Location = new System.Drawing.Point(31, 194);
+            this.grp_sideEffects.Location = new System.Drawing.Point(31, 186);
             this.grp_sideEffects.Name = "grp_sideEffects";
             this.grp_sideEffects.Size = new System.Drawing.Size(312, 61);
             this.grp_sideEffects.TabIndex = 16;
@@ -450,10 +450,10 @@ namespace Proyecto_POO_BDD
             // dtp_dateVaccineRecieved
             // 
             this.dtp_dateVaccineRecieved.CalendarFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.dtp_dateVaccineRecieved.CustomFormat = "yyyy/MM/dd    HH:mm";
+            this.dtp_dateVaccineRecieved.CustomFormat = "HH:mm";
             this.dtp_dateVaccineRecieved.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dtp_dateVaccineRecieved.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dateVaccineRecieved.Location = new System.Drawing.Point(170, 135);
+            this.dtp_dateVaccineRecieved.Location = new System.Drawing.Point(191, 127);
             this.dtp_dateVaccineRecieved.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dtp_dateVaccineRecieved.MinDate = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
             this.dtp_dateVaccineRecieved.Name = "dtp_dateVaccineRecieved";
@@ -464,11 +464,11 @@ namespace Proyecto_POO_BDD
             // lbl_dateVaccineRecieved
             // 
             this.lbl_dateVaccineRecieved.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_dateVaccineRecieved.Location = new System.Drawing.Point(31, 135);
+            this.lbl_dateVaccineRecieved.Location = new System.Drawing.Point(31, 127);
             this.lbl_dateVaccineRecieved.Name = "lbl_dateVaccineRecieved";
-            this.lbl_dateVaccineRecieved.Size = new System.Drawing.Size(133, 39);
+            this.lbl_dateVaccineRecieved.Size = new System.Drawing.Size(154, 39);
             this.lbl_dateVaccineRecieved.TabIndex = 14;
-            this.lbl_dateVaccineRecieved.Text = "Fecha y hora \r\nde vacunación:";
+            this.lbl_dateVaccineRecieved.Text = "Hora de vacunacion:";
             // 
             // btn_aceptVaccineRecieved
             // 
@@ -515,10 +515,10 @@ namespace Proyecto_POO_BDD
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txt_minutesEffects);
             this.tabPage5.Controls.Add(this.btn_CancelSideEffect);
             this.tabPage5.Controls.Add(this.btn_aceptTimeEffects);
             this.tabPage5.Controls.Add(this.lbl_timeSideEffect);
-            this.tabPage5.Controls.Add(this.dtpTimeSideEffect);
             this.tabPage5.Controls.Add(this.cmbSideEffect);
             this.tabPage5.Controls.Add(this.lbl_sideEffects);
             this.tabPage5.Controls.Add(this.pictureBoxBannerTab5);
@@ -564,21 +564,11 @@ namespace Proyecto_POO_BDD
             // lbl_timeSideEffect
             // 
             this.lbl_timeSideEffect.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_timeSideEffect.Location = new System.Drawing.Point(16, 150);
+            this.lbl_timeSideEffect.Location = new System.Drawing.Point(16, 140);
             this.lbl_timeSideEffect.Name = "lbl_timeSideEffect";
-            this.lbl_timeSideEffect.Size = new System.Drawing.Size(120, 51);
+            this.lbl_timeSideEffect.Size = new System.Drawing.Size(215, 51);
             this.lbl_timeSideEffect.TabIndex = 16;
-            this.lbl_timeSideEffect.Text = "Hora en que se presentaron:";
-            // 
-            // dtpTimeSideEffect
-            // 
-            this.dtpTimeSideEffect.CustomFormat = "HH:mm:00";
-            this.dtpTimeSideEffect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.dtpTimeSideEffect.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeSideEffect.Location = new System.Drawing.Point(157, 154);
-            this.dtpTimeSideEffect.Name = "dtpTimeSideEffect";
-            this.dtpTimeSideEffect.Size = new System.Drawing.Size(203, 25);
-            this.dtpTimeSideEffect.TabIndex = 15;
+            this.lbl_timeSideEffect.Text = "Minutos transcurridos luego de aplicada la vacuna:";
             // 
             // cmbSideEffect
             // 
@@ -683,6 +673,14 @@ namespace Proyecto_POO_BDD
             this.panelBannerTab6.Size = new System.Drawing.Size(386, 69);
             this.panelBannerTab6.TabIndex = 10;
             // 
+            // txt_minutesEffects
+            // 
+            this.txt_minutesEffects.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txt_minutesEffects.Location = new System.Drawing.Point(216, 155);
+            this.txt_minutesEffects.Name = "txt_minutesEffects";
+            this.txt_minutesEffects.Size = new System.Drawing.Size(140, 25);
+            this.txt_minutesEffects.TabIndex = 19;
+            // 
             // frmVaccinationProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,11 +711,16 @@ namespace Proyecto_POO_BDD
             this.grp_sideEffects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab4)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBannerTab5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner6)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.TextBox txt_minutesEffects;
+
+        private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.TabControl tabVaccinationProcess;
         
@@ -770,7 +773,6 @@ namespace Proyecto_POO_BDD
         private System.Windows.Forms.PictureBox pictureBoxBannerTab5;
         private System.Windows.Forms.Panel panelBannerTab5;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DateTimePicker dtpTimeSideEffect;
         private System.Windows.Forms.ComboBox cmbSideEffect;
         private System.Windows.Forms.Label lbl_sideEffects;
         private System.Windows.Forms.Label lbl_timeSideEffect;

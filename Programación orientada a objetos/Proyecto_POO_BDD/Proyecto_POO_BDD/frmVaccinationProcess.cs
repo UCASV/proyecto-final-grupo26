@@ -17,6 +17,9 @@ namespace Proyecto_POO_BDD
         
         private void frmVaccinationProcess_Load(object sender, EventArgs e)
         {
+            //Validar que el dia que se pase a la fila de espera no sea un dia que ya haya transcurrido
+            dtp_queueDate.MinDate = DateTime.Now;
+
             tabVaccinationProcess.ItemSize = new Size(0, 1);
             this.Height = 285;
             
@@ -43,7 +46,6 @@ namespace Proyecto_POO_BDD
             {
                 tabVaccinationProcess.SelectedIndex = 1;
                 this.Height = 360;
-                
             }
         }
 
@@ -82,6 +84,13 @@ namespace Proyecto_POO_BDD
 
         private void btn_aceptTimeEffects_Click(object sender, EventArgs e)
         {
+            if(Int32.Parse(txt_minutesEffects.Text) <= 0)
+                MessageBox.Show("Minutos invalidos", "Vacuna Covid-19", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            else if(Int32.Parse(txt_minutesEffects.Text) > 30)
+                MessageBox.Show("El tiempo de observacion maximo es de 30 minutos", "Vacuna Covid-19", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            
             this.Height = 440;
             tabVaccinationProcess.SelectedIndex = 3;
             radYesSideEffects.Checked = true;
@@ -96,11 +105,7 @@ namespace Proyecto_POO_BDD
 
             if (radYesSideEffects.Checked)
             {
-                //Se resta la hora en que se dan los efectos secundarios con la hora en que se coloco la vacuna 
-                var Time = dtpTimeSideEffect.Value.TimeOfDay.Subtract(dtp_dateVaccineRecieved.Value.TimeOfDay);
-                int minutes = Convert.ToInt32(Time.Minutes); // Se convierten los minutos a entero
-
-                c.TimeEffect = minutes; //se ingresan los minutos
+                c.TimeEffect = Int32.Parse(txt_minutesEffects.Text); //se ingresan los minutos
                 c.DateEffect = dtp_dateVaccineRecieved.Value.Date;
                 
                 int idSideEffects = cmbSideEffect.SelectedIndex + 1; 
@@ -152,7 +157,7 @@ namespace Proyecto_POO_BDD
             doc.Close();
             */
             
-            
+           
             
 
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,

@@ -26,6 +26,9 @@ namespace Proyecto_POO_BDD
 
         private void frmRegisterCitizen_Load(object sender, EventArgs e)
         {
+            //Validar que el dia de la cita no sea un dia que ya haya transcurrido
+            dtp_date.MinDate = DateTime.Now;
+                    
             tabControl1.ItemSize = new Size(0, 1);
             
             //Poblando comboBox con las enfermedades
