@@ -140,20 +140,13 @@ namespace Proyecto_POO_BDD
                     rb_institutionYes.Checked = true;
                     this.Height = 680;
                 }
-            
-            }    
-                
-            
-            
+            }
         }
 
         private void btn_aceptRegister_Click(object sender, EventArgs e)
         {
-
             try
             {
-     //          var listCitizen = db.Citizens.ToList(); 
-                
                 Citizen newCitizen = new Citizen();
 
                 newCitizen.Dui = txt_dui.Text;
