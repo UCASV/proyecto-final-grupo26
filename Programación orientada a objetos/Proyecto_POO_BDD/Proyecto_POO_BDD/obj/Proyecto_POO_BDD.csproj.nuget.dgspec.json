@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {}
+    "C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {
+    "C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
+        "projectUniqueName": "C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
         "projectName": "Proyecto_POO_BDD",
-        "projectPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
+        "projectPath": "C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\Proyecto_POO_BDD.csproj",
         "packagesPath": "C:\\Users\\gi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gi\\Desktop\\ProyectoPOO\\Proyect_BD_POO\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
+        "outputPath": "C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -51,6 +51,18 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "PdfSharp": {
+              "target": "Package",
+              "version": "[1.50.5147, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
