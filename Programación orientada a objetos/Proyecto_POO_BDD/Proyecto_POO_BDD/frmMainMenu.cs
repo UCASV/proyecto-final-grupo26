@@ -33,7 +33,7 @@ namespace Proyecto_POO_BDD
 
         private void btn_vaccinationProcess_Click(object sender, EventArgs e)
         {
-            using (frmVaccinationProcess window = new frmVaccinationProcess())
+            using (frmVaccinationProcess window = new frmVaccinationProcess(employee))
             {
                 this.Hide();
                 window.ShowDialog();
