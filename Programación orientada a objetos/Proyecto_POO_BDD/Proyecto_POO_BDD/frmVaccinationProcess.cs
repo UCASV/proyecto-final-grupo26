@@ -2,8 +2,10 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 using Proyecto_POO_BDD.SqlServerContext;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -151,30 +153,26 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            /* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-=======
->>>>>>> 1b080a2dc37de38dd2b8cc516371e3e822b3f9ff
+/* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
             PdfDocument document = new PdfDocument();
             PdfPage page = document.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
             XFont font = new XFont("Arial", 20);
             gfx.DrawString("Tryouts", font, XBrushes.Blue,
-<<<<<<< HEAD
+
                 new XRect(0, 0, page.Width, page.Height),
                 XStringFormats.Center);
 */
+
+            
+            
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Save your Vaccination Card";
             saveFileDialog1.ShowDialog();
             
             
             //document.Save();
-=======
-                new XRect(0,0,page.Width,page.Height),
-                XStringFormats.Center);         
-            document.Save("C:\\Users\\HP\\Desktop");
->>>>>>> 1b080a2dc37de38dd2b8cc516371e3e822b3f9ff
 
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
