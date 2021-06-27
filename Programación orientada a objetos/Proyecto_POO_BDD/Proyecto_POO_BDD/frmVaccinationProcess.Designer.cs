@@ -51,10 +51,10 @@ namespace Proyecto_POO_BDD
             this.panelBannerTab2 = new System.Windows.Forms.Panel();
             this.pictureBoxBannerTab2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_dateTimeNowQueue = new System.Windows.Forms.Button();
             this.btn_queueAcept = new System.Windows.Forms.Button();
             this.lbl_queue = new System.Windows.Forms.Label();
             this.lbl_queueDate = new System.Windows.Forms.Label();
-            this.dtp_queueDate = new System.Windows.Forms.DateTimePicker();
             this.panelBannerTab3 = new System.Windows.Forms.Panel();
             this.pictureBoxBannerTab3 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -68,6 +68,7 @@ namespace Proyecto_POO_BDD
             this.pictureBoxBannerTab4 = new System.Windows.Forms.PictureBox();
             this.panelbannerTab4 = new System.Windows.Forms.Panel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txt_minutesEffects = new System.Windows.Forms.TextBox();
             this.btn_CancelSideEffect = new System.Windows.Forms.Button();
             this.btn_aceptTimeEffects = new System.Windows.Forms.Button();
             this.lbl_timeSideEffect = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@ namespace Proyecto_POO_BDD
             this.lbl_date2Vaccine = new System.Windows.Forms.Label();
             this.pictureBoxBanner6 = new System.Windows.Forms.PictureBox();
             this.panelBannerTab6 = new System.Windows.Forms.Panel();
-            this.txt_minutesEffects = new System.Windows.Forms.TextBox();
             this.tabVaccinationProcess.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelBannerTab1.SuspendLayout();
@@ -318,10 +318,10 @@ namespace Proyecto_POO_BDD
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_dateTimeNowQueue);
             this.tabPage3.Controls.Add(this.btn_queueAcept);
             this.tabPage3.Controls.Add(this.lbl_queue);
             this.tabPage3.Controls.Add(this.lbl_queueDate);
-            this.tabPage3.Controls.Add(this.dtp_queueDate);
             this.tabPage3.Controls.Add(this.panelBannerTab3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -330,6 +330,21 @@ namespace Proyecto_POO_BDD
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fila espera";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_dateTimeNowQueue
+            // 
+            this.btn_dateTimeNowQueue.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_dateTimeNowQueue.FlatAppearance.BorderSize = 0;
+            this.btn_dateTimeNowQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dateTimeNowQueue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_dateTimeNowQueue.ForeColor = System.Drawing.Color.White;
+            this.btn_dateTimeNowQueue.Location = new System.Drawing.Point(183, 117);
+            this.btn_dateTimeNowQueue.Name = "btn_dateTimeNowQueue";
+            this.btn_dateTimeNowQueue.Size = new System.Drawing.Size(136, 42);
+            this.btn_dateTimeNowQueue.TabIndex = 12;
+            this.btn_dateTimeNowQueue.Text = "Registrar fecha actual";
+            this.btn_dateTimeNowQueue.UseVisualStyleBackColor = false;
+            this.btn_dateTimeNowQueue.Click += new System.EventHandler(this.btn_dateTimeNowQueue_Click);
             // 
             // btn_queueAcept
             // 
@@ -363,20 +378,6 @@ namespace Proyecto_POO_BDD
             this.lbl_queueDate.Size = new System.Drawing.Size(110, 32);
             this.lbl_queueDate.TabIndex = 9;
             this.lbl_queueDate.Text = "Fecha y Hora: ";
-            // 
-            // dtp_queueDate
-            // 
-            this.dtp_queueDate.CalendarFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.dtp_queueDate.CustomFormat = "yyyy/MM/dd    hh:mm";
-            this.dtp_queueDate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.dtp_queueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_queueDate.Location = new System.Drawing.Point(165, 124);
-            this.dtp_queueDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
-            this.dtp_queueDate.MinDate = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
-            this.dtp_queueDate.Name = "dtp_queueDate";
-            this.dtp_queueDate.Size = new System.Drawing.Size(166, 23);
-            this.dtp_queueDate.TabIndex = 8;
-            this.dtp_queueDate.Value = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
             // 
             // panelBannerTab3
             // 
@@ -531,6 +532,14 @@ namespace Proyecto_POO_BDD
             this.tabPage5.Text = "efectos sec.";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // txt_minutesEffects
+            // 
+            this.txt_minutesEffects.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txt_minutesEffects.Location = new System.Drawing.Point(216, 155);
+            this.txt_minutesEffects.Name = "txt_minutesEffects";
+            this.txt_minutesEffects.Size = new System.Drawing.Size(140, 25);
+            this.txt_minutesEffects.TabIndex = 19;
+            // 
             // btn_CancelSideEffect
             // 
             this.btn_CancelSideEffect.BackColor = System.Drawing.Color.DarkGray;
@@ -639,6 +648,7 @@ namespace Proyecto_POO_BDD
             // 
             // dtp_date2vaccine
             // 
+            this.dtp_date2vaccine.CustomFormat = "yyyy/mm/dd      HH:mm";
             this.dtp_date2vaccine.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dtp_date2vaccine.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_date2vaccine.Location = new System.Drawing.Point(153, 107);
@@ -672,14 +682,6 @@ namespace Proyecto_POO_BDD
             this.panelBannerTab6.Name = "panelBannerTab6";
             this.panelBannerTab6.Size = new System.Drawing.Size(386, 69);
             this.panelBannerTab6.TabIndex = 10;
-            // 
-            // txt_minutesEffects
-            // 
-            this.txt_minutesEffects.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.txt_minutesEffects.Location = new System.Drawing.Point(216, 155);
-            this.txt_minutesEffects.Name = "txt_minutesEffects";
-            this.txt_minutesEffects.Size = new System.Drawing.Size(140, 25);
-            this.txt_minutesEffects.TabIndex = 19;
             // 
             // frmVaccinationProcess
             // 
@@ -718,6 +720,8 @@ namespace Proyecto_POO_BDD
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Button btn_dateTimeNowQueue;
+
         private System.Windows.Forms.TextBox txt_minutesEffects;
 
         private System.Windows.Forms.TextBox textBox1;
@@ -750,7 +754,6 @@ namespace Proyecto_POO_BDD
         private System.Windows.Forms.Panel panelBannerTab3;
         private System.Windows.Forms.PictureBox pictureBoxBannerTab3;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DateTimePicker dtp_queueDate;
         private System.Windows.Forms.Label lbl_queueDate;
         private System.Windows.Forms.Label lbl_queue;
         private System.Windows.Forms.Button btn_queueAcept;

@@ -47,17 +47,18 @@ namespace Proyecto_POO_BDD
             // 
             // btn_search
             // 
-            this.btn_search.BackColor = System.Drawing.Color.LightGray;
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
             this.btn_search.FlatAppearance.BorderSize = 0;
             this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Location = new System.Drawing.Point(391, 85);
+            this.btn_search.Location = new System.Drawing.Point(288, 85);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(99, 40);
             this.btn_search.TabIndex = 0;
             this.btn_search.Text = "Buscar";
             this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // lbl_DuiSearch
             // 
@@ -73,7 +74,7 @@ namespace Proyecto_POO_BDD
             this.txt_DuiSearch.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.txt_DuiSearch.Location = new System.Drawing.Point(65, 94);
             this.txt_DuiSearch.Name = "txt_DuiSearch";
-            this.txt_DuiSearch.Size = new System.Drawing.Size(320, 24);
+            this.txt_DuiSearch.Size = new System.Drawing.Size(204, 24);
             this.txt_DuiSearch.TabIndex = 2;
             // 
             // panelBanner
@@ -101,7 +102,7 @@ namespace Proyecto_POO_BDD
             this.dgv_citizenInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_citizenInformation.Location = new System.Drawing.Point(22, 143);
             this.dgv_citizenInformation.Name = "dgv_citizenInformation";
-            this.dgv_citizenInformation.Size = new System.Drawing.Size(674, 234);
+            this.dgv_citizenInformation.Size = new System.Drawing.Size(634, 83);
             this.dgv_citizenInformation.TabIndex = 4;
             // 
             // bt_download
@@ -111,12 +112,13 @@ namespace Proyecto_POO_BDD
             this.bt_download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_download.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.bt_download.ForeColor = System.Drawing.Color.White;
-            this.bt_download.Location = new System.Drawing.Point(410, 398);
+            this.bt_download.Location = new System.Drawing.Point(356, 296);
             this.bt_download.Name = "bt_download";
             this.bt_download.Size = new System.Drawing.Size(155, 40);
             this.bt_download.TabIndex = 5;
             this.bt_download.Text = "Descargar";
             this.bt_download.UseVisualStyleBackColor = false;
+            this.bt_download.Click += new System.EventHandler(this.bt_download_Click);
             // 
             // btn_cancel
             // 
@@ -125,18 +127,19 @@ namespace Proyecto_POO_BDD
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(583, 398);
+            this.btn_cancel.Location = new System.Drawing.Point(543, 296);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(113, 40);
             this.btn_cancel.TabIndex = 6;
             this.btn_cancel.Text = "Salir";
             this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 450);
+            this.ClientSize = new System.Drawing.Size(719, 348);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.bt_download);
             this.Controls.Add(this.dgv_citizenInformation);

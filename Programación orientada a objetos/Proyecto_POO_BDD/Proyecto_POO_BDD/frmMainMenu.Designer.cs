@@ -179,7 +179,7 @@ namespace Proyecto_POO_BDD
             this.btn_Search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btn_Search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Search.Location = new System.Drawing.Point(195, 150);
+            this.btn_Search.Location = new System.Drawing.Point(187, 150);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(151, 146);
             this.btn_Search.TabIndex = 8;

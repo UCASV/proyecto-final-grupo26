@@ -8,7 +8,7 @@ namespace Proyecto_POO_BDD.ViewModels
         public string NameCitizen { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
-        public virtual InfoVaccination IdInfoVaccinationNavigation { get; set; }
+        
     }
     
 }
