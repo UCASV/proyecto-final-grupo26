@@ -2,9 +2,14 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Windows.Forms;
+<<<<<<< HEAD
+using Microsoft.IdentityModel.Tokens;
+=======
 using Org.BouncyCastle.Asn1.Cms;
+>>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
 using Proyecto_POO_BDD.SqlServerContext;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -145,16 +150,28 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+/* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+=======
             /* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+>>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
             PdfDocument document = new PdfDocument();
             PdfPage page = document.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
             XFont font = new XFont("Arial", 20);
             gfx.DrawString("Tryouts", font, XBrushes.Blue,
+<<<<<<< HEAD
+
+=======
                 
+>>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
                 new XRect(0, 0, page.Width, page.Height),
                 XStringFormats.Center);
 */
+
+            
+            
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Save your Vaccination Card";
             saveFileDialog1.ShowDialog();

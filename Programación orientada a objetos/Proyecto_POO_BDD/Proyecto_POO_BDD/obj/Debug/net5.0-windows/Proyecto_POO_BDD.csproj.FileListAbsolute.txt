@@ -255,5 +255,9 @@ C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Pro
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 >>>>>>> 1b080a2dc37de38dd2b8cc516371e3e822b3f9ff
+<<<<<<< HEAD
+C:\Users\gi\Desktop\proyecto-final-grupo26\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\obj\Debug\net5.0-windows\Proyecto_POO_BDD.frmSearch.resources
+=======
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
 C:\Users\HP\Desktop\POO PRO\Proyect_BD_POO\Programación orientada a objetos\Proyecto_POO_BDD\Proyecto_POO_BDD\bin\Debug\net5.0-windows\itextsharp.dll
+>>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
