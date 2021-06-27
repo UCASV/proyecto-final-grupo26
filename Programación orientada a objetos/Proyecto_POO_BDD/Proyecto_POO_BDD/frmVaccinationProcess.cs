@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Org.BouncyCastle.Asn1.Cms;
 using Proyecto_POO_BDD.SqlServerContext;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -20,9 +21,6 @@ namespace Proyecto_POO_BDD
         
         private void frmVaccinationProcess_Load(object sender, EventArgs e)
         {
-            //Validar que el dia que se pase a la fila de espera no sea un dia que ya haya transcurrido
-            dtp_queueDate.MinDate = DateTime.Now;
-
             tabVaccinationProcess.ItemSize = new Size(0, 1);
             this.Height = 285;
             
@@ -30,6 +28,8 @@ namespace Proyecto_POO_BDD
             cmbSideEffect.DataSource = db.SideEffects.ToList();
             cmbSideEffect.DisplayMember = "SideEffects";
             cmbSideEffect.ValueMember = "Id";
+            
+            //TODO: Asignar la fehca minima para la segunda cita dentro de 6 semanas 
         }
 
         private void btn_aceptDui_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Proyecto_POO_BDD
 
         private void chkConsent_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkConsent.Checked = true)
+            if (chkConsent.Checked)
             {
                 btnConsentAcepted.BackColor = ColorTranslator.FromHtml("#ed1b24");
                 btnConsentAcepted.Enabled = true;
@@ -103,9 +103,6 @@ namespace Proyecto_POO_BDD
         {
             Citizen c = db.Citizens.First(c => c.Dui.Equals(txt_dui.Text));
 
-            c.DateWline = dtp_queueDate.Value.Date;
-            c.TimeWline = dtp_queueDate.Value.TimeOfDay;
-
             if (radYesSideEffects.Checked)
             {
                 c.TimeEffect = Int32.Parse(txt_minutesEffects.Text); //se ingresan los minutos
@@ -124,13 +121,13 @@ namespace Proyecto_POO_BDD
                 c.TimeEffect = null;
                 c.DateEffect = null;
             }
+            
             InfoVaccination updateInfo = db.InfoVaccinations.First(i => i.Id.Equals(c.IdInfoVaccination));
-
-
 
             if (updateInfo.DateAppointment2 == null && updateInfo.TimeAppointment2 == null)
             {
                 tabVaccinationProcess.SelectedIndex = 5;
+                this.Height = 280;
                 
                 updateInfo.DateAppointment2 = dtp_date2vaccine.Value.Date;
                 updateInfo.TimeAppointment2 = dtp_date2vaccine.Value.TimeOfDay;
@@ -144,9 +141,6 @@ namespace Proyecto_POO_BDD
                     
                     this.Close();
             }
-
-            tabVaccinationProcess.SelectedIndex = 5;
-            this.Height = 280;
         }
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
@@ -171,6 +165,15 @@ namespace Proyecto_POO_BDD
                 MessageBoxIcon.Information);
             
             this.Close();
+        }
+
+        private void btn_dateTimeNowQueue_Click(object sender, EventArgs e)
+        {
+            Citizen c = db.Citizens.First(c => c.Dui.Equals(txt_dui.Text));
+            
+            c.DateWline = DateTime.Today;
+            c.TimeWline = DateTime.Now.TimeOfDay;
+            db.SaveChanges();
         }
     }
 }
