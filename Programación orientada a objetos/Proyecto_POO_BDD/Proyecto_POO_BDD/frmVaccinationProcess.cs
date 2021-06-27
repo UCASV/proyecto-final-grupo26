@@ -12,13 +12,10 @@ namespace Proyecto_POO_BDD
 {
     public partial class frmVaccinationProcess : Form
     {
-        private Employee employee { get; set; } // enviar el empleado que esta registrando si se desea registrar a un ciudadano
-        private ProCitasContext db = new ProCitasContext(); //tener acceso a la base de datos
-       
-        public frmVaccinationProcess(Employee employee)
+        private ProCitasContext db = new ProCitasContext();
+        public frmVaccinationProcess()
         {
             InitializeComponent();
-            this.employee = employee;
         }
         
         
@@ -32,12 +29,7 @@ namespace Proyecto_POO_BDD
             cmbSideEffect.DisplayMember = "SideEffects";
             cmbSideEffect.ValueMember = "Id";
             
-            //La segunda vacuna se coloca minimo dentro de 6 semanas
-            //Se suman 42 dias apartir de la primera dosis (dia actual) que equivale a 6 semanas
-            dtp_date2vaccine.MinDate = DateTime.Now.AddDays(42);
-            //La segunda vacuna se coloca maximo dentro de 8 semanas
-            //Se suman 56 dias apartir de la primera dosis (dia actual) que equivale a 8 semanas
-            dtp_date2vaccine.MaxDate = DateTime.Now.AddDays(56);
+            //TODO: Asignar la fehca minima para la segunda cita dentro de 6 semanas 
         }
 
         private void btn_aceptDui_Click(object sender, EventArgs e)
@@ -48,19 +40,11 @@ namespace Proyecto_POO_BDD
                 e.Dui.Equals(txt_dui.Text)).ToList();
 
             if (result.Count == 0)
-            {
-                DialogResult answer = MessageBox.Show("El usuario aun no esta registrado\n ¿Desea regsitrarlo?", "Vaccination Program", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
+                MessageBox.Show("El usuario aun no esta registrado", "Vaccination Program", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Exclamation);
+            
+            //TODO: AGREGAR la opcion de registrarlo
 
-                if (answer == DialogResult.Yes)
-                {
-                    using (frmRegisterCitizen window = new frmRegisterCitizen(employee))
-                    { 
-                        this.Hide(); 
-                        window.ShowDialog();
-                    }
-                }
-            }
             else
             {
                 tabVaccinationProcess.SelectedIndex = 1;
