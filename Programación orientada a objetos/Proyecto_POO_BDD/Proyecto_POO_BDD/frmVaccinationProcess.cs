@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -150,18 +151,24 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
+            /* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             PdfDocument document = new PdfDocument();
             PdfPage page = document.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
             XFont font = new XFont("Arial", 20);
             gfx.DrawString("Tryouts", font, XBrushes.Blue,
-                new XRect(0,0,page.Width,page.Height),
-                XStringFormats.Center);         
-            document.Save("C:\\Users\\HP\\Desktop");
+                
+                new XRect(0, 0, page.Width, page.Height),
+                XStringFormats.Center);
+*/
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Title = "Save your Vaccination Card";
+            saveFileDialog1.ShowDialog();
+
+            //document.Save();
 
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
             
             this.Close();
         }
