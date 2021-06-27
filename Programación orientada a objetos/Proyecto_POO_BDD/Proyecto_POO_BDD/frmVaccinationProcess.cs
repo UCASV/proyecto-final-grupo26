@@ -151,12 +151,16 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+=======
+>>>>>>> 1b080a2dc37de38dd2b8cc516371e3e822b3f9ff
             PdfDocument document = new PdfDocument();
             PdfPage page = document.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
             XFont font = new XFont("Arial", 20);
             gfx.DrawString("Tryouts", font, XBrushes.Blue,
+<<<<<<< HEAD
                 new XRect(0, 0, page.Width, page.Height),
                 XStringFormats.Center);
 */
@@ -166,6 +170,11 @@ namespace Proyecto_POO_BDD
             
             
             //document.Save();
+=======
+                new XRect(0,0,page.Width,page.Height),
+                XStringFormats.Center);         
+            document.Save("C:\\Users\\HP\\Desktop");
+>>>>>>> 1b080a2dc37de38dd2b8cc516371e3e822b3f9ff
 
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

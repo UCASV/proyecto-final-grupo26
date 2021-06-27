@@ -40,5 +40,15 @@ namespace Proyecto_POO_BDD
             }
             this.Show();
         }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            using (frmSearch window = new frmSearch())
+            {
+                this.Hide();
+                window.ShowDialog();
+            }
+            this.Show();
+        }
     }
 }

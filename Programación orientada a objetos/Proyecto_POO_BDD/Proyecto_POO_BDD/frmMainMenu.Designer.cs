@@ -42,6 +42,8 @@ namespace Proyecto_POO_BDD
             this.btn_citizenRegister = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lbl_user = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.lbl_search = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).BeginInit();
             this.panelBanner.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -65,13 +67,13 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Controls.Add(this.pictureBoxBanner);
             this.panelBanner.Location = new System.Drawing.Point(-1, 0);
             this.panelBanner.Name = "panelBanner";
-            this.panelBanner.Size = new System.Drawing.Size(457, 73);
+            this.panelBanner.Size = new System.Drawing.Size(533, 73);
             this.panelBanner.TabIndex = 1;
             // 
             // lbl_LogOut
             // 
             this.lbl_LogOut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_LogOut.Location = new System.Drawing.Point(347, 46);
+            this.lbl_LogOut.Location = new System.Drawing.Point(429, 46);
             this.lbl_LogOut.Name = "lbl_LogOut";
             this.lbl_LogOut.Size = new System.Drawing.Size(107, 27);
             this.lbl_LogOut.TabIndex = 9;
@@ -88,7 +90,7 @@ namespace Proyecto_POO_BDD
             this.btn_LogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btn_LogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LogOut.Location = new System.Drawing.Point(374, -1);
+            this.btn_LogOut.Location = new System.Drawing.Point(456, -1);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Size = new System.Drawing.Size(55, 61);
             this.btn_LogOut.TabIndex = 8;
@@ -98,7 +100,7 @@ namespace Proyecto_POO_BDD
             // 
             this.lbl_register.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbl_register.ForeColor = System.Drawing.Color.Black;
-            this.lbl_register.Location = new System.Drawing.Point(70, 124);
+            this.lbl_register.Location = new System.Drawing.Point(22, 102);
             this.lbl_register.Name = "lbl_register";
             this.lbl_register.Size = new System.Drawing.Size(114, 34);
             this.lbl_register.TabIndex = 3;
@@ -115,7 +117,7 @@ namespace Proyecto_POO_BDD
             this.btn_vaccinationProcess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btn_vaccinationProcess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btn_vaccinationProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_vaccinationProcess.Location = new System.Drawing.Point(261, 172);
+            this.btn_vaccinationProcess.Location = new System.Drawing.Point(367, 150);
             this.btn_vaccinationProcess.Name = "btn_vaccinationProcess";
             this.btn_vaccinationProcess.Size = new System.Drawing.Size(151, 146);
             this.btn_vaccinationProcess.TabIndex = 4;
@@ -125,7 +127,7 @@ namespace Proyecto_POO_BDD
             // lbl_vaccinate
             // 
             this.lbl_vaccinate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_vaccinate.Location = new System.Drawing.Point(269, 112);
+            this.lbl_vaccinate.Location = new System.Drawing.Point(367, 89);
             this.lbl_vaccinate.Name = "lbl_vaccinate";
             this.lbl_vaccinate.Size = new System.Drawing.Size(143, 58);
             this.lbl_vaccinate.TabIndex = 5;
@@ -142,7 +144,7 @@ namespace Proyecto_POO_BDD
             this.btn_citizenRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btn_citizenRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btn_citizenRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_citizenRegister.Location = new System.Drawing.Point(48, 172);
+            this.btn_citizenRegister.Location = new System.Drawing.Point(12, 150);
             this.btn_citizenRegister.Name = "btn_citizenRegister";
             this.btn_citizenRegister.Size = new System.Drawing.Size(151, 146);
             this.btn_citizenRegister.TabIndex = 6;
@@ -155,7 +157,7 @@ namespace Proyecto_POO_BDD
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.lbl_user});
             this.statusStrip.Location = new System.Drawing.Point(0, 369);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(455, 22);
+            this.statusStrip.Size = new System.Drawing.Size(532, 22);
             this.statusStrip.TabIndex = 7;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -167,12 +169,41 @@ namespace Proyecto_POO_BDD
             this.lbl_user.Size = new System.Drawing.Size(60, 17);
             this.lbl_user.Text = "Usuario: ";
             // 
+            // btn_Search
+            // 
+            this.btn_Search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Search.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("btn_Search.BackgroundImage")));
+            this.btn_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Search.FlatAppearance.BorderSize = 0;
+            this.btn_Search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btn_Search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Location = new System.Drawing.Point(195, 150);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(151, 146);
+            this.btn_Search.TabIndex = 8;
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // lbl_search
+            // 
+            this.lbl_search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_search.Location = new System.Drawing.Point(195, 90);
+            this.lbl_search.Name = "lbl_search";
+            this.lbl_search.Size = new System.Drawing.Size(143, 58);
+            this.lbl_search.TabIndex = 9;
+            this.lbl_search.Text = "Buscar";
+            this.lbl_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(455, 391);
+            this.ClientSize = new System.Drawing.Size(532, 391);
+            this.Controls.Add(this.lbl_search);
+            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.btn_citizenRegister);
             this.Controls.Add(this.lbl_vaccinate);
@@ -191,6 +222,10 @@ namespace Proyecto_POO_BDD
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label lbl_search;
+        
+        private System.Windows.Forms.Button btn_Search;
 
         private System.Windows.Forms.Button btn_LogOut;
 
