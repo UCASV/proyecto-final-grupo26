@@ -49,6 +49,15 @@ namespace Proyecto_POO_BDD
                 //newRegister.TimeR = DateTime.Now.TimeOfDay;
 
                 newRegister.TimeR = DateTime.Now.TimeOfDay;
+                
+                Employeexcabin xref = db.Set<Employeexcabin>()
+                    .SingleOrDefault(x => x.IdEmployee.Equals(result[0].Id));
+
+                Cabin cbdd = db.Set<Cabin>()
+                    .SingleOrDefault(c => c.Id == xref.IdCabin);
+                
+                newRegister.IdEmployee = result[0].Id;
+                newRegister.IdCabin = cbdd.Id;
 
                 db.Add(newRegister);
                 db.SaveChanges();

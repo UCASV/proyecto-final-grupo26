@@ -67,7 +67,6 @@ namespace Proyecto_POO_BDD
             this.Height = 680;
             tabControl1.SelectedIndex = 0;
             rb_diseasesNo.Checked = true;
-            
         }
 
         private void rb_institutionYes_CheckedChanged(object sender, EventArgs e)
