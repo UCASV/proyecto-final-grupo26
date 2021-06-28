@@ -100,16 +100,14 @@ namespace Proyecto_POO_BDD
                             Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);//margenes 
                             PdfWriter.GetInstance(document, fileStream); 
                             
-                            
-                            
-                            
-                            
                             document.Open();
                             //Agregando informacion al documento
                             document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n")); 
                             document.Add(new Paragraph("Primera vacuna")); 
                             document.Add(new Paragraph("Fecha: " + dgv_citizenInformation.Rows[0].Cells[0].Value.ToString()));
                             document.Add(new Paragraph("Hora: " + dgv_citizenInformation.Rows[0].Cells[1].Value.ToString()));
+                            
+                            document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
                             
                             //si no se ha reservado la segunda cita (esta en null) se omite en el PDF
 
@@ -122,7 +120,7 @@ namespace Proyecto_POO_BDD
                             }
                             catch (Exception exception)
                             {
-                                document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
+                                document.Add(new Paragraph("Aun no se ha registrado segunda cita"));
                             }
 
 
