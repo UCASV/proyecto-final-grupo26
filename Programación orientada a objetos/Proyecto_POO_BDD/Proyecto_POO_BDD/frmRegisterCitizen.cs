@@ -171,7 +171,7 @@ namespace Proyecto_POO_BDD
                     newCitizen.IdDiseases = dbdd.Id;
                 }
                 //------------------------------------------------------------------
-                
+
                 //INSTITUCION-------------------------------------------------------
                 Institution ibdd = db.Set<Institution>()
                     .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
@@ -182,31 +182,27 @@ namespace Proyecto_POO_BDD
                     newCitizen.IdInstitution = ibdd.Id;
                 //--------------------------------------------------------------------
 
-                
                 //CABINA--------------------------------------------------------------
                 Employeexcabin xref = db.Set<Employeexcabin>()
                     .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
 
                 Cabin cbdd = db.Set<Cabin>()
                     .SingleOrDefault(c => c.Id == xref.IdCabin);
-    
+
                 newCitizen.IdCabin = cbdd.Id;
                 //---------------------------------------------------------------------
 
-
                 //DIRECCION------------------------------------------------------------//
-                int idAddress = cmb_address.SelectedIndex + 1; 
+                int idAddress = cmb_address.SelectedIndex + 1;
                 // el indice empieza de 0 por lo que se le suma 1 para obtener su id
 
-                
                 Direction rbdd = db.Set<Direction>()
                     .SingleOrDefault(r => r.Id == idAddress);
-                
+
                 newCitizen.IdDirection = rbdd.Id;
                 //------------------------------------------------------------------------
                 
-                
-                //Detalles de la cita------------------------------------------------------
+            //Detalles de la cita------------------------------------------------------
                         
                     //obtener valor del comboBox del lugar de la cita
                     VaccinationPlace vref = (VaccinationPlace) cmb_PlaceVaccination.SelectedItem;
@@ -226,9 +222,8 @@ namespace Proyecto_POO_BDD
                     
                     newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFO_VACCINATION
                 //----------------------------------------------------------------------
-
+                
                 //----------------------------------------------------------------------//
-
                 //valores temporalmente nulos ya que se llenan mas adelante--------------//
                 newCitizen.TimeEffect = null;
                 newCitizen.DateEffect = null;
@@ -253,8 +248,6 @@ namespace Proyecto_POO_BDD
             
             //Guardar archivo PDF para imprimir
             SavePDF();
-
-
         }
 
         private void btn_cancelRegister_Click(object sender, EventArgs e)
