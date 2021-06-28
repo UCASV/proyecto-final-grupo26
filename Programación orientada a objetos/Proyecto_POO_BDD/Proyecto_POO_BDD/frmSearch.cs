@@ -37,35 +37,21 @@ namespace Proyecto_POO_BDD
             else
             { 
                 using(var context = new ProCitasContext())
-               { 
-                   /*dgv_citizenInformation.DataSource = null;
-
-                   var newDS = context.Citizens
-                       .Where(x => x.Dui.Equals(txt_DuiSearch.Text))
-                       .ToList();
-
-                    var mappedDS = new List<CitizenVM>();
-                    
-                    newDS.ForEach(c => mappedDS.Add(ProyectoPOOBDDMapped.MapCitizenToCitizenVm(c)));
-
-                    dgv_citizenInformation.DataSource = mappedDS;*/
-                    
-                    
-                    dgv_citizenInformation.DataSource = null;
+               {
+                   dgv_citizenInformation.DataSource = null;
+                   
                     var citizen = context.Citizens
                         .First(x => x.Dui.Equals(txt_DuiSearch.Text));
                     
-                    var newDS2 = context.InfoVaccinations
+                    var newDS = context.InfoVaccinations
                         .Where(i => i.Id.Equals(citizen.IdInfoVaccination))
                         .ToList();
 
-                    var mappedDS2 = new List<InfoVaccinationVM>();
+                    var mappedDS = new List<InfoVaccinationVM>();
                     
-                    newDS2.ForEach(i => mappedDS2.Add(ProyectoPOOBDDMapped.MapInfoVaccinationToInfoVaccinationVm(i)));
+                    newDS.ForEach(i => mappedDS.Add(ProyectoPOOBDDMapped.MapInfoVaccinationToInfoVaccinationVm(i)));
                     
-                    dgv_citizenInformation.DataSource = mappedDS2;
-                    
-                   
+                    dgv_citizenInformation.DataSource = mappedDS;
                }
             }
         }

@@ -9,17 +9,6 @@ namespace Proyecto_POO_BDD.ViewModels
     {
         private static ProCitasContext context = new ProCitasContext();
 
-        public static CitizenVM MapCitizenToCitizenVm(Citizen c)
-        {
-            return new CitizenVM()
-            {
-                Dui = c.Dui,
-                NameCitizen = c.NameCitizen,
-                Phone = c.Phone,
-                Mail = c.Mail
-            };
-        }
-
         public static InfoVaccinationVM MapInfoVaccinationToInfoVaccinationVm(InfoVaccination i)
         {
             var place = context.VaccinationPlaces

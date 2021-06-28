@@ -2,19 +2,10 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.Intrinsics.Arm;
-using System.Text;
 using System.Windows.Forms;
-using Microsoft.IdentityModel.Tokens;
-<<<<<<< HEAD
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-=======
->>>>>>> 05dd5268232156d4b201335a29290d6af0c82b61
-using Org.BouncyCastle.Asn1.Cms;
 using Proyecto_POO_BDD.SqlServerContext;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
 namespace Proyecto_POO_BDD
 {
     public partial class frmVaccinationProcess : Form
@@ -150,7 +141,7 @@ namespace Proyecto_POO_BDD
             if (updateInfo.DateAppointment2 == null && updateInfo.TimeAppointment2 == null)
             {
                 tabVaccinationProcess.SelectedIndex = 5;
-                this.Height = 280;
+                this.Height = 300;
                 
                 updateInfo.DateAppointment2 = dtp_date2vaccine.Value.Date;
                 updateInfo.TimeAppointment2 = dtp_date2vaccine.Value.TimeOfDay;
@@ -168,21 +159,6 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-           /* SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-=======
-
-            
-            
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
->>>>>>> 05dd5268232156d4b201335a29290d6af0c82b61
-            saveFileDialog1.Title = "Save your Vaccination Card";
-            saveFileDialog1.ShowDialog();
-            MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            this.Close();
-            */
-           
                 SaveFileDialog save = new SaveFileDialog(); 
                 save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
                 save.FileName = "Result.pdf"; //Nombre por defecto
@@ -203,39 +179,44 @@ namespace Proyecto_POO_BDD
                         {
                             Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);//margenes 
                             PdfWriter.GetInstance(document, fileStream);
+                            
                             document.Open();
+                            
+                            var yearRecieved = dtp_dateVaccineRecieved.Value.Year;
+                            var monthRecieved = dtp_dateVaccineRecieved.Value.Month;
+                            var dayRecieved = dtp_dateVaccineRecieved.Value.Day;
+                            
                             //Agregando informacion al documento
-                            document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n")); 
-                            document.Add(new Paragraph("Primera vacuna")); 
-                            document.Add(new Paragraph("Fecha: " + dtp_dateVaccineRecieved.Value));
-                            //frmRegisterCitizen reference = new frmRegisterCitizen();
+                            document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n\n")); 
+                            document.Add(new Paragraph("vacuna realizada")); 
+                            document.Add(new Paragraph("Fecha: " + yearRecieved + "/" + monthRecieved + "/" + dayRecieved));
+                            document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value.TimeOfDay));
                             
-                                
-                            
-                            //document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value));
                             if (radNoSideEffects.Checked)
                             {
-                                document.Add((new Paragraph("No presento efectos adversos")));
+                                document.Add((new Paragraph("No presento efectos secundarios")));
                             }
                             else if (radYesSideEffects.Checked)
                             {
+                                int idSideEffects = cmbSideEffect.SelectedIndex + 1; 
+                                // el indice empieza de 0 por lo que se le suma 1 para obtener su id
+                                
+                                SideEffect sbdd = db.Set<SideEffect>()
+                                    .SingleOrDefault(s => s.Id == idSideEffects);
+                                
                                 document.Add(new Paragraph("Presentó efectos adversos"));
-                                document.Add(new Paragraph("Efecto secundario:" + cmbSideEffect.SelectedItem));
+                                document.Add(new Paragraph("Efecto secundario:" + sbdd.SideEffects));
                             }
                             
+                            document.Add(new Paragraph("\nCita para segunda vacuna"));
+
+                            var year = dtp_date2vaccine.Value.Year;
+                            var month = dtp_date2vaccine.Value.Month;
+                            var day = dtp_date2vaccine.Value.Day;
                             
-                                //si no se ha reservado la segunda cita (esta en null) se omite en el PDF
-                            try
-                            {
-                                document.Add(new Paragraph("\nSegunda vacuna"));
-                                document.Add(new Paragraph("Fecha: " + dtp_date2vaccine.Value));
-                                //document.Add(new Paragraph("Hora: " + dtp_date2vaccine.Value));
-                            }
-                            catch (Exception exception)
-                            {
-                               // document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
-                            }
-                            
+                            document.Add(new Paragraph("Fecha: " + year + "/" + month + "/" + day));
+                            document.Add(new Paragraph("Hora: " + dtp_date2vaccine.Value.TimeOfDay));
+
                             document.Close();
 
                             fileStream.Close();
@@ -251,7 +232,8 @@ namespace Proyecto_POO_BDD
             { 
                 MessageBox.Show("No se ha encontrado el registro a guardar","Info");
             }
-        
+
+                this.Close();
         }
 
         private void btn_dateTimeNowQueue_Click(object sender, EventArgs e)
