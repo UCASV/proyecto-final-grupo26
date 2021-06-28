@@ -5,11 +5,10 @@ using System.Linq;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
-=======
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Org.BouncyCastle.Asn1.Cms;
->>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
 using Proyecto_POO_BDD.SqlServerContext;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -150,38 +149,83 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-/* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
-=======
-            /* System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
->>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
-            PdfDocument document = new PdfDocument();
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("Arial", 20);
-            gfx.DrawString("Tryouts", font, XBrushes.Blue,
-<<<<<<< HEAD
-
-=======
-                
->>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
-                new XRect(0, 0, page.Width, page.Height),
-                XStringFormats.Center);
-*/
-
-            
-            
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+           /* SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Save your Vaccination Card";
             saveFileDialog1.ShowDialog();
-
-            //document.Save();
-
             MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-            
             this.Close();
+            */
+           
+                SaveFileDialog save = new SaveFileDialog(); 
+                save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
+                save.FileName = "Result.pdf"; //Nombre por defecto
+        
+                bool ErrorMessage = false;
+        
+                if (save.ShowDialog()==DialogResult.OK)
+                    if (File.Exists(save.FileName)) 
+                    {    
+                        ErrorMessage = true; 
+                        MessageBox.Show("No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
+                    }
+                if (!ErrorMessage)
+                {
+                    try
+                    {
+                        using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+                        {
+                            Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);//margenes 
+                            PdfWriter.GetInstance(document, fileStream);
+                            document.Open();
+                            //Agregando informacion al documento
+                            document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n")); 
+                            document.Add(new Paragraph("Primera vacuna")); 
+                            document.Add(new Paragraph("Fecha: " + dtp_dateVaccineRecieved.Value));
+                            //frmRegisterCitizen reference = new frmRegisterCitizen();
+                            
+                                
+                            
+                            //document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value));
+                            if (radNoSideEffects.Checked)
+                            {
+                                document.Add((new Paragraph("No presento efectos adversos")));
+                            }
+                            else if (radYesSideEffects.Checked)
+                            {
+                                document.Add(new Paragraph("Presentó efectos adversos"));
+                                document.Add(new Paragraph("Efecto secundario:" + cmbSideEffect.SelectedItem));
+                            }
+                            
+                            
+                                //si no se ha reservado la segunda cita (esta en null) se omite en el PDF
+                            try
+                            {
+                                document.Add(new Paragraph("\nSegunda vacuna"));
+                                document.Add(new Paragraph("Fecha: " + dtp_date2vaccine.Value));
+                                //document.Add(new Paragraph("Hora: " + dtp_date2vaccine.Value));
+                            }
+                            catch (Exception exception)
+                            {
+                               // document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
+                            }
+                            
+                            document.Close();
+
+                            fileStream.Close();
+                        } 
+                        MessageBox.Show("Archivo guardado","info");
+                    }
+                    catch (Exception ex)
+                    { 
+                        MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message); 
+                    }
+                }
+                else
+            { 
+                MessageBox.Show("No se ha encontrado el registro a guardar","Info");
+            }
+        
         }
 
         private void btn_dateTimeNowQueue_Click(object sender, EventArgs e)

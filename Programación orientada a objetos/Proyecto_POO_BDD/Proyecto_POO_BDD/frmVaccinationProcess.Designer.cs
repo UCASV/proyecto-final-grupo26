@@ -460,7 +460,7 @@ namespace Proyecto_POO_BDD
             this.dtp_dateVaccineRecieved.Name = "dtp_dateVaccineRecieved";
             this.dtp_dateVaccineRecieved.Size = new System.Drawing.Size(176, 23);
             this.dtp_dateVaccineRecieved.TabIndex = 15;
-            this.dtp_dateVaccineRecieved.Value = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
+            this.dtp_dateVaccineRecieved.Value = new System.DateTime(2021, 6, 27, 0, 0, 0, 0);
             // 
             // lbl_dateVaccineRecieved
             // 

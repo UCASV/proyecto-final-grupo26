@@ -5945,8 +5945,12 @@
   },
   "logs": [
     {
-<<<<<<< HEAD
-=======
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\gi\\Desktop\\proyecto-final-grupo26\\Programación orientada a objetos\\Proyecto_POO_BDD\\Proyecto_POO_BDD\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
@@ -5967,7 +5971,6 @@
       ]
     },
     {
->>>>>>> b3311b309d44788db7c3c44e65b60aad2f5fc609
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
