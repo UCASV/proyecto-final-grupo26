@@ -258,7 +258,7 @@ namespace Proyecto_POO_BDD
         {
             SaveFileDialog save = new SaveFileDialog(); 
             save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
-            save.FileName = "Registro Ciudadano.pdf"; //Nombre por defecto
+            save.FileName = $"{txt_dui} Registro Ciudadano.pdf"; //Nombre por defecto
         
             bool ErrorMessage = false;
         

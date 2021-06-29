@@ -136,6 +136,7 @@ namespace Proyecto_POO_BDD
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmLogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesión";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

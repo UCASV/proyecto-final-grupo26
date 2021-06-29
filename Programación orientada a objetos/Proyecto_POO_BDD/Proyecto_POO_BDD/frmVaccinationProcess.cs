@@ -10,32 +10,39 @@ namespace Proyecto_POO_BDD
 {
     public partial class frmVaccinationProcess : Form
     {
-        private Employee employee { get; set; } // enviar el empleado que esta registrando si se desea registrar a un ciudadano
+        private Employee employee { get; set; }
+        // enviar el empleado que esta registrando si se desea registrar a un ciudadano
+
         private ProCitasContext db = new ProCitasContext(); //tener acceso a la base de datos
-       
+
         public frmVaccinationProcess(Employee employee)
         {
             InitializeComponent();
             this.employee = employee;
         }
-        
-        
+
+
         private void frmVaccinationProcess_Load(object sender, EventArgs e)
         {
             tabVaccinationProcess.ItemSize = new Size(0, 1);
             this.Height = 285;
-            
+
             //Enlace comboBox que contiene los efecto secundarios
             cmbSideEffect.DataSource = db.SideEffects.ToList();
             cmbSideEffect.DisplayMember = "SideEffects";
             cmbSideEffect.ValueMember = "Id";
-            
+
+            dtp_date2vaccine.Format = DateTimePickerFormat.Custom;
+            dtp_date2vaccine.CustomFormat = "yyyy/MM/dd    HH:mm";
             //La segunda vacuna se coloca minimo dentro de 6 semanas
             //Se suman 42 dias apartir de la primera dosis (dia actual) que equivale a 6 semanas
             dtp_date2vaccine.MinDate = DateTime.Now.AddDays(42);
+
             //La segunda vacuna se coloca maximo dentro de 8 semanas
             //Se suman 56 dias apartir de la primera dosis (dia actual) que equivale a 8 semanas
             dtp_date2vaccine.MaxDate = DateTime.Now.AddDays(56);
+
+            dtp_dateVaccineRecieved.ShowUpDown = true;
         }
 
         private void btn_aceptDui_Click(object sender, EventArgs e)
@@ -47,14 +54,15 @@ namespace Proyecto_POO_BDD
 
             if (result.Count == 0)
             {
-                DialogResult answer = MessageBox.Show("El usuario aun no esta registrado\n ¿Desea regsitrarlo?", "Vaccination Program", MessageBoxButtons.YesNo,
+                DialogResult answer = MessageBox.Show("El usuario aun no esta registrado\n ¿Desea regsitrarlo?",
+                    "Vaccination Program", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (answer == DialogResult.Yes)
                 {
                     using (frmRegisterCitizen window = new frmRegisterCitizen(employee))
-                    { 
-                        this.Hide(); 
+                    {
+                        this.Hide();
                         window.ShowDialog();
                     }
                 }
@@ -74,6 +82,8 @@ namespace Proyecto_POO_BDD
 
         private void chkConsent_CheckedChanged(object sender, EventArgs e)
         {
+            chkConsent.Checked = true;
+
             if (chkConsent.Checked)
             {
                 btnConsentAcepted.BackColor = ColorTranslator.FromHtml("#ed1b24");
@@ -101,13 +111,14 @@ namespace Proyecto_POO_BDD
 
         private void btn_aceptTimeEffects_Click(object sender, EventArgs e)
         {
-            if(Int32.Parse(txt_minutesEffects.Text) <= 0)
+            if (Int32.Parse(txt_minutesEffects.Text) <= 0)
                 MessageBox.Show("Minutos invalidos", "Vacuna Covid-19", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-            else if(Int32.Parse(txt_minutesEffects.Text) > 30)
-                MessageBox.Show("El tiempo de observacion maximo es de 30 minutos", "Vacuna Covid-19", MessageBoxButtons.OK,
+            else if (Int32.Parse(txt_minutesEffects.Text) > 30)
+                MessageBox.Show("El tiempo de observacion maximo es de 30 minutos", "Vacuna Covid-19",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-            
+
             this.Height = 440;
             tabVaccinationProcess.SelectedIndex = 3;
             radYesSideEffects.Checked = true;
@@ -121,13 +132,13 @@ namespace Proyecto_POO_BDD
             {
                 c.TimeEffect = Int32.Parse(txt_minutesEffects.Text); //se ingresan los minutos
                 c.DateEffect = dtp_dateVaccineRecieved.Value.Date;
-                
-                int idSideEffects = cmbSideEffect.SelectedIndex + 1; 
+
+                int idSideEffects = cmbSideEffect.SelectedIndex + 1;
                 // el indice empieza de 0 por lo que se le suma 1 para obtener su id
 
                 SideEffect sbdd = db.Set<SideEffect>()
                     .SingleOrDefault(s => s.Id == idSideEffects);
-                
+
                 c.IdSideEffects = sbdd.Id;
             }
             else
@@ -135,14 +146,14 @@ namespace Proyecto_POO_BDD
                 c.TimeEffect = null;
                 c.DateEffect = null;
             }
-            
+
             InfoVaccination updateInfo = db.InfoVaccinations.First(i => i.Id.Equals(c.IdInfoVaccination));
 
             if (updateInfo.DateAppointment2 == null && updateInfo.TimeAppointment2 == null)
             {
                 tabVaccinationProcess.SelectedIndex = 5;
                 this.Height = 300;
-                
+
                 updateInfo.DateAppointment2 = dtp_date2vaccine.Value.Date;
                 updateInfo.TimeAppointment2 = dtp_date2vaccine.Value.TimeOfDay;
                 db.SaveChanges();
@@ -151,98 +162,117 @@ namespace Proyecto_POO_BDD
             {
                 MessageBox.Show("Ambas dosis recibidas", "Vacuna Covid-19", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
-                    db.SaveChanges();
-                    
-                    this.Close();
+                db.SaveChanges();
+
+                this.Close();
             }
         }
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-                SaveFileDialog save = new SaveFileDialog(); 
-                save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
-                save.FileName = "Result.pdf"; //Nombre por defecto
-        
-                bool ErrorMessage = false;
-        
-                if (save.ShowDialog()==DialogResult.OK)
-                    if (File.Exists(save.FileName)) 
-                    {    
-                        ErrorMessage = true; 
-                        MessageBox.Show("No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
-                    }
-                if (!ErrorMessage)
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
+            save.FileName = $"{txt_dui} Vacunacion.pdf"; //Nombre por defecto
+
+            bool ErrorMessage = false;
+
+            if (save.ShowDialog() == DialogResult.OK)
+                if (File.Exists(save.FileName))
                 {
-                    try
-                    {
-                        using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
-                        {
-                            Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);//margenes 
-                            PdfWriter.GetInstance(document, fileStream);
-                            
-                            document.Open();
-                            
-                            var yearRecieved = dtp_dateVaccineRecieved.Value.Year;
-                            var monthRecieved = dtp_dateVaccineRecieved.Value.Month;
-                            var dayRecieved = dtp_dateVaccineRecieved.Value.Day;
-                            
-                            //Agregando informacion al documento
-                            document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n\n")); 
-                            document.Add(new Paragraph("vacuna realizada")); 
-                            document.Add(new Paragraph("Fecha: " + yearRecieved + "/" + monthRecieved + "/" + dayRecieved));
-                            document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value.TimeOfDay));
-                            
-                            if (radNoSideEffects.Checked)
-                            {
-                                document.Add((new Paragraph("No presento efectos secundarios")));
-                            }
-                            else if (radYesSideEffects.Checked)
-                            {
-                                int idSideEffects = cmbSideEffect.SelectedIndex + 1; 
-                                // el indice empieza de 0 por lo que se le suma 1 para obtener su id
-                                
-                                SideEffect sbdd = db.Set<SideEffect>()
-                                    .SingleOrDefault(s => s.Id == idSideEffects);
-                                
-                                document.Add(new Paragraph("Presentó efectos adversos"));
-                                document.Add(new Paragraph("Efecto secundario:" + sbdd.SideEffects));
-                            }
-                            
-                            document.Add(new Paragraph("\nCita para segunda vacuna"));
-
-                            var year = dtp_date2vaccine.Value.Year;
-                            var month = dtp_date2vaccine.Value.Month;
-                            var day = dtp_date2vaccine.Value.Day;
-                            
-                            document.Add(new Paragraph("Fecha: " + year + "/" + month + "/" + day));
-                            document.Add(new Paragraph("Hora: " + dtp_date2vaccine.Value.TimeOfDay));
-
-                            document.Close();
-
-                            fileStream.Close();
-                        } 
-                        MessageBox.Show("Archivo guardado","info");
-                    }
-                    catch (Exception ex)
-                    { 
-                        MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message); 
-                    }
+                    ErrorMessage = true;
+                    MessageBox.Show(
+                        "No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
                 }
-                else
-            { 
-                MessageBox.Show("No se ha encontrado el registro a guardar","Info");
+
+            if (!ErrorMessage)
+            {
+                try
+                {
+                    using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+                    {
+                        Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f); //margenes 
+                        PdfWriter.GetInstance(document, fileStream);
+
+                        document.Open();
+
+                        var yearRecieved = dtp_dateVaccineRecieved.Value.Year;
+                        var monthRecieved = dtp_dateVaccineRecieved.Value.Month;
+                        var dayRecieved = dtp_dateVaccineRecieved.Value.Day;
+
+                        //Agregando informacion al documento
+                        document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n\n"));
+                        document.Add(new Paragraph("vacuna realizada"));
+                        document.Add(new Paragraph("Fecha: " + yearRecieved + "/" + monthRecieved + "/" + dayRecieved));
+                        document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value.TimeOfDay));
+
+                        if (radNoSideEffects.Checked)
+                        {
+                            document.Add((new Paragraph("No presento efectos secundarios")));
+                        }
+                        else if (radYesSideEffects.Checked)
+                        {
+                            int idSideEffects = cmbSideEffect.SelectedIndex + 1;
+                            // el indice empieza de 0 por lo que se le suma 1 para obtener su id
+
+                            SideEffect sbdd = db.Set<SideEffect>()
+                                .SingleOrDefault(s => s.Id == idSideEffects);
+
+                            document.Add(new Paragraph("Presentó efectos adversos"));
+                            document.Add(new Paragraph("Efecto secundario:" + sbdd.SideEffects));
+                        }
+
+                        document.Add(new Paragraph("\nCita para segunda vacuna"));
+
+                        var year = dtp_date2vaccine.Value.Year;
+                        var month = dtp_date2vaccine.Value.Month;
+                        var day = dtp_date2vaccine.Value.Day;
+
+                        document.Add(new Paragraph("Fecha: " + year + "/" + month + "/" + day));
+                        document.Add(new Paragraph("Hora: " + dtp_date2vaccine.Value.TimeOfDay));
+
+                        document.Close();
+
+                        fileStream.Close();
+                    }
+
+                    MessageBox.Show("Archivo guardado", "info");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el registro a guardar", "Info");
             }
 
-                this.Close();
+            this.Close();
         }
 
         private void btn_dateTimeNowQueue_Click(object sender, EventArgs e)
         {
             Citizen c = db.Citizens.First(c => c.Dui.Equals(txt_dui.Text));
-            
+
             c.DateWline = DateTime.Today;
             c.TimeWline = DateTime.Now.TimeOfDay;
             db.SaveChanges();
+
+            btn_queueAcept.Enabled = true;
+            //Habilitar el boton aceptar para avanzar a la siguiente parte
+
+            btn_queueAcept.BackColor = ColorTranslator.FromHtml("#ed1b24");
+            //cambiar el color del boton a rojo para indicar que esta habilitado
+        }
+
+        private void btn_cancelDui_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnConsentCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -153,6 +153,7 @@ namespace Proyecto_POO_BDD
             this.Controls.Add(this.lbl_DuiSearch);
             this.Controls.Add(this.btn_search);
             this.Name = "frmSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSearch";
             this.panelBanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
