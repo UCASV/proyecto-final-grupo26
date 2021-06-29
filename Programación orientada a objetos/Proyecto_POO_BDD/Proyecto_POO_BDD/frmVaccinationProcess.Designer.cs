@@ -724,11 +724,7 @@ namespace Proyecto_POO_BDD
         }
 
         private System.Windows.Forms.Button btn_dateTimeNowQueue;
-
         private System.Windows.Forms.TextBox txt_minutesEffects;
-
-        private System.Windows.Forms.TextBox textBox1;
-
         private System.Windows.Forms.TabControl tabVaccinationProcess;
         
         // tab1 //

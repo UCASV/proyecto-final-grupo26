@@ -852,9 +852,6 @@ namespace Proyecto_POO_BDD
         //
         
         private System.Windows.Forms.TabControl tabControl1;
-       
-
-        
 
         #endregion
     }

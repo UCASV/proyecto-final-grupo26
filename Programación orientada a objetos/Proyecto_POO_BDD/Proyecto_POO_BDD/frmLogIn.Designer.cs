@@ -146,8 +146,6 @@ namespace Proyecto_POO_BDD
 
         private System.Windows.Forms.Button btn_login;
 
-        private System.Windows.Forms.Button button1;
-
         private System.Windows.Forms.TextBox txt_password;
 
         private System.Windows.Forms.TextBox txt_user;
@@ -155,8 +153,6 @@ namespace Proyecto_POO_BDD
         private System.Windows.Forms.Label lbl_password;
 
         private System.Windows.Forms.Label lbl_user;
-
-        private System.Windows.Forms.Label lbl_Password;
 
         private System.Windows.Forms.PictureBox pictureBox;
 

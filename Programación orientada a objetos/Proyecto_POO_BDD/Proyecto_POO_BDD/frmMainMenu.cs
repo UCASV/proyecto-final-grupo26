@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
 

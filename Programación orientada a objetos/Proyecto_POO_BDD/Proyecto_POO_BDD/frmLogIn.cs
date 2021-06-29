@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json.Serialization;
 using Proyecto_POO_BDD.SqlServerContext;
 
 namespace Proyecto_POO_BDD

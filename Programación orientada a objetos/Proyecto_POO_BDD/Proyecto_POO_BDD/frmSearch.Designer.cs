@@ -163,14 +163,10 @@ namespace Proyecto_POO_BDD
         }
 
         private System.Windows.Forms.Button btn_cancel;
-
         private System.Windows.Forms.Button bt_download;
-
         private System.Windows.Forms.DataGridView dgv_citizenInformation;
-
         private System.Windows.Forms.Panel panelBanner;
         private System.Windows.Forms.PictureBox pictureBoxBanner;
-
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label lbl_DuiSearch;
         private System.Windows.Forms.TextBox txt_DuiSearch;

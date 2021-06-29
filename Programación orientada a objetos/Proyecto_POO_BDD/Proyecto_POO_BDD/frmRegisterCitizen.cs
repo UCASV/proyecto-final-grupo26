@@ -3,12 +3,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Proyecto_POO_BDD.SqlServerContext;
 using Proyecto_POO_BDD.Validations;
-using Document = System.Reflection.Metadata.Document;
 
 namespace Proyecto_POO_BDD
 {
