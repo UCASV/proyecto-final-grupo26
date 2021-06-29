@@ -50,5 +50,15 @@ namespace Proyecto_POO_BDD
             }
             this.Show();
         }
+
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -247,6 +247,7 @@ namespace Proyecto_POO_BDD
             
             //Guardar archivo PDF para imprimir
             SavePDF();
+            this.Close();
         }
 
         private void btn_cancelRegister_Click(object sender, EventArgs e)

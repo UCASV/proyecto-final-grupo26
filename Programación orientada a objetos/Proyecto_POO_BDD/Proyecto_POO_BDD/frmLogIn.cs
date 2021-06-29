@@ -30,29 +30,17 @@ namespace Proyecto_POO_BDD
             {
                 MessageBox.Show("Bienvenido Gestor!", "Vaccination Program", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                frmMainMenu window = new frmMainMenu(result[0]);
-                window.Show();
-
-                DateTime date = DateTime.Today;
-                string formatDate = "yyyy MM d";
-
-                string fullTime = $"{date.ToString(formatDate)}";
                 
-               //DateTime time = DateTime.Now;
-                DateTime time = DateTime.Now;
-                
-                string formatTime = "hh mm";
-                
+                //Instanciando objeto del tipo record               
                 var newRegister = new Record();
+                
+                //Añadiendo fecha y hora actual a la que se inicio sesion
                 newRegister.DateR = DateTime.Today;
-
-                //newRegister.TimeR = DateTime.Now.TimeOfDay;
-
                 newRegister.TimeR = DateTime.Now.TimeOfDay;
                 
                 Employeexcabin xref = db.Set<Employeexcabin>()
                     .SingleOrDefault(x => x.IdEmployee.Equals(result[0].Id));
-
+                
                 Cabin cbdd = db.Set<Cabin>()
                     .SingleOrDefault(c => c.Id == xref.IdCabin);
                 
@@ -61,8 +49,14 @@ namespace Proyecto_POO_BDD
 
                 db.Add(newRegister);
                 db.SaveChanges();
+                
+                using (frmMainMenu window = new frmMainMenu(result[0]))
+                {
+                    this.Hide();
+                    window.ShowDialog();
+                }
 
-                this.Hide();
+                this.Show();
             }
         }
     }
