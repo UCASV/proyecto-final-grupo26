@@ -6,11 +6,10 @@ using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.IdentityModel.Tokens;
-<<<<<<< HEAD
+
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-=======
->>>>>>> 05dd5268232156d4b201335a29290d6af0c82b61
+
 using Org.BouncyCastle.Asn1.Cms;
 using Proyecto_POO_BDD.SqlServerContext;
 using PdfSharp.Drawing;
@@ -168,22 +167,7 @@ namespace Proyecto_POO_BDD
 
         private void btn_Acept2vaccine_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-           /* SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-=======
-
-            
-            
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
->>>>>>> 05dd5268232156d4b201335a29290d6af0c82b61
-            saveFileDialog1.Title = "Save your Vaccination Card";
-            saveFileDialog1.ShowDialog();
-            MessageBox.Show("Segunda cita registrada", "Segunda cita de vacunación", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            this.Close();
-            */
-           
-                SaveFileDialog save = new SaveFileDialog(); 
+            SaveFileDialog save = new SaveFileDialog(); 
                 save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
                 save.FileName = "Result.pdf"; //Nombre por defecto
         
@@ -220,7 +204,21 @@ namespace Proyecto_POO_BDD
                             else if (radYesSideEffects.Checked)
                             {
                                 document.Add(new Paragraph("Presentó efectos adversos"));
-                                document.Add(new Paragraph("Efecto secundario:" + cmbSideEffect.SelectedItem));
+                                
+                               /* var db = new ProCitasContext();
+                                cmbSideEffect.DataSource = db.SideEffects.ToList();
+                                cmbSideEffect.DisplayMember = "SideEffects";
+                                cmbSideEffect.ValueMember = "Id";
+*/
+
+
+                               document.Add(new Paragraph("Efecto secundario:" + ((SideEffect)cmbSideEffect.SelectedItem).SideEffects));
+
+
+
+
+
+
                             }
                             
                             
