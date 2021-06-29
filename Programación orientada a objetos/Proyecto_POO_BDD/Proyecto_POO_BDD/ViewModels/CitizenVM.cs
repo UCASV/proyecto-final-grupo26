@@ -1,4 +1,4 @@
-﻿using Proyecto_POO_BDD.SqlServerContext;
+﻿using System;
 
 namespace Proyecto_POO_BDD.ViewModels
 {
@@ -6,9 +6,11 @@ namespace Proyecto_POO_BDD.ViewModels
     {
         public string Dui { get; set; }
         public string NameCitizen { get; set; }
-        public string Phone { get; set; }
-        public string Mail { get; set; }
-        
+        public DateTime? DateAppointment1 { get; set; }
+        public TimeSpan? TimeAppointment1 { get; set; }
+        public DateTime? DateAppointment2 { get; set; }
+        public TimeSpan? TimeAppointment2 { get; set; }
+        public string VaccinationPlaces { get; set; }
+
     }
-    
 }

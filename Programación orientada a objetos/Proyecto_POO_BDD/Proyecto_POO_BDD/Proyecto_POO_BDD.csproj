@@ -23,7 +23,7 @@
       <Compile Update="frmVaccinationProcess.cs">
         <SubType>Form</SubType>
       </Compile>
-      <Compile Remove="ViewModels\CitizenVM.cs" />
+      <Compile Remove="ViewModels\InfoVaccinationVM.cs" />
     </ItemGroup>
 
     <ItemGroup>
