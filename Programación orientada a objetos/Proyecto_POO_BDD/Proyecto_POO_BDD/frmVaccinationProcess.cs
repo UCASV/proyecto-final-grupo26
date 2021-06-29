@@ -205,6 +205,7 @@ namespace Proyecto_POO_BDD
                         document.Add(new Paragraph("Fecha: " + yearRecieved + "/" + monthRecieved + "/" + dayRecieved));
                         document.Add(new Paragraph("Hora: " + dtp_dateVaccineRecieved.Value.TimeOfDay));
 
+                        //Agregar informacion de los efecto secundarios si se presentaron
                         if (radNoSideEffects.Checked)
                         {
                             document.Add((new Paragraph("No presento efectos secundarios")));
