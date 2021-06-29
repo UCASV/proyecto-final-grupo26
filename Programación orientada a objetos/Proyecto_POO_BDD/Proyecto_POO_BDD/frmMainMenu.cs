@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
 
@@ -49,6 +48,16 @@ namespace Proyecto_POO_BDD
                 window.ShowDialog();
             }
             this.Show();
+        }
+
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

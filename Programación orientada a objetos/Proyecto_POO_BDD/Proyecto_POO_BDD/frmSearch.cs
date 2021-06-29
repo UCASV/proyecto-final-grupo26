@@ -14,14 +14,10 @@ namespace Proyecto_POO_BDD
     {
         private bool _showFormDB = false;
         ProCitasContext db = new ProCitasContext();
+
         public frmSearch()
         {
             InitializeComponent();
-        }
-
-        private void frmSearch_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -35,38 +31,31 @@ namespace Proyecto_POO_BDD
                 MessageBox.Show("Ciudadano no registrado", "Vaccination Program", MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Exclamation);
             else
-            { 
-                using(var context = new ProCitasContext())
-               { 
-                   /*dgv_citizenInformation.DataSource = null;
-
-                   var newDS = context.Citizens
-                       .Where(x => x.Dui.Equals(txt_DuiSearch.Text))
-                       .ToList();
-
-                    var mappedDS = new List<CitizenVM>();
-                    
-                    newDS.ForEach(c => mappedDS.Add(ProyectoPOOBDDMapped.MapCitizenToCitizenVm(c)));
-
-                    dgv_citizenInformation.DataSource = mappedDS;*/
-                    
-                    
+            {
+                using (var context = new ProCitasContext())
+                {
+                    //Inicializando DataGridView en nulo
                     dgv_citizenInformation.DataSource = null;
+
                     var citizen = context.Citizens
                         .First(x => x.Dui.Equals(txt_DuiSearch.Text));
-                    
-                    var newDS2 = context.InfoVaccinations
-                        .Where(i => i.Id.Equals(citizen.IdInfoVaccination))
+
+                    var newDS = context.Citizens
+                        .Where(i => i.Id.Equals(citizen.Id))
                         .ToList();
 
-                    var mappedDS2 = new List<InfoVaccinationVM>();
-                    
-                    newDS2.ForEach(i => mappedDS2.Add(ProyectoPOOBDDMapped.MapInfoVaccinationToInfoVaccinationVm(i)));
-                    
-                    dgv_citizenInformation.DataSource = mappedDS2;
-                    
-                   
-               }
+                    var mappedDS = new List<CitizenVM>();
+
+                    newDS.ForEach(c => mappedDS.Add(ProyectoPOOBDDMapped.MapCitizenToCitizenVM(c)));
+
+                    //llenado el DataGridView
+                    dgv_citizenInformation.DataSource = mappedDS;
+
+                    //Modificar automaticamente el tamaño de las columnas del DataGridView
+                    //para que se ajuste a la informacion que contiene el nombre del ciudadano y el lugar de vacunación
+                    this.dgv_citizenInformation.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    this.dgv_citizenInformation.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                }
             }
         }
 
@@ -77,68 +66,71 @@ namespace Proyecto_POO_BDD
 
         private void bt_download_Click(object sender, EventArgs e)
         {
-            if (dgv_citizenInformation.Rows.Count>0)
-            { 
-                SaveFileDialog save = new SaveFileDialog(); 
+            if (dgv_citizenInformation.Rows.Count > 0)
+            {
+                bool errorMessage = false;
+                SaveFileDialog save = new SaveFileDialog();
                 save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
-                save.FileName = "Result.pdf"; //Nombre por defecto
-        
-                bool ErrorMessage = false;
-        
-                if (save.ShowDialog()==DialogResult.OK)
-                    if (File.Exists(save.FileName)) 
-                    {    
-                        ErrorMessage = true; 
-                        MessageBox.Show("No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
-                    }
-                if (!ErrorMessage)
+                save.FileName =
+                    $"{dgv_citizenInformation.Rows[0].Cells[0].Value} Registro.pdf"; //Nombre por defecto dui de la persona
+    
+                if (save.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    if (File.Exists(save.FileName))
                     {
-                        using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
-                        {
-                            Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);//margenes 
-                            PdfWriter.GetInstance(document, fileStream); 
-                            
-                            document.Open();
-                            //Agregando informacion al documento
-                            document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n")); 
-                            document.Add(new Paragraph("Primera vacuna")); 
-                            document.Add(new Paragraph("Fecha: " + dgv_citizenInformation.Rows[0].Cells[0].Value.ToString()));
-                            document.Add(new Paragraph("Hora: " + dgv_citizenInformation.Rows[0].Cells[1].Value.ToString()));
-                            
-                            document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
-                            
-                            //si no se ha reservado la segunda cita (esta en null) se omite en el PDF
-
-                            try
-                            {
-                                document.Add(new Paragraph("\nSegunda vacuna"));
-                                document.Add(new Paragraph("Fecha: " + dgv_citizenInformation.Rows[0].Cells[2].Value.ToString()));
-                                document.Add(new Paragraph("Hora: " + dgv_citizenInformation.Rows[0].Cells[3].Value.ToString()));
-                                document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
-                            }
-                            catch (Exception exception)
-                            {
-                                document.Add(new Paragraph("Aun no se ha registrado segunda cita"));
-                            }
-
-
-                            document.Close();
-
-                            fileStream.Close();
-                        } 
-                        MessageBox.Show("Archivo guardado","info");
+                        errorMessage = true;
+                        MessageBox.Show(
+                            "No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
                     }
-                    catch (Exception ex)
-                    { 
-                        MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message); 
+
+                    if (!errorMessage)
+                    {
+                        try
+                        {
+                            using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+                            {
+                                Document document = new Document(PageSize.A4, 32f, 32f, 32f, 32f); //margenes 
+                                PdfWriter.GetInstance(document, fileStream);
+
+                                document.Open();
+                                //Agregando informacion al documento
+                                document.Add(new Paragraph("INFORMACIÓN CITA COVID-19\n"));
+                                document.Add(new Paragraph("\nDui: " + dgv_citizenInformation.Rows[0].Cells[0].Value));
+                                document.Add(new Paragraph("Nombre: " + dgv_citizenInformation.Rows[0].Cells[1].Value));
+                                document.Add(new Paragraph("\nPrimera vacuna"));
+                                document.Add(new Paragraph("Fecha: " + dgv_citizenInformation.Rows[0].Cells[2].Value));
+                                document.Add(new Paragraph("Hora: " + dgv_citizenInformation.Rows[0].Cells[3].Value));
+                                document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[6].Value));
+
+                                //si no se ha reservado la segunda cita (esta en null) surgira un error al intentar convertir un valor nulo a string
+                                try
+                                {
+                                    document.Add(new Paragraph("\nSegunda vacuna"));
+                                    document.Add(new Paragraph("Fecha: " + dgv_citizenInformation.Rows[0].Cells[4].Value.ToString()));
+                                    document.Add(new Paragraph("Hora: " + dgv_citizenInformation.Rows[0].Cells[5].Value.ToString()));
+                                    document.Add(new Paragraph("Lugar: " + dgv_citizenInformation.Rows[0].Cells[6].Value.ToString()));
+                                }
+                                catch (Exception exception)
+                                {
+                                    document.Add(new Paragraph("Aun no se ha registrado segunda cita"));
+                                }
+
+                                document.Close();
+                                fileStream.Close();
+                            }
+
+                            MessageBox.Show("Archivo guardado", "Registro");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message);
+                        }
                     }
                 }
-            }
-            else
-            { 
-                MessageBox.Show("No se ha encontrado el registro a guardar","Info");
+                else
+                {
+                    MessageBox.Show("No se ha encontrado el registro a guardar", "Info");
+                }
             }
         }
     }

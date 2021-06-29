@@ -95,6 +95,7 @@ namespace Proyecto_POO_BDD
             this.btn_LogOut.Size = new System.Drawing.Size(55, 61);
             this.btn_LogOut.TabIndex = 8;
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
             // 
             // lbl_register
             // 
@@ -214,6 +215,7 @@ namespace Proyecto_POO_BDD
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             this.panelBanner.ResumeLayout(false);

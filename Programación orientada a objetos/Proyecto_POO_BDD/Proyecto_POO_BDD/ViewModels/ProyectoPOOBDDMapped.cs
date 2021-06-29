@@ -7,34 +7,36 @@ namespace Proyecto_POO_BDD.ViewModels
 {
     class ProyectoPOOBDDMapped
     {
-        private static ProCitasContext context = new ProCitasContext();
-
-        public static CitizenVM MapCitizenToCitizenVm(Citizen c)
+        public static CitizenVM MapCitizenToCitizenVM(Citizen c)
         {
-            return new CitizenVM()
-            {
-                Dui = c.Dui,
-                NameCitizen = c.NameCitizen,
-                Phone = c.Phone,
-                Mail = c.Mail
-            };
-        }
+            ProCitasContext context = new ProCitasContext();
 
-        public static InfoVaccinationVM MapInfoVaccinationToInfoVaccinationVm(InfoVaccination i)
-        {
+            CitizenVM citizen = new CitizenVM();
+
+            //asignando dui y nombre del ciudadano
+            citizen.Dui = c.Dui;
+            citizen.NameCitizen = c.NameCitizen;
+
+            //instanciando variable infoRef para contener la informacion de la tabla InfoVaccination
+            //que corresponda a dicho ciudadano
+            var infoRef = context.InfoVaccinations
+                .SingleOrDefault(i => i.Id.Equals(c.IdInfoVaccination));
+
+            //Asignando informacion de la cita
+            citizen.DateAppointment1 = infoRef.DateAppointment1;
+            citizen.TimeAppointment1 = infoRef.TimeAppointment1;
+            citizen.DateAppointment2 = infoRef.DateAppointment2;
+            citizen.TimeAppointment2 = infoRef.TimeAppointment2;
+
+            //instanciando variable place para contener el lugar de vacunacion la cual es llave foranea en 
+            //la tabla infoVaccination
             var place = context.VaccinationPlaces
-                .SingleOrDefault(p => p.Id.Equals(i.IdVaccinationPlace));
+                .SingleOrDefault(p => p.Id.Equals(infoRef.IdVaccinationPlace));
 
-            var namePlace = place.Place;
-            
-                return new InfoVaccinationVM()
-                {
-                    DateAppointment1 = i.DateAppointment1,
-                    TimeAppointment1 = i.TimeAppointment1,
-                    DateAppointment2 = i.DateAppointment2,
-                    TimeAppointment2 = i.TimeAppointment2,
-                    VaccinationPlaces = namePlace
-                };
+            //asignando lugar de la cita al ciudadano
+            citizen.VaccinationPlaces = place.Place;
+
+            return citizen;
         }
     }
 }

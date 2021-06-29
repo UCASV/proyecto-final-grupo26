@@ -165,6 +165,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancelDui.TabIndex = 3;
             this.btn_cancelDui.Text = "Cancel";
             this.btn_cancelDui.UseVisualStyleBackColor = false;
+            this.btn_cancelDui.Click += new System.EventHandler(this.btn_cancelDui_Click);
             // 
             // btn_aceptDui
             // 
@@ -237,6 +238,7 @@ namespace Proyecto_POO_BDD
             this.btnConsentCancel.TabIndex = 9;
             this.btnConsentCancel.Text = "Cancel";
             this.btnConsentCancel.UseVisualStyleBackColor = false;
+            this.btnConsentCancel.Click += new System.EventHandler(this.btnConsentCancel_Click);
             // 
             // btnConsentAcepted
             // 
@@ -348,7 +350,8 @@ namespace Proyecto_POO_BDD
             // 
             // btn_queueAcept
             // 
-            this.btn_queueAcept.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (237)))), ((int) (((byte) (27)))), ((int) (((byte) (36)))));
+            this.btn_queueAcept.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
+            this.btn_queueAcept.Enabled = false;
             this.btn_queueAcept.FlatAppearance.BorderSize = 0;
             this.btn_queueAcept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_queueAcept.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -458,7 +461,7 @@ namespace Proyecto_POO_BDD
             this.dtp_dateVaccineRecieved.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dtp_dateVaccineRecieved.MinDate = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
             this.dtp_dateVaccineRecieved.Name = "dtp_dateVaccineRecieved";
-            this.dtp_dateVaccineRecieved.Size = new System.Drawing.Size(176, 23);
+            this.dtp_dateVaccineRecieved.Size = new System.Drawing.Size(152, 23);
             this.dtp_dateVaccineRecieved.TabIndex = 15;
             this.dtp_dateVaccineRecieved.Value = new System.DateTime(2021, 6, 27, 0, 0, 0, 0);
             // 
@@ -721,11 +724,7 @@ namespace Proyecto_POO_BDD
         }
 
         private System.Windows.Forms.Button btn_dateTimeNowQueue;
-
         private System.Windows.Forms.TextBox txt_minutesEffects;
-
-        private System.Windows.Forms.TextBox textBox1;
-
         private System.Windows.Forms.TabControl tabVaccinationProcess;
         
         // tab1 //

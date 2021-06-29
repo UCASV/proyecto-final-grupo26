@@ -83,7 +83,7 @@ namespace Proyecto_POO_BDD
             this.panelBanner.Controls.Add(this.pictureBoxBanner);
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
             this.panelBanner.Name = "panelBanner";
-            this.panelBanner.Size = new System.Drawing.Size(719, 73);
+            this.panelBanner.Size = new System.Drawing.Size(804, 73);
             this.panelBanner.TabIndex = 3;
             // 
             // pictureBoxBanner
@@ -99,10 +99,15 @@ namespace Proyecto_POO_BDD
             // 
             // dgv_citizenInformation
             // 
+            this.dgv_citizenInformation.AllowUserToAddRows = false;
+            this.dgv_citizenInformation.AllowUserToDeleteRows = false;
+            this.dgv_citizenInformation.AllowUserToOrderColumns = true;
+            this.dgv_citizenInformation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgv_citizenInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_citizenInformation.Location = new System.Drawing.Point(22, 143);
             this.dgv_citizenInformation.Name = "dgv_citizenInformation";
-            this.dgv_citizenInformation.Size = new System.Drawing.Size(634, 83);
+            this.dgv_citizenInformation.ReadOnly = true;
+            this.dgv_citizenInformation.Size = new System.Drawing.Size(757, 59);
             this.dgv_citizenInformation.TabIndex = 4;
             // 
             // bt_download
@@ -112,7 +117,7 @@ namespace Proyecto_POO_BDD
             this.bt_download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_download.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.bt_download.ForeColor = System.Drawing.Color.White;
-            this.bt_download.Location = new System.Drawing.Point(356, 296);
+            this.bt_download.Location = new System.Drawing.Point(456, 220);
             this.bt_download.Name = "bt_download";
             this.bt_download.Size = new System.Drawing.Size(155, 40);
             this.bt_download.TabIndex = 5;
@@ -127,7 +132,7 @@ namespace Proyecto_POO_BDD
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(543, 296);
+            this.btn_cancel.Location = new System.Drawing.Point(666, 220);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(113, 40);
             this.btn_cancel.TabIndex = 6;
@@ -139,7 +144,7 @@ namespace Proyecto_POO_BDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 348);
+            this.ClientSize = new System.Drawing.Size(804, 281);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.bt_download);
             this.Controls.Add(this.dgv_citizenInformation);
@@ -148,8 +153,8 @@ namespace Proyecto_POO_BDD
             this.Controls.Add(this.lbl_DuiSearch);
             this.Controls.Add(this.btn_search);
             this.Name = "frmSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSearch";
-            this.Load += new System.EventHandler(this.frmSearch_Load);
             this.panelBanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_citizenInformation)).EndInit();
@@ -158,14 +163,10 @@ namespace Proyecto_POO_BDD
         }
 
         private System.Windows.Forms.Button btn_cancel;
-
         private System.Windows.Forms.Button bt_download;
-
         private System.Windows.Forms.DataGridView dgv_citizenInformation;
-
         private System.Windows.Forms.Panel panelBanner;
         private System.Windows.Forms.PictureBox pictureBoxBanner;
-
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label lbl_DuiSearch;
         private System.Windows.Forms.TextBox txt_DuiSearch;

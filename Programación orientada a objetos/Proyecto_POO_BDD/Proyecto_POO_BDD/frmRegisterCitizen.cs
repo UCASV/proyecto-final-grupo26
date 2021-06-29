@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Proyecto_POO_BDD.SqlServerContext;
 using Proyecto_POO_BDD.Validations;
 
@@ -63,7 +65,6 @@ namespace Proyecto_POO_BDD
             this.Height = 680;
             tabControl1.SelectedIndex = 0;
             rb_diseasesNo.Checked = true;
-            
         }
 
         private void rb_institutionYes_CheckedChanged(object sender, EventArgs e)
@@ -167,7 +168,7 @@ namespace Proyecto_POO_BDD
                     newCitizen.IdDiseases = dbdd.Id;
                 }
                 //------------------------------------------------------------------
-                
+
                 //INSTITUCION-------------------------------------------------------
                 Institution ibdd = db.Set<Institution>()
                     .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
@@ -178,31 +179,27 @@ namespace Proyecto_POO_BDD
                     newCitizen.IdInstitution = ibdd.Id;
                 //--------------------------------------------------------------------
 
-                
                 //CABINA--------------------------------------------------------------
                 Employeexcabin xref = db.Set<Employeexcabin>()
                     .SingleOrDefault(x => x.IdEmployee.Equals(employee.Id));
 
                 Cabin cbdd = db.Set<Cabin>()
                     .SingleOrDefault(c => c.Id == xref.IdCabin);
-    
+
                 newCitizen.IdCabin = cbdd.Id;
                 //---------------------------------------------------------------------
 
-
                 //DIRECCION------------------------------------------------------------//
-                int idAddress = cmb_address.SelectedIndex + 1; 
+                int idAddress = cmb_address.SelectedIndex + 1;
                 // el indice empieza de 0 por lo que se le suma 1 para obtener su id
 
-                
                 Direction rbdd = db.Set<Direction>()
                     .SingleOrDefault(r => r.Id == idAddress);
-                
+
                 newCitizen.IdDirection = rbdd.Id;
                 //------------------------------------------------------------------------
                 
-                
-                //Detalles de la cita------------------------------------------------------
+            //Detalles de la cita------------------------------------------------------
                         
                     //obtener valor del comboBox del lugar de la cita
                     VaccinationPlace vref = (VaccinationPlace) cmb_PlaceVaccination.SelectedItem;
@@ -222,9 +219,8 @@ namespace Proyecto_POO_BDD
                     
                     newCitizen.IdInfoVaccination = newInfo.Id; //asignar la fk de INFO_VACCINATION
                 //----------------------------------------------------------------------
-
+                
                 //----------------------------------------------------------------------//
-
                 //valores temporalmente nulos ya que se llenan mas adelante--------------//
                 newCitizen.TimeEffect = null;
                 newCitizen.DateEffect = null;
@@ -243,16 +239,117 @@ namespace Proyecto_POO_BDD
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+               MessageBox.Show($"{exception}");
                 throw;
             } 
-
             
+            //Guardar archivo PDF para imprimir
+            SavePDF();
+            this.Close();
         }
 
         private void btn_cancelRegister_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SavePDF()
+        {
+            SaveFileDialog save = new SaveFileDialog(); 
+            save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
+            save.FileName = $"{txt_dui} Registro Ciudadano.pdf"; //Nombre por defecto
+        
+            bool ErrorMessage = false;
+        
+            if (save.ShowDialog()==DialogResult.OK)
+                if (File.Exists(save.FileName)) 
+                {    
+                    ErrorMessage = true; 
+                    
+                    MessageBox.Show("No se puede reemplazar el archivo, favor cambiar nombre del archivo o eliminar el ya existente");
+                }
+
+            if (!ErrorMessage)
+            {
+                try
+                {
+                    using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+                    {
+                        iTextSharp.text.Document
+                            document = new iTextSharp.text.Document(PageSize.A4, 8f, 16f, 16f, 8f); //margenes 
+                        PdfWriter.GetInstance(document, fileStream);
+
+                        document.Open();
+
+                        //Agregando informacion al documento
+                        document.Add(new Paragraph("INFORMACIÓN Registro\n\n"));
+                        document.Add(new Paragraph("Dui: " + txt_dui.Text));
+                        document.Add(new Paragraph("Nombre Completo: " + txt_name.Text));
+                        document.Add(new Paragraph("Edad: " + txt_age.Text));
+
+                        document.Add(new Paragraph(
+                            "\n\n--------------------------------------------------------------------------------------\n\n"));
+
+                        int age = Convert.ToInt32(txt_age.Text);
+
+                        //persona mayor
+                        if (age > 60)
+                            document.Add(new Paragraph("Adulto mayor"));
+                        //validar que sea mayor de edad
+                        else if (age > 18)
+                            document.Add(new Paragraph("Mayor de 18 años"));
+                        else
+                            document.Add(new Paragraph("Menor de 18 años"));
+                        
+                        //validar si tiene alguna discapacidad
+                        if (rb_disabilityYes.Checked)
+                            document.Add(new Paragraph("Presenta discapacidad"));
+
+                        //validar si tiene alguna enfermedad transmisible
+                        if (rb_contagiousDiseasesYes.Checked)
+                            document.Add(new Phrase(" y una enfermedad contagiosa"));
+                        
+                        //validar que pertenezca a alguna institucion
+                        if (rb_institutionYes.Checked)
+                        {
+                            Institution ibdd = db.Set<Institution>()
+                                .SingleOrDefault(i => i.IdentifierNumber == txt_numInstitution.Text);
+
+                            document.Add(new Paragraph("Pretenece a la institucion de: " + ibdd.NameInstitution));
+                        }
+
+                        document.Add(new Paragraph(
+                            "\n\n--------------------------------------------------------------------------------------\n\n"));
+                        
+                        //Obtener unicamente la fecha
+                        int year = dtp_date.Value.Year;
+                        int month = dtp_date.Value.Month;
+                        int day = dtp_date.Value.Day;
+                        
+                        //obtener lugar de vacunacion
+                        VaccinationPlace vref = (VaccinationPlace) cmb_PlaceVaccination.SelectedItem;
+                        VaccinationPlace vbdd = db.Set<VaccinationPlace>()
+                            .SingleOrDefault(v => v.Id == vref.Id);
+                        
+                        document.Add(new Paragraph("Cita vacunacion"));
+                        document.Add(new Paragraph("Fecha: " + year + "/" + month + "/" + day));
+                        document.Add(new Paragraph("Hora: " + dtp_date.Value.TimeOfDay));
+                        document.Add(new Paragraph("Lugar de vacunacion: " + vbdd.Place));
+                        
+                        document.Close();
+                        fileStream.Close();
+                    } 
+                    MessageBox.Show("Archivo guardado","info");
+                }
+                catch (Exception ex)
+                { 
+                    MessageBox.Show("Se ha presentado un error al intentar guardar el archivo " + ex.Message); 
+                }
+            }
+            else
+            { 
+                MessageBox.Show("No se ha encontrado el registro a guardar","Info");
+            }
         }
     }
 }
