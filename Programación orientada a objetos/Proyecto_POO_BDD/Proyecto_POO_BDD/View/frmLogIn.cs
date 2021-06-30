@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     public partial class frmLogIn : Form
     {
@@ -15,10 +15,10 @@ namespace Proyecto_POO_BDD
         private void btn_login_Click(object sender, EventArgs e)
         {
             var db = new ProCitasContext();
-            var listOfEmployees = db.Employees.OrderBy(c => c.Id).ToList();
+            var listOfEmployees = db.Employees.OrderBy(c => c.Id);
 
             var result = listOfEmployees.Where(e =>
-                e.NameEmployee.Equals(txt_user.Text) &&
+                e.UserG.Equals(txt_user.Text) && 
                 e.Passwordd.Equals((txt_password.Text))).ToList();
 
             if (result.Count == 0)
@@ -54,8 +54,9 @@ namespace Proyecto_POO_BDD
                     this.Hide();
                     window.ShowDialog();
                 }
-
                 this.Show();
+                txt_user.Clear();
+                txt_password.Clear();
             }
         }
     }

@@ -8,7 +8,7 @@ using iTextSharp.text.pdf;
 using Proyecto_POO_BDD.SqlServerContext;
 using Proyecto_POO_BDD.Validations;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     public partial class frmRegisterCitizen : Form
     {
@@ -72,7 +72,7 @@ namespace Proyecto_POO_BDD
             if (rb_institutionYes.Checked)
             {
                 tabControl1.SelectedIndex = 2;
-                this.Height = 420;
+                this.Height = 350;
             }
         }
 
@@ -257,7 +257,7 @@ namespace Proyecto_POO_BDD
         {
             SaveFileDialog save = new SaveFileDialog(); 
             save.Filter = "PDF (*.pdf)|*.pdf"; //tipo PDF
-            save.FileName = $"{txt_dui} Registro Ciudadano.pdf"; //Nombre por defecto
+            save.FileName = $"{txt_dui.Text} Registro Ciudadano.pdf"; //Nombre por defecto
         
             bool ErrorMessage = false;
         

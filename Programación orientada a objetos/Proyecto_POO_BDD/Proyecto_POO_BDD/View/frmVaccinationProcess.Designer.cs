@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     partial class frmVaccinationProcess
     {

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Proyecto_POO_BDD.SqlServerContext;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     public partial class frmMainMenu : Form
     {
@@ -13,7 +13,6 @@ namespace Proyecto_POO_BDD
             InitializeComponent();
             this.employee = employee;
         }
-
 
         private void btn_citizenRegister_Click(object sender, EventArgs e)
         {
@@ -53,11 +52,6 @@ namespace Proyecto_POO_BDD
         private void btn_LogOut_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
         }
     }
 }

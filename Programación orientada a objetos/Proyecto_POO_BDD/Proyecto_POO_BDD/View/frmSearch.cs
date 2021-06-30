@@ -8,7 +8,7 @@ using iTextSharp.text.pdf;
 using Proyecto_POO_BDD.SqlServerContext;
 using Proyecto_POO_BDD.ViewModels;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     public partial class frmSearch : Form
     {

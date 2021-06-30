@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Proyecto_POO_BDD
+namespace Proyecto_POO_BDD.View
 {
     partial class frmMainMenu
     {
@@ -215,7 +215,6 @@ namespace Proyecto_POO_BDD
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxBanner)).EndInit();
             this.panelBanner.ResumeLayout(false);

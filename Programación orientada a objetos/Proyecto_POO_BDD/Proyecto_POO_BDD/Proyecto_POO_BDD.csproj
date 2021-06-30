@@ -7,12 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Update="frmLogIn.cs">
-        <SubType>Form</SubType>
-      </Compile>
-      <Compile Update="frmMainMenu.cs">
-        <SubType>Form</SubType>
-      </Compile>
       <Compile Remove="frmRegister.cs" />
       <Compile Remove="frmRegister.Designer.cs" />
       <Compile Update="frm.cs">
@@ -20,10 +14,16 @@
       </Compile>
       <Compile Remove="Entities\**" />
       <Compile Remove="Context\**" />
-      <Compile Update="frmVaccinationProcess.cs">
+      <Compile Remove="ViewModels\InfoVaccinationVM.cs" />
+      <Compile Update="View\frmLogIn.cs">
         <SubType>Form</SubType>
       </Compile>
-      <Compile Remove="ViewModels\InfoVaccinationVM.cs" />
+      <Compile Update="View\frmMainMenu.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="View\frmVaccinationProcess.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

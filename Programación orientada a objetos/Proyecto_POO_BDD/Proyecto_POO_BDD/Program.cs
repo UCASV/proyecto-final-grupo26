@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_POO_BDD.View;
+
 namespace Proyecto_POO_BDD
 {
     static class Program
