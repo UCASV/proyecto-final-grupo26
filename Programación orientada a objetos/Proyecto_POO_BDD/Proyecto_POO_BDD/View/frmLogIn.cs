@@ -14,15 +14,18 @@ namespace Proyecto_POO_BDD.View
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            var db = new ProCitasContext();
-            var listOfEmployees = db.Employees.OrderBy(c => c.Id);
+            try
+            {
+                var db = new ProCitasContext();
+                
+                var listOfEmployees = db.Employees.OrderBy(c => c.Id);
 
             var result = listOfEmployees.Where(e =>
                 e.UserG.Equals(txt_user.Text) && 
                 e.Passwordd.Equals((txt_password.Text))).ToList();
 
             if (result.Count == 0)
-                MessageBox.Show("Este usuario no existe", "Vaccination Program", MessageBoxButtons.OK,
+                MessageBox.Show("Este usuario no existe", "Vaccination Program", MessageBoxButtons.OK, 
                     MessageBoxIcon.Exclamation);
 
             else
@@ -55,8 +58,14 @@ namespace Proyecto_POO_BDD.View
                     window.ShowDialog();
                 }
                 this.Show();
-                txt_user.Clear();
+                txt_user.Clear(); 
                 txt_password.Clear();
+            }
+        }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"No es posible conectar con la base de datos");
+                throw;
             }
         }
     }

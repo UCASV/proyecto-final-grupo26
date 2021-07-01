@@ -276,7 +276,7 @@ namespace Proyecto_POO_BDD.View
                     using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
                     {
                         iTextSharp.text.Document
-                            document = new iTextSharp.text.Document(PageSize.A4, 8f, 16f, 16f, 8f); //margenes 
+                            document = new iTextSharp.text.Document(PageSize.A4, 32f, 32f, 32f, 32f); //margenes 
                         PdfWriter.GetInstance(document, fileStream);
 
                         document.Open();

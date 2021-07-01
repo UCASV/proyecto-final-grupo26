@@ -108,8 +108,9 @@ namespace Proyecto_POO_BDD.View
         private void btn_CancelSideEffect_Click(object sender, EventArgs e)
         {
             this.Height = 440;
-            tabVaccinationProcess.SelectedIndex = 3;//Regresar a la ventana anterior
             radNoSideEffects.Checked = true; //Y volver a marca no
+            tabVaccinationProcess.SelectedIndex = 3;//Regresar a la ventana anterior
+            
         }
         
         private void btn_aceptTimeEffects_Click(object sender, EventArgs e)
@@ -121,10 +122,11 @@ namespace Proyecto_POO_BDD.View
             else if (Int32.Parse(txt_minutesEffects.Text) > 30)
                 MessageBox.Show("El tiempo de observacion maximo es de 30 minutos", "Vacuna Covid-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            
-            this.Height = 440;
-            tabVaccinationProcess.SelectedIndex = 3; // avanzar a la siguiente ventana
-            radYesSideEffects.Checked = true;
+            else
+            {
+                this.Height = 440;
+                tabVaccinationProcess.SelectedIndex = 3; // avanzar a la siguiente venta    
+            }
         }
         private void btn_aceptVaccineRecieved_Click(object sender, EventArgs e)
         {
@@ -193,7 +195,7 @@ namespace Proyecto_POO_BDD.View
                 {
                     using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
                     {
-                        Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f); //margenes 
+                        Document document = new Document(PageSize.A4, 32f, 32f, 32f, 32f); //margenes 
                         PdfWriter.GetInstance(document, fileStream);
 
                         document.Open();
