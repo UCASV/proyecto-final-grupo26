@@ -22,5 +22,5 @@ __View Model:__ Implementamos este patron de diseño ya que no vimos necesario m
 - Tener instalado JetBrains Rider 2021.1.2 con .NET 5.0 para poder correr el programa
 
 ## Manual de usuario
-[ Manual de usuario]()
+[ Manual de usuario](https://github.com/UCASV/proyecto-final-grupo26/blob/POO/Programaci%C3%B3n%20orientada%20a%20objetos/Manual%20de%20Usuario.pdf)
  
